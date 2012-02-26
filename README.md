@@ -1,4 +1,4 @@
-# Location Data Comparison
+Location Data Comparison
 --
 This projects goal is to compare all location based APIs.
 
