@@ -7,6 +7,7 @@
 //
 
 #import "CTAppDelegate.h"
+#import <CityGrid/CityGrid.h>
 
 @implementation CTAppDelegate
 
@@ -14,6 +15,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [CityGrid setPublisher:@"test"];
+	[CityGrid setPlacement:@"ios-example"];
+	[CityGrid setDebug:YES];
+
     // Override point for customization after application launch.
     return YES;
 }
