@@ -1,6 +1,6 @@
 Location Data Comparison
 ------
-This projects goal is to compare all location based APIs.
+This project's goal is to compare all location based APIs.
 
 List of location based API sources to compare:
 
