@@ -1,0 +1,4 @@
+I don't really understand cocoapods, but I want to.  I am creating a fake dependency file for my records.
+
+dependency BZFoursquare - https://github.com/baztokyo/foursquare-ios-api
+dependency CityGrid SDK - http://docs.citygridmedia.com/display/citygridv2/SDKs
