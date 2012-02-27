@@ -21,5 +21,5 @@
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
 - (void) loadPlaces;
-
+- (void) loadFoursquarePlaces;
 @end

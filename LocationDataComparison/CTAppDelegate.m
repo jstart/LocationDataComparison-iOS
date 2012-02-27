@@ -23,9 +23,9 @@
    _foursquare.version = @"20120227";
    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   _foursquare.sessionDelegate = self;
-  if (![_foursquare isSessionValid]){
-    [_foursquare startAuthorization];
-  }
+//  if (![_foursquare isSessionValid]){
+//    [_foursquare startAuthorization];
+//  }
     // Override point for customization after application launch.
     return YES;
 }

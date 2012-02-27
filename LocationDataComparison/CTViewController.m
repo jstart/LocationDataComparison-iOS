@@ -50,6 +50,7 @@
   [super viewWillAppear:animated];
   [mapView removeAnnotations:mapView.annotations];
   [mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+  [self loadFoursquarePlaces];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,7 +111,7 @@
 }
 
 - (void) loadFoursquarePlaces {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude], @"ll", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude], @"ll",  @"IYGRZE1FC4X02XK03JDSTNVS1MYCR1B3C3WMPORAI3OHV5MK", @"client_secret",@"K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B", @"client_id", nil];
     BZFoursquareRequest * request = [appDelegate.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [request start];
 }
@@ -197,7 +198,8 @@
 
 #pragma mark
 #pragma Foursquare
-- (void)requestDidStartLoading:(BZFoursquareRequest *)request{  NSLog(@"%@, %@", request, [request response]);
+- (void)requestDidStartLoading:(BZFoursquareRequest *)request{  
+  NSLog(@"Foursquare request did start loading %@, %@", request, [request response]);
 }
 
 - (void)requestDidFinishLoading:(BZFoursquareRequest *)request{

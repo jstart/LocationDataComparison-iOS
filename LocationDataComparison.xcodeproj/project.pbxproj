@@ -10,6 +10,7 @@
 		FD26344E14FBEFFF00142047 /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26344B14FBEFFF00142047 /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345514FBF31F00142047 /* MobileCoreServices.framework */; };
+		FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */; };
 		FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
 		FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
 		FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70883014F84DC50029C7AC /* CoreGraphics.framework */; };
@@ -46,6 +47,7 @@
 		FD26344C14FBEFFF00142047 /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
 		FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquareRequest.m; sourceTree = "<group>"; };
 		FD26345514FBF31F00142047 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SupportedLocationAPIs.plist; sourceTree = "<group>"; };
 		FD70882814F84DC50029C7AC /* LocationDataComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationDataComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD70882C14F84DC50029C7AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD70882E14F84DC50029C7AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -167,6 +169,7 @@
 				FD70883514F84DC50029C7AC /* InfoPlist.strings */,
 				FD70883814F84DC50029C7AC /* main.m */,
 				FD70883A14F84DC50029C7AC /* LocationDataComparison-Prefix.pch */,
+				FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				FD70883714F84DC50029C7AC /* InfoPlist.strings in Resources */,
 				FD70884014F84DC60029C7AC /* MainStoryboard_iPhone.storyboard in Resources */,
 				FD70884314F84DC60029C7AC /* MainStoryboard_iPad.storyboard in Resources */,
+				FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
