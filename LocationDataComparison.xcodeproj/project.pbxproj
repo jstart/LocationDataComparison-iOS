@@ -12,6 +12,8 @@
 		FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345514FBF31F00142047 /* MobileCoreServices.framework */; };
 		FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */; };
 		FD26345A14FC0BF700142047 /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345914FC0BF700142047 /* FactualSDK.framework */; };
+		FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26345E14FC2B5700142047 /* CTLocationDataManager.m */; };
+		FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */; };
 		FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
 		FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
 		FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70883014F84DC50029C7AC /* CoreGraphics.framework */; };
@@ -50,6 +52,13 @@
 		FD26345514FBF31F00142047 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SupportedLocationAPIs.plist; sourceTree = "<group>"; };
 		FD26345914FC0BF700142047 /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FactualSDK.framework; path = ../../../../../Downloads/FactualSDK.framework; sourceTree = "<group>"; };
+		FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		FD26345D14FC2B5700142047 /* CTLocationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManager.h; path = LocationDataManagement/CTLocationDataManager.h; sourceTree = "<group>"; };
+		FD26345E14FC2B5700142047 /* CTLocationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManager.m; path = LocationDataManagement/CTLocationDataManager.m; sourceTree = "<group>"; };
+		FD26346014FC2C0E00142047 /* CTLocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationConstants.h; path = LocationDataManagement/CTLocationConstants.h; sourceTree = "<group>"; };
+		FD26346114FC317F00142047 /* CTLocationDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManagerDelegate.h; path = LocationDataManagement/CTLocationDataManagerDelegate.h; sourceTree = "<group>"; };
+		FD26346314FC36F800142047 /* CTLocationDataManagerResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManagerResult.h; path = LocationDataManagement/CTLocationDataManagerResult.h; sourceTree = "<group>"; };
+		FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManagerResult.m; path = LocationDataManagement/CTLocationDataManagerResult.m; sourceTree = "<group>"; };
 		FD70882814F84DC50029C7AC /* LocationDataComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationDataComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD70882C14F84DC50029C7AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD70882E14F84DC50029C7AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +126,19 @@
 			name = BZFoursquare;
 			sourceTree = "<group>";
 		};
+		FD26345B14FC2B1600142047 /* Location Data Management */ = {
+			isa = PBXGroup;
+			children = (
+				FD26345D14FC2B5700142047 /* CTLocationDataManager.h */,
+				FD26345E14FC2B5700142047 /* CTLocationDataManager.m */,
+				FD26346014FC2C0E00142047 /* CTLocationConstants.h */,
+				FD26346114FC317F00142047 /* CTLocationDataManagerDelegate.h */,
+				FD26346314FC36F800142047 /* CTLocationDataManagerResult.h */,
+				FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */,
+			);
+			name = "Location Data Management";
+			sourceTree = "<group>";
+		};
 		FD70881D14F84DC10029C7AC = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +177,8 @@
 		FD70883214F84DC50029C7AC /* LocationDataComparison */ = {
 			isa = PBXGroup;
 			children = (
+				FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */,
+				FD26345B14FC2B1600142047 /* Location Data Management */,
 				FD26345014FBF00300142047 /* BZFoursquare */,
 				FD70886B14F852190029C7AC /* View Controllers */,
 				FD70883B14F84DC50029C7AC /* CTAppDelegate.h */,
@@ -322,6 +346,8 @@
 				FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */,
 				FD26344E14FBEFFF00142047 /* BZFoursquare.m in Sources */,
 				FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */,
+				FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */,
+				FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

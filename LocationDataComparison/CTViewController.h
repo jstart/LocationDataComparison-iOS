@@ -11,8 +11,11 @@
 #import <CityGrid/CityGrid.h>
 #import <FactualSDK/FactualAPI.h>
 #import "BZFoursquareRequest.h"
+#import "CTLocationDataManagerDelegate.h"
+#import "CTLocationDataManagerResult.h"
+#import "CTLocationDataManager.h"
 
-@interface CTViewController : UIViewController <MKMapViewDelegate, BZFoursquareRequestDelegate, FactualAPIDelegate>
+@interface CTViewController : UIViewController <MKMapViewDelegate, CTLocationDataManagerDelegate>
 
 @property (strong, nonatomic) NSMutableArray * places;
 @property (strong, nonatomic) NSMutableDictionary * fsqPlaces;
@@ -22,7 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 
-- (void) loadPlaces;
+- (void) loadCityGridPlaces;
 - (void) loadFoursquarePlaces;
 - (void) loadFactualPlaces;
 @end

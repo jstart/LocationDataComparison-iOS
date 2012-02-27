@@ -7,7 +7,6 @@
 //
 
 #import "CTAppDelegate.h"
-#import <CityGrid/CityGrid.h>
 
 @implementation CTAppDelegate
 
@@ -15,16 +14,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [CityGrid setPublisher:@"test"];
-	[CityGrid setPlacement:@"ios-example"];
-	[CityGrid setDebug:NO];
 
   _foursquare = [[BZFoursquare alloc] initWithClientID:@"K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B" callbackURL:@"fsqdemo://foursquare"];
    _foursquare.version = @"20120227";
    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   _foursquare.sessionDelegate = self;
   
-  _factual = [[FactualAPI alloc] initWithAPIKey:@"S0mvKJsSItrI76wNrFsa2Y9tfHEFENJ6fd5XFvdG9qFo1THE5Fh0FpUeHBUBybBD"];
 //  if (![_foursquare isSessionValid]){
 //    [_foursquare startAuthorization];
 //  }
