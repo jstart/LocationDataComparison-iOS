@@ -17,6 +17,7 @@
 @synthesize queue;
 @synthesize places;
 @synthesize fsqPlaces;
+@synthesize factualPlaces;
 
 - (void)didReceiveMemoryWarning
 {
@@ -50,7 +51,8 @@
   [super viewWillAppear:animated];
   [mapView removeAnnotations:mapView.annotations];
   [mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-  [self loadFoursquarePlaces];
+//  [self loadFoursquarePlaces];
+  [self loadFactualPlaces];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -116,6 +118,17 @@
     [request start];
 }
 
+- (void) loadFactualPlaces {
+  // alloc query object
+  FactualQuery* queryObject = [FactualQuery query];
+  
+  // set geo filter
+  [queryObject setGeoFilter:mapView.centerCoordinate radiusInMeters:200.00];
+
+  
+  // run query against the US-POI table
+  FactualAPIRequest* activeRequest = [appDelegate.factual queryTable:@"bi0eJZ" optionalQueryParams:queryObject withDelegate:self];
+}
 
 #pragma mark
 #pragma MapKitDelegate
@@ -230,6 +243,66 @@
 }
 
 - (void)request:(BZFoursquareRequest *)request didFailWithError:(NSError *)error{
+  
+}
+
+#pragma mark
+#pragma Factual
+- (void)requestComplete:(FactualAPIRequest*) request{
+  NSLog(@"Factual request complete: %@", request  );
+}
+- (void)requestComplete:(FactualAPIRequest*) request receivedUpdateResult:(FactualUpdateResult*) updateResult{
+  
+}
+
+/*! @discussion This method gets called when a queryTable request successfully 
+ completes on the server. The results of the request are passed to the caller
+ in the FactualQueryResult object. Please see related FactualQueryResult 
+ docs for more details.
+ 
+ @param request The request context object 
+ 
+ @param queryResult The FactualQueryResult result object
+ */
+
+- (void)requestComplete:(FactualAPIRequest*) request receivedQueryResult:(FactualQueryResult*) queryResult{
+  [self.queue addOperationWithBlock:^{
+    NSArray* errors = nil;
+    NSDictionary* tmpPlaces = [queryResult rows];
+    self.factualPlaces = [tmpPlaces mutableCopy];
+    if ([errors count] > 0) {
+      NSLog (@"%@", errors);
+    } else {
+      [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        //NSLog (@"%@", self.places);
+        NSMutableArray * array = [NSMutableArray arrayWithCapacity:self.factualPlaces.count];
+        for (FactualRow * venue in self.factualPlaces) {
+          NSDictionary * factualDictionary = [venue namesAndValues];
+          MKPointAnnotation * annotation = [[MKPointAnnotation alloc] init];
+          [annotation setTitle:[factualDictionary objectForKey:@"name"]];
+          //          [annotation setSubtitle:location.tagline];
+          [annotation setCoordinate:CLLocationCoordinate2DMake([[factualDictionary objectForKey:@"latitude"] floatValue], [[factualDictionary objectForKey:@"longitude"] floatValue])];
+          [array addObject:annotation];
+        }
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        [mapView addAnnotations:array];
+      }];
+    }
+  }];
+
+}
+
+/*! @discussion This method gets called when a getTableSchema request successfully 
+ completes on the server. The results of the request are passed to the caller
+ in the FactualSchemaResult object. Please see related FactualSchemaResult 
+ docs for more details.
+ 
+ @param request The request context object 
+ 
+ @param schemaResult The FactualSchemaResult result object
+ */
+
+- (void)requestComplete:(FactualAPIRequest*) request receivedSchemaResult:(FactualSchemaResult*) schemaResult{
   
 }
 

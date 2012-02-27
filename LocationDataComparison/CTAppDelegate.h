@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FactualSDK/FactualAPI.h>
 #import "BZFoursquare.h"
 
 #define appDelegate ((CTAppDelegate*)[[UIApplication sharedApplication] delegate])
@@ -15,5 +16,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) BZFoursquare * foursquare;
+@property (strong, nonatomic) FactualAPI * factual;
 
 @end

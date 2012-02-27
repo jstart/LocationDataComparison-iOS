@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CityGrid/CityGrid.h>
+#import <FactualSDK/FactualAPI.h>
 #import "BZFoursquareRequest.h"
 
-@interface CTViewController : UIViewController <MKMapViewDelegate, BZFoursquareRequestDelegate>
+@interface CTViewController : UIViewController <MKMapViewDelegate, BZFoursquareRequestDelegate, FactualAPIDelegate>
 
 @property (strong, nonatomic) NSMutableArray * places;
 @property (strong, nonatomic) NSMutableDictionary * fsqPlaces;
+@property (strong, nonatomic) NSMutableDictionary * factualPlaces;
 @property (strong, nonatomic) NSOperationQueue * queue;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
@@ -22,4 +24,5 @@
 
 - (void) loadPlaces;
 - (void) loadFoursquarePlaces;
+- (void) loadFactualPlaces;
 @end

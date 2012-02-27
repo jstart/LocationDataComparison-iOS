@@ -11,7 +11,7 @@
 
 @implementation CTAppDelegate
 
-@synthesize window = _window, foursquare = _foursquare;
+@synthesize window = _window, foursquare = _foursquare, factual = _factual;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -23,6 +23,8 @@
    _foursquare.version = @"20120227";
    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   _foursquare.sessionDelegate = self;
+  
+  _factual = [[FactualAPI alloc] initWithAPIKey:@"S0mvKJsSItrI76wNrFsa2Y9tfHEFENJ6fd5XFvdG9qFo1THE5Fh0FpUeHBUBybBD"];
 //  if (![_foursquare isSessionValid]){
 //    [_foursquare startAuthorization];
 //  }

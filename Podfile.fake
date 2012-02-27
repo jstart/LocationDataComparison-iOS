@@ -2,3 +2,4 @@ I don't really understand cocoapods, but I want to.  I am creating a fake depend
 
 dependency BZFoursquare - https://github.com/baztokyo/foursquare-ios-api
 dependency CityGrid SDK - http://docs.citygridmedia.com/display/citygridv2/SDKs
+dependency Factual SDK - http://wiki.developer.factual.com/w/page/33091750/iPhone%20SDK
