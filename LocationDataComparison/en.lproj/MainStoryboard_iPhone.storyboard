@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Y1p-YY-91s">
+                    <navigationItem key="navigationItem" title="Location Data" id="Y1p-YY-91s">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="KyS-aD-L5I">
                             <connections>
                                 <segue destination="R3I-4A-WEF" kind="push" id="F3m-wq-OI6"/>

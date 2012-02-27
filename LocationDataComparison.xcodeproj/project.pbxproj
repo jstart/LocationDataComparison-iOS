@@ -1,558 +1,1536 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		FD26344E14FBEFFF00142047 /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26344B14FBEFFF00142047 /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345514FBF31F00142047 /* MobileCoreServices.framework */; };
-		FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */; };
-		FD26345A14FC0BF700142047 /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345914FC0BF700142047 /* FactualSDK.framework */; };
-		FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26345E14FC2B5700142047 /* CTLocationDataManager.m */; };
-		FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */; };
-		FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
-		FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
-		FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70883014F84DC50029C7AC /* CoreGraphics.framework */; };
-		FD70883714F84DC50029C7AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD70883514F84DC50029C7AC /* InfoPlist.strings */; };
-		FD70883914F84DC50029C7AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70883814F84DC50029C7AC /* main.m */; };
-		FD70883D14F84DC50029C7AC /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70883C14F84DC50029C7AC /* CTAppDelegate.m */; };
-		FD70884014F84DC60029C7AC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD70883E14F84DC60029C7AC /* MainStoryboard_iPhone.storyboard */; };
-		FD70884314F84DC60029C7AC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD70884114F84DC60029C7AC /* MainStoryboard_iPad.storyboard */; };
-		FD70884614F84DC60029C7AC /* CTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70884514F84DC60029C7AC /* CTViewController.m */; };
-		FD70884E14F84DCA0029C7AC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70884D14F84DCA0029C7AC /* SenTestingKit.framework */; };
-		FD70884F14F84DCA0029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
-		FD70885014F84DCA0029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
-		FD70885814F84DCA0029C7AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD70885614F84DCA0029C7AC /* InfoPlist.strings */; };
-		FD70885B14F84DCA0029C7AC /* LocationDataComparisonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */; };
-		FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886414F84F090029C7AC /* MapKit.framework */; };
-		FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886614F84F140029C7AC /* CityGrid.framework */; };
-		FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */; };
-		FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFA675A14F854D7001D8938 /* CoreLocation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FD70885114F84DCA0029C7AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD70881F14F84DC10029C7AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FD70882714F84DC50029C7AC;
-			remoteInfo = LocationDataComparison;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		FD26344A14FBEFFF00142047 /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
-		FD26344B14FBEFFF00142047 /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
-		FD26344C14FBEFFF00142047 /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
-		FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquareRequest.m; sourceTree = "<group>"; };
-		FD26345514FBF31F00142047 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SupportedLocationAPIs.plist; sourceTree = "<group>"; };
-		FD26345914FC0BF700142047 /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FactualSDK.framework; path = ../../../../../Downloads/FactualSDK.framework; sourceTree = "<group>"; };
-		FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		FD26345D14FC2B5700142047 /* CTLocationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManager.h; path = LocationDataManagement/CTLocationDataManager.h; sourceTree = "<group>"; };
-		FD26345E14FC2B5700142047 /* CTLocationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManager.m; path = LocationDataManagement/CTLocationDataManager.m; sourceTree = "<group>"; };
-		FD26346014FC2C0E00142047 /* CTLocationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationConstants.h; path = LocationDataManagement/CTLocationConstants.h; sourceTree = "<group>"; };
-		FD26346114FC317F00142047 /* CTLocationDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManagerDelegate.h; path = LocationDataManagement/CTLocationDataManagerDelegate.h; sourceTree = "<group>"; };
-		FD26346314FC36F800142047 /* CTLocationDataManagerResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManagerResult.h; path = LocationDataManagement/CTLocationDataManagerResult.h; sourceTree = "<group>"; };
-		FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManagerResult.m; path = LocationDataManagement/CTLocationDataManagerResult.m; sourceTree = "<group>"; };
-		FD70882814F84DC50029C7AC /* LocationDataComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationDataComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD70882C14F84DC50029C7AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FD70882E14F84DC50029C7AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FD70883014F84DC50029C7AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FD70883414F84DC50029C7AC /* LocationDataComparison-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationDataComparison-Info.plist"; sourceTree = "<group>"; };
-		FD70883614F84DC50029C7AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FD70883814F84DC50029C7AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FD70883A14F84DC50029C7AC /* LocationDataComparison-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocationDataComparison-Prefix.pch"; sourceTree = "<group>"; };
-		FD70883B14F84DC50029C7AC /* CTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
-		FD70883C14F84DC50029C7AC /* CTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
-		FD70883F14F84DC60029C7AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		FD70884214F84DC60029C7AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		FD70884414F84DC60029C7AC /* CTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTViewController.h; sourceTree = "<group>"; };
-		FD70884514F84DC60029C7AC /* CTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTViewController.m; sourceTree = "<group>"; };
-		FD70884C14F84DCA0029C7AC /* LocationDataComparisonTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationDataComparisonTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD70884D14F84DCA0029C7AC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FD70885514F84DCA0029C7AC /* LocationDataComparisonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocationDataComparisonTests-Info.plist"; sourceTree = "<group>"; };
-		FD70885714F84DCA0029C7AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FD70885914F84DCA0029C7AC /* LocationDataComparisonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationDataComparisonTests.h; sourceTree = "<group>"; };
-		FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationDataComparisonTests.m; sourceTree = "<group>"; };
-		FD70886414F84F090029C7AC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FD70886614F84F140029C7AC /* CityGrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CityGrid.framework; path = "../CityGridiOS SDK/CityGrid.framework"; sourceTree = "<group>"; };
-		FD70886814F851060029C7AC /* CTDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTDataSourceTableViewController.h; path = Views/CTDataSourceTableViewController.h; sourceTree = "<group>"; };
-		FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTDataSourceTableViewController.m; path = Views/CTDataSourceTableViewController.m; sourceTree = "<group>"; };
-		FDFA675A14F854D7001D8938 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		FD70882514F84DC50029C7AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD26345A14FC0BF700142047 /* FactualSDK.framework in Frameworks */,
-				FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */,
-				FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */,
-				FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */,
-				FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */,
-				FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */,
-				FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */,
-				FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD70884814F84DCA0029C7AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD70884E14F84DCA0029C7AC /* SenTestingKit.framework in Frameworks */,
-				FD70884F14F84DCA0029C7AC /* UIKit.framework in Frameworks */,
-				FD70885014F84DCA0029C7AC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		FD26345014FBF00300142047 /* BZFoursquare */ = {
-			isa = PBXGroup;
-			children = (
-				FD26344A14FBEFFF00142047 /* BZFoursquare.h */,
-				FD26344B14FBEFFF00142047 /* BZFoursquare.m */,
-				FD26344C14FBEFFF00142047 /* BZFoursquareRequest.h */,
-				FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */,
-			);
-			name = BZFoursquare;
-			sourceTree = "<group>";
-		};
-		FD26345B14FC2B1600142047 /* Location Data Management */ = {
-			isa = PBXGroup;
-			children = (
-				FD26345D14FC2B5700142047 /* CTLocationDataManager.h */,
-				FD26345E14FC2B5700142047 /* CTLocationDataManager.m */,
-				FD26346014FC2C0E00142047 /* CTLocationConstants.h */,
-				FD26346114FC317F00142047 /* CTLocationDataManagerDelegate.h */,
-				FD26346314FC36F800142047 /* CTLocationDataManagerResult.h */,
-				FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */,
-			);
-			name = "Location Data Management";
-			sourceTree = "<group>";
-		};
-		FD70881D14F84DC10029C7AC = {
-			isa = PBXGroup;
-			children = (
-				FD26345914FC0BF700142047 /* FactualSDK.framework */,
-				FD26345514FBF31F00142047 /* MobileCoreServices.framework */,
-				FDFA675A14F854D7001D8938 /* CoreLocation.framework */,
-				FD70886614F84F140029C7AC /* CityGrid.framework */,
-				FD70886414F84F090029C7AC /* MapKit.framework */,
-				FD70883214F84DC50029C7AC /* LocationDataComparison */,
-				FD70885314F84DCA0029C7AC /* LocationDataComparisonTests */,
-				FD70882B14F84DC50029C7AC /* Frameworks */,
-				FD70882914F84DC50029C7AC /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		FD70882914F84DC50029C7AC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD70882814F84DC50029C7AC /* LocationDataComparison.app */,
-				FD70884C14F84DCA0029C7AC /* LocationDataComparisonTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FD70882B14F84DC50029C7AC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FD70882C14F84DC50029C7AC /* UIKit.framework */,
-				FD70882E14F84DC50029C7AC /* Foundation.framework */,
-				FD70883014F84DC50029C7AC /* CoreGraphics.framework */,
-				FD70884D14F84DCA0029C7AC /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FD70883214F84DC50029C7AC /* LocationDataComparison */ = {
-			isa = PBXGroup;
-			children = (
-				FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */,
-				FD26345B14FC2B1600142047 /* Location Data Management */,
-				FD26345014FBF00300142047 /* BZFoursquare */,
-				FD70886B14F852190029C7AC /* View Controllers */,
-				FD70883B14F84DC50029C7AC /* CTAppDelegate.h */,
-				FD70883C14F84DC50029C7AC /* CTAppDelegate.m */,
-				FD70883E14F84DC60029C7AC /* MainStoryboard_iPhone.storyboard */,
-				FD70884114F84DC60029C7AC /* MainStoryboard_iPad.storyboard */,
-				FD70883314F84DC50029C7AC /* Supporting Files */,
-			);
-			path = LocationDataComparison;
-			sourceTree = "<group>";
-		};
-		FD70883314F84DC50029C7AC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FD70883414F84DC50029C7AC /* LocationDataComparison-Info.plist */,
-				FD70883514F84DC50029C7AC /* InfoPlist.strings */,
-				FD70883814F84DC50029C7AC /* main.m */,
-				FD70883A14F84DC50029C7AC /* LocationDataComparison-Prefix.pch */,
-				FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FD70885314F84DCA0029C7AC /* LocationDataComparisonTests */ = {
-			isa = PBXGroup;
-			children = (
-				FD70885914F84DCA0029C7AC /* LocationDataComparisonTests.h */,
-				FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */,
-				FD70885414F84DCA0029C7AC /* Supporting Files */,
-			);
-			path = LocationDataComparisonTests;
-			sourceTree = "<group>";
-		};
-		FD70885414F84DCA0029C7AC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FD70885514F84DCA0029C7AC /* LocationDataComparisonTests-Info.plist */,
-				FD70885614F84DCA0029C7AC /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FD70886B14F852190029C7AC /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FD70886814F851060029C7AC /* CTDataSourceTableViewController.h */,
-				FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */,
-				FD70884414F84DC60029C7AC /* CTViewController.h */,
-				FD70884514F84DC60029C7AC /* CTViewController.m */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		FD70882714F84DC50029C7AC /* LocationDataComparison */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FD70885E14F84DCA0029C7AC /* Build configuration list for PBXNativeTarget "LocationDataComparison" */;
-			buildPhases = (
-				FD70882414F84DC50029C7AC /* Sources */,
-				FD70882514F84DC50029C7AC /* Frameworks */,
-				FD70882614F84DC50029C7AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LocationDataComparison;
-			productName = LocationDataComparison;
-			productReference = FD70882814F84DC50029C7AC /* LocationDataComparison.app */;
-			productType = "com.apple.product-type.application";
-		};
-		FD70884B14F84DCA0029C7AC /* LocationDataComparisonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FD70886114F84DCA0029C7AC /* Build configuration list for PBXNativeTarget "LocationDataComparisonTests" */;
-			buildPhases = (
-				FD70884714F84DCA0029C7AC /* Sources */,
-				FD70884814F84DCA0029C7AC /* Frameworks */,
-				FD70884914F84DCA0029C7AC /* Resources */,
-				FD70884A14F84DCA0029C7AC /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FD70885214F84DCA0029C7AC /* PBXTargetDependency */,
-			);
-			name = LocationDataComparisonTests;
-			productName = LocationDataComparisonTests;
-			productReference = FD70884C14F84DCA0029C7AC /* LocationDataComparisonTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		FD70881F14F84DC10029C7AC /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0420;
-			};
-			buildConfigurationList = FD70882214F84DC10029C7AC /* Build configuration list for PBXProject "LocationDataComparison" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = FD70881D14F84DC10029C7AC;
-			productRefGroup = FD70882914F84DC50029C7AC /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				FD70882714F84DC50029C7AC /* LocationDataComparison */,
-				FD70884B14F84DCA0029C7AC /* LocationDataComparisonTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		FD70882614F84DC50029C7AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD70883714F84DC50029C7AC /* InfoPlist.strings in Resources */,
-				FD70884014F84DC60029C7AC /* MainStoryboard_iPhone.storyboard in Resources */,
-				FD70884314F84DC60029C7AC /* MainStoryboard_iPad.storyboard in Resources */,
-				FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD70884914F84DCA0029C7AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD70885814F84DCA0029C7AC /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FD70884A14F84DCA0029C7AC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		FD70882414F84DC50029C7AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD70883914F84DC50029C7AC /* main.m in Sources */,
-				FD70883D14F84DC50029C7AC /* CTAppDelegate.m in Sources */,
-				FD70884614F84DC60029C7AC /* CTViewController.m in Sources */,
-				FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */,
-				FD26344E14FBEFFF00142047 /* BZFoursquare.m in Sources */,
-				FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */,
-				FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */,
-				FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD70884714F84DCA0029C7AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD70885B14F84DCA0029C7AC /* LocationDataComparisonTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FD70885214F84DCA0029C7AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FD70882714F84DC50029C7AC /* LocationDataComparison */;
-			targetProxy = FD70885114F84DCA0029C7AC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FD70883514F84DC50029C7AC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD70883614F84DC50029C7AC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FD70883E14F84DC60029C7AC /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD70883F14F84DC60029C7AC /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		FD70884114F84DC60029C7AC /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD70884214F84DC60029C7AC /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		FD70885614F84DCA0029C7AC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD70885714F84DCA0029C7AC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		FD70885C14F84DCA0029C7AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FD70885D14F84DCA0029C7AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		FD70885F14F84DCA0029C7AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FOURSQUARE_CALLBACK_URL = "fsqdemo://foursquare";
-				FOURSQUARE_CLIENT_ID = K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../CityGridiOS SDK\"",
-					"\"$(SRCROOT)/../../../../../Downloads\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";
-				INFOPLIST_FILE = "LocationDataComparison/LocationDataComparison-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		FD70886014F84DCA0029C7AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FOURSQUARE_CALLBACK_URL = "fsqdemo://foursquare";
-				FOURSQUARE_CLIENT_ID = K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../CityGridiOS SDK\"",
-					"\"$(SRCROOT)/../../../../../Downloads\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";
-				INFOPLIST_FILE = "LocationDataComparison/LocationDataComparison-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		FD70886214F84DCA0029C7AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LocationDataComparison.app/LocationDataComparison";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";
-				INFOPLIST_FILE = "LocationDataComparisonTests/LocationDataComparisonTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		FD70886314F84DCA0029C7AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LocationDataComparison.app/LocationDataComparison";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";
-				INFOPLIST_FILE = "LocationDataComparisonTests/LocationDataComparisonTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		FD70882214F84DC10029C7AC /* Build configuration list for PBXProject "LocationDataComparison" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD70885C14F84DCA0029C7AC /* Debug */,
-				FD70885D14F84DCA0029C7AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD70885E14F84DCA0029C7AC /* Build configuration list for PBXNativeTarget "LocationDataComparison" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD70885F14F84DCA0029C7AC /* Debug */,
-				FD70886014F84DCA0029C7AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD70886114F84DCA0029C7AC /* Build configuration list for PBXNativeTarget "LocationDataComparisonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD70886214F84DCA0029C7AC /* Debug */,
-				FD70886314F84DCA0029C7AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = FD70881F14F84DC10029C7AC /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>019467196DA34A3B90D87D0E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+		</dict>
+		<key>1102BB22AE454899BCBEB79E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E263CAB44BA4F04897FF376</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26CB59A8844B4AB3BDC39F8D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5E263CAB44BA4F04897FF376</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A4D15A05DE40402C8A4E8500</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5E263CAB44BA4F04897FF376</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD26344A14FBEFFF00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BZFoursquare.h</string>
+			<key>path</key>
+			<string>BZFoursquare.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26344B14FBEFFF00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BZFoursquare.m</string>
+			<key>path</key>
+			<string>BZFoursquare.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26344C14FBEFFF00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>BZFoursquareRequest.h</string>
+			<key>path</key>
+			<string>BZFoursquareRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26344D14FBEFFF00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>BZFoursquareRequest.m</string>
+			<key>path</key>
+			<string>BZFoursquareRequest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26344E14FBEFFF00142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26344B14FBEFFF00142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc</string>
+			</dict>
+		</dict>
+		<key>FD26344F14FBEFFF00142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26344D14FBEFFF00142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fno-objc-arc</string>
+			</dict>
+		</dict>
+		<key>FD26345014FBF00300142047</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD26344A14FBEFFF00142047</string>
+				<string>FD26344B14FBEFFF00142047</string>
+				<string>FD26344C14FBEFFF00142047</string>
+				<string>FD26344D14FBEFFF00142047</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>BZFoursquare</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345514FBF31F00142047</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MobileCoreServices.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FD26345614FBF31F00142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26345514FBF31F00142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD26345714FC06EA00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>SupportedLocationAPIs.plist</string>
+			<key>path</key>
+			<string>SupportedLocationAPIs.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345814FC06EA00142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26345714FC06EA00142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD26345914FC0BF700142047</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>FactualSDK.framework</string>
+			<key>path</key>
+			<string>../../../../../Downloads/FactualSDK.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345A14FC0BF700142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26345914FC0BF700142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD26345B14FC2B1600142047</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD26345D14FC2B5700142047</string>
+				<string>FD26345E14FC2B5700142047</string>
+				<string>FD26346014FC2C0E00142047</string>
+				<string>FD26346114FC317F00142047</string>
+				<string>FD26346314FC36F800142047</string>
+				<string>FD26346414FC36F800142047</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Location Data Management</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345C14FC2B3400142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>SynthesizeSingleton.h</string>
+			<key>path</key>
+			<string>SynthesizeSingleton.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345D14FC2B5700142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTLocationDataManager.h</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationDataManager.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345E14FC2B5700142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTLocationDataManager.m</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationDataManager.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26345F14FC2B5700142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26345E14FC2B5700142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD26346014FC2C0E00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTLocationConstants.h</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26346114FC317F00142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTLocationDataManagerDelegate.h</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationDataManagerDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26346314FC36F800142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTLocationDataManagerResult.h</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationDataManagerResult.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26346414FC36F800142047</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTLocationDataManagerResult.m</string>
+			<key>path</key>
+			<string>LocationDataManagement/CTLocationDataManagerResult.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD26346514FC36F800142047</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD26346414FC36F800142047</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70881D14F84DC10029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD26345914FC0BF700142047</string>
+				<string>FD26345514FBF31F00142047</string>
+				<string>FDFA675A14F854D7001D8938</string>
+				<string>FD70886614F84F140029C7AC</string>
+				<string>FD70886414F84F090029C7AC</string>
+				<string>FD70883214F84DC50029C7AC</string>
+				<string>FD70885314F84DCA0029C7AC</string>
+				<string>FD70882B14F84DC50029C7AC</string>
+				<string>FD70882914F84DC50029C7AC</string>
+				<string>26CB59A8844B4AB3BDC39F8D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70881F14F84DC10029C7AC</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0420</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>FD70882214F84DC10029C7AC</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>FD70881D14F84DC10029C7AC</string>
+			<key>productRefGroup</key>
+			<string>FD70882914F84DC50029C7AC</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>FD70882714F84DC50029C7AC</string>
+				<string>FD70884B14F84DCA0029C7AC</string>
+			</array>
+		</dict>
+		<key>FD70882214F84DC10029C7AC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FD70885C14F84DCA0029C7AC</string>
+				<string>FD70885D14F84DCA0029C7AC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FD70882414F84DC50029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD70883914F84DC50029C7AC</string>
+				<string>FD70883D14F84DC50029C7AC</string>
+				<string>FD70884614F84DC60029C7AC</string>
+				<string>FD70886A14F851060029C7AC</string>
+				<string>FD26344E14FBEFFF00142047</string>
+				<string>FD26344F14FBEFFF00142047</string>
+				<string>FD26345F14FC2B5700142047</string>
+				<string>FD26346514FC36F800142047</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70882514F84DC50029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD26345A14FC0BF700142047</string>
+				<string>FD26345614FBF31F00142047</string>
+				<string>FDFA675B14F854D7001D8938</string>
+				<string>FD70886714F84F140029C7AC</string>
+				<string>FD70886514F84F090029C7AC</string>
+				<string>FD70882D14F84DC50029C7AC</string>
+				<string>FD70882F14F84DC50029C7AC</string>
+				<string>FD70883114F84DC50029C7AC</string>
+				<string>1102BB22AE454899BCBEB79E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70882614F84DC50029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD70883714F84DC50029C7AC</string>
+				<string>FD70884014F84DC60029C7AC</string>
+				<string>FD70884314F84DC60029C7AC</string>
+				<string>FD26345814FC06EA00142047</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70882714F84DC50029C7AC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FD70885E14F84DCA0029C7AC</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FD70882414F84DC50029C7AC</string>
+				<string>FD70882514F84DC50029C7AC</string>
+				<string>FD70882614F84DC50029C7AC</string>
+				<string>019467196DA34A3B90D87D0E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>LocationDataComparison</string>
+			<key>productName</key>
+			<string>LocationDataComparison</string>
+			<key>productReference</key>
+			<string>FD70882814F84DC50029C7AC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>FD70882814F84DC50029C7AC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>LocationDataComparison.app</string>
+			<key>path</key>
+			<string>LocationDataComparison.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FD70882914F84DC50029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70882814F84DC50029C7AC</string>
+				<string>FD70884C14F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70882B14F84DC50029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70882C14F84DC50029C7AC</string>
+				<string>FD70882E14F84DC50029C7AC</string>
+				<string>FD70883014F84DC50029C7AC</string>
+				<string>FD70884D14F84DCA0029C7AC</string>
+				<string>5E263CAB44BA4F04897FF376</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70882C14F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FD70882D14F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70882C14F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70882E14F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FD70882F14F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70882E14F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70883014F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FD70883114F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70883014F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70883214F84DC50029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD26345C14FC2B3400142047</string>
+				<string>FD26345B14FC2B1600142047</string>
+				<string>FD26345014FBF00300142047</string>
+				<string>FD70886B14F852190029C7AC</string>
+				<string>FD70883B14F84DC50029C7AC</string>
+				<string>FD70883C14F84DC50029C7AC</string>
+				<string>FD70883E14F84DC60029C7AC</string>
+				<string>FD70884114F84DC60029C7AC</string>
+				<string>FD70883314F84DC50029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LocationDataComparison</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883314F84DC50029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70883414F84DC50029C7AC</string>
+				<string>FD70883514F84DC50029C7AC</string>
+				<string>FD70883814F84DC50029C7AC</string>
+				<string>FD70883A14F84DC50029C7AC</string>
+				<string>FD26345714FC06EA00142047</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883414F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>LocationDataComparison-Info.plist</string>
+			<key>path</key>
+			<string>LocationDataComparison-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883514F84DC50029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70883614F84DC50029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883614F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883714F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70883514F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70883814F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>main.m</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883914F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70883814F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70883A14F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>LocationDataComparison-Prefix.pch</string>
+			<key>path</key>
+			<string>LocationDataComparison-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883B14F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTAppDelegate.h</string>
+			<key>path</key>
+			<string>CTAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883C14F84DC50029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTAppDelegate.m</string>
+			<key>path</key>
+			<string>CTAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883D14F84DC50029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70883C14F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70883E14F84DC60029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70883F14F84DC60029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>MainStoryboard_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70883F14F84DC60029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/MainStoryboard_iPhone.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70884014F84DC60029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70883E14F84DC60029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70884114F84DC60029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70884214F84DC60029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>MainStoryboard_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70884214F84DC60029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/MainStoryboard_iPad.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70884314F84DC60029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70884114F84DC60029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70884414F84DC60029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTViewController.h</string>
+			<key>path</key>
+			<string>CTViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70884514F84DC60029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTViewController.m</string>
+			<key>path</key>
+			<string>CTViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70884614F84DC60029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70884514F84DC60029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70884714F84DCA0029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD70885B14F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70884814F84DCA0029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD70884E14F84DCA0029C7AC</string>
+				<string>FD70884F14F84DCA0029C7AC</string>
+				<string>FD70885014F84DCA0029C7AC</string>
+				<string>A4D15A05DE40402C8A4E8500</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70884914F84DCA0029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FD70885814F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FD70884A14F84DCA0029C7AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string># Run the unit tests in this test bundle.
+"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
+</string>
+		</dict>
+		<key>FD70884B14F84DCA0029C7AC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FD70886114F84DCA0029C7AC</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FD70884714F84DCA0029C7AC</string>
+				<string>FD70884814F84DCA0029C7AC</string>
+				<string>FD70884914F84DCA0029C7AC</string>
+				<string>FD70884A14F84DCA0029C7AC</string>
+				<string>019467196DA34A3B90D87D0E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>FD70885214F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>LocationDataComparisonTests</string>
+			<key>productName</key>
+			<string>LocationDataComparisonTests</string>
+			<key>productReference</key>
+			<string>FD70884C14F84DCA0029C7AC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>FD70884C14F84DCA0029C7AC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>LocationDataComparisonTests.octest</string>
+			<key>path</key>
+			<string>LocationDataComparisonTests.octest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FD70884D14F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SenTestingKit.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/SenTestingKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>FD70884E14F84DCA0029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70884D14F84DCA0029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70884F14F84DCA0029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70882C14F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70885014F84DCA0029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70882E14F84DC50029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70885114F84DCA0029C7AC</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FD70881F14F84DC10029C7AC</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>FD70882714F84DC50029C7AC</string>
+			<key>remoteInfo</key>
+			<string>LocationDataComparison</string>
+		</dict>
+		<key>FD70885214F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>FD70882714F84DC50029C7AC</string>
+			<key>targetProxy</key>
+			<string>FD70885114F84DCA0029C7AC</string>
+		</dict>
+		<key>FD70885314F84DCA0029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70885914F84DCA0029C7AC</string>
+				<string>FD70885A14F84DCA0029C7AC</string>
+				<string>FD70885414F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LocationDataComparisonTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885414F84DCA0029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70885514F84DCA0029C7AC</string>
+				<string>FD70885614F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885514F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>LocationDataComparisonTests-Info.plist</string>
+			<key>path</key>
+			<string>LocationDataComparisonTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885614F84DCA0029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70885714F84DCA0029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885714F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885814F84DCA0029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70885614F84DCA0029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70885914F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>LocationDataComparisonTests.h</string>
+			<key>path</key>
+			<string>LocationDataComparisonTests.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885A14F84DCA0029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>LocationDataComparisonTests.m</string>
+			<key>path</key>
+			<string>LocationDataComparisonTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70885B14F84DCA0029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70885A14F84DCA0029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70885C14F84DCA0029C7AC</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_MISSING_PROTOTYPES</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FD70885D14F84DCA0029C7AC</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_MISSING_PROTOTYPES</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>OTHER_CFLAGS</key>
+				<string>-DNS_BLOCK_ASSERTIONS=1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FD70885E14F84DCA0029C7AC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FD70885F14F84DCA0029C7AC</string>
+				<string>FD70886014F84DCA0029C7AC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FD70885F14F84DCA0029C7AC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>26CB59A8844B4AB3BDC39F8D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FOURSQUARE_CALLBACK_URL</key>
+				<string>fsqdemo://foursquare</string>
+				<key>FOURSQUARE_CLIENT_ID</key>
+				<string>K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>"$(SRCROOT)/../CityGridiOS SDK"</string>
+					<string>"$(SRCROOT)/../../../../../Downloads"</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>LocationDataComparison/LocationDataComparison-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LocationDataComparison/LocationDataComparison-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FD70886014F84DCA0029C7AC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>26CB59A8844B4AB3BDC39F8D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FOURSQUARE_CALLBACK_URL</key>
+				<string>fsqdemo://foursquare</string>
+				<key>FOURSQUARE_CLIENT_ID</key>
+				<string>K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>"$(SRCROOT)/../CityGridiOS SDK"</string>
+					<string>"$(SRCROOT)/../../../../../Downloads"</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>LocationDataComparison/LocationDataComparison-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LocationDataComparison/LocationDataComparison-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FD70886114F84DCA0029C7AC</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FD70886214F84DCA0029C7AC</string>
+				<string>FD70886314F84DCA0029C7AC</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FD70886214F84DCA0029C7AC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>26CB59A8844B4AB3BDC39F8D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/LocationDataComparison.app/LocationDataComparison</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>LocationDataComparison/LocationDataComparison-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LocationDataComparisonTests/LocationDataComparisonTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FD70886314F84DCA0029C7AC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>26CB59A8844B4AB3BDC39F8D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/LocationDataComparison.app/LocationDataComparison</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>LocationDataComparison/LocationDataComparison-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>LocationDataComparisonTests/LocationDataComparisonTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FD70886414F84F090029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MapKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MapKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FD70886514F84F090029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70886414F84F090029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70886614F84F140029C7AC</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CityGrid.framework</string>
+			<key>path</key>
+			<string>../CityGridiOS SDK/CityGrid.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70886714F84F140029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70886614F84F140029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70886814F851060029C7AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTDataSourceTableViewController.h</string>
+			<key>path</key>
+			<string>Views/CTDataSourceTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70886914F851060029C7AC</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTDataSourceTableViewController.m</string>
+			<key>path</key>
+			<string>Views/CTDataSourceTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FD70886A14F851060029C7AC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FD70886914F851060029C7AC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD70886B14F852190029C7AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FD70886814F851060029C7AC</string>
+				<string>FD70886914F851060029C7AC</string>
+				<string>FD70884414F84DC60029C7AC</string>
+				<string>FD70884514F84DC60029C7AC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FDFA675A14F854D7001D8938</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>FDFA675B14F854D7001D8938</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FDFA675A14F854D7001D8938</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>FD70881F14F84DC10029C7AC</string>
+</dict>
+</plist>

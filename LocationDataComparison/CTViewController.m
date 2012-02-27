@@ -183,6 +183,7 @@
 #pragma mark
 #pragma CTLocationDataManagerDelegate methods
 -(void)didReceiveResults:(NSArray*)results{
+  NSLog(@"Location Data Manager received %d results.", results.count);
   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
     NSMutableArray * array = [NSMutableArray arrayWithCapacity:results.count];
     for (CTLocationDataManagerResult * location in results) {
