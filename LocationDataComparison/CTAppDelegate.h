@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BZFoursquare.h"
 
-@interface CTAppDelegate : UIResponder <UIApplicationDelegate>
+#define appDelegate ((CTAppDelegate*)[[UIApplication sharedApplication] delegate])
+
+@interface CTAppDelegate : UIResponder <UIApplicationDelegate, BZFoursquareSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) BZFoursquare * foursquare;
 
 @end

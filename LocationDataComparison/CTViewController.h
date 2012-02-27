@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CityGrid/CityGrid.h>
+#import "BZFoursquareRequest.h"
 
-@interface CTViewController : UIViewController <MKMapViewDelegate>
+@interface CTViewController : UIViewController <MKMapViewDelegate, BZFoursquareRequestDelegate>
 
 @property (strong, nonatomic) NSMutableArray * places;
+@property (strong, nonatomic) NSMutableDictionary * fsqPlaces;
 @property (strong, nonatomic) NSOperationQueue * queue;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;

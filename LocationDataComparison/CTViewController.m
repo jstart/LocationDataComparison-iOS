@@ -7,6 +7,8 @@
 //
 
 #import "CTViewController.h"
+#import "BZFoursquare.h"
+#import "CTAppDelegate.h"
 
 @implementation CTViewController
 @synthesize mapView;
@@ -14,6 +16,7 @@
 @synthesize toolbar;
 @synthesize queue;
 @synthesize places;
+@synthesize fsqPlaces;
 
 - (void)didReceiveMemoryWarning
 {
@@ -29,6 +32,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   self.queue = [[NSOperationQueue alloc] init];
   self.places = [[NSMutableArray alloc] init];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFoursquarePlaces) name:@"FoursquareAuthSuccess" object:nil];
 }
 
 - (void)viewDidUnload
@@ -89,7 +93,7 @@
      } else {
        self.places = [tmpPlaces mutableCopy];
        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-          NSLog (@"%@", self.places);
+          //NSLog (@"%@", self.places);
           NSMutableArray * array = [NSMutableArray arrayWithCapacity:self.places.count];
           for (CGPlacesSearchLocation * location in self.places) {
             MKPointAnnotation * annotation = [[MKPointAnnotation alloc] init];
@@ -105,12 +109,19 @@
    }];
 }
 
+- (void) loadFoursquarePlaces {
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",mapView.centerCoordinate.latitude, mapView.centerCoordinate.longitude], @"ll", nil];
+    BZFoursquareRequest * request = [appDelegate.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
+    [request start];
+}
+
+
 #pragma mark
 #pragma MapKitDelegate
 
 - (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated {
   NSLog(@"Region will change");
-  [self loadPlaces];
+//  [self loadPlaces];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
@@ -149,10 +160,10 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
+  NSLog(@"%@, %@", view.annotation.title, view.annotation.subtitle);
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
-  NSLog(@"%@, %@", view.annotation.title, view.annotation.subtitle);
 }
 
 - (void)mapViewWillStartLocatingUser:(MKMapView *)mapView NS_AVAILABLE(NA, 4_0){
@@ -162,7 +173,7 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation NS_AVAILABLE(NA, 4_0){
-  [self loadPlaces];
+//  [self loadPlaces];
   [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
 }
 
@@ -182,6 +193,42 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated NS_AVAILABLE(NA, 5_0){
+}
+
+#pragma mark
+#pragma Foursquare
+- (void)requestDidStartLoading:(BZFoursquareRequest *)request{  NSLog(@"%@, %@", request, [request response]);
+}
+
+- (void)requestDidFinishLoading:(BZFoursquareRequest *)request{
+  [self.queue addOperationWithBlock:^{
+    NSArray* errors = nil;
+    NSDictionary* tmpPlaces = [[request response] objectForKey:@"venues"];
+    self.fsqPlaces = [tmpPlaces mutableCopy];
+    if ([errors count] > 0) {
+      NSLog (@"%@", errors);
+    } else {
+      [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        //NSLog (@"%@", self.places);
+        NSMutableArray * array = [NSMutableArray arrayWithCapacity:self.fsqPlaces.count];
+        for (NSDictionary * venue in self.fsqPlaces) {
+          MKPointAnnotation * annotation = [[MKPointAnnotation alloc] init];
+          [annotation setTitle:[venue objectForKey:@"name"]];
+//          [annotation setSubtitle:location.tagline];
+          NSDictionary * locationDict = [venue objectForKey:@"location"];
+          [annotation setCoordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"lat"] floatValue], [[locationDict objectForKey:@"lng"] floatValue])];
+          [array addObject:annotation];
+        }
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        [mapView addAnnotations:array];
+      }];
+    }
+  }];
+
+}
+
+- (void)request:(BZFoursquareRequest *)request didFailWithError:(NSError *)error{
+  
 }
 
 @end

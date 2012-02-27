@@ -11,16 +11,38 @@
 
 @implementation CTAppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window, foursquare = _foursquare;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [CityGrid setPublisher:@"test"];
 	[CityGrid setPlacement:@"ios-example"];
-	[CityGrid setDebug:YES];
+	[CityGrid setDebug:NO];
 
+  _foursquare = [[BZFoursquare alloc] initWithClientID:@"K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B" callbackURL:@"fsqdemo://foursquare"];
+   _foursquare.version = @"20120227";
+   _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+  _foursquare.sessionDelegate = self;
+  if (![_foursquare isSessionValid]){
+    [_foursquare startAuthorization];
+  }
     // Override point for customization after application launch.
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  NSLog(@"%@, %@, %@", url, sourceApplication, annotation);
+  return [_foursquare handleOpenURL:url];
+}
+
+- (void)foursquareDidAuthorize:(BZFoursquare *)foursquare{
+  NSLog(@"%@", [_foursquare accessToken]);
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"FoursquareAuthSuccess" object:nil];
+
+}
+
+- (void)foursquareDidNotAuthorize:(BZFoursquare *)foursquare error:(NSDictionary *)errorInfo{
+  
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
