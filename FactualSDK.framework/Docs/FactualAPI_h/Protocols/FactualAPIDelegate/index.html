@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>FactualAPIDelegate</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=intf; uid=//apple_ref/occ/intf/FactualAPIDelegate;  name=FactualAPIDelegate-->
+<a name="//apple_ref/occ/intf/FactualAPIDelegate"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="FactualAPIDelegate">FactualAPIDelegate</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Protocol which defines FactualAPI callback methods
+</p>
+<!-- end abstract --></p>
+<p><b>Extends&nbsp;Protocol:</b> <!-- a logicalPath="//apple_ref/occ/intf/NSObject" -->NSObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">FactulAPI.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The Factual API is uses an asyncrhonous IO model, so all request completion/
+failure notifications arrive via the delegate callback methods. You can 
+implement this protocol in your main UIViewController or your AppDelegate
+implementation. All callbacks should arrive in the context of the main UI 
+thread as long as the related API call was initiated in the UI Thread as well. 
+Each method in the protocol takes a FactualAPIRequest object, which is used 
+to establish context about the callback. You can either (retain) a reference 
+to the Request object or the NSString request identifier property and use 
+either attribute to associate requests with callback responses. 
+</p>
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveInitialResponse:" target="_top">-requestDidReceiveInitialResponse:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveData:" target="_top">-requestDidReceiveData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:failedWithError:" target="_top">-requestComplete:failedWithError:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:" target="_top">-requestComplete:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedUpdateResult:" target="_top">-requestComplete:receivedUpdateResult:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedQueryResult:" target="_top">-requestComplete:receivedQueryResult:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedSchemaResult:" target="_top">-requestComplete:receivedSchemaResult:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveInitialResponse:;   name=FactualAPIDelegate::requestDidReceiveInitialResponse: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveInitialResponse:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestDidReceiveInitialResponse:">requestDidReceiveInitialResponse:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestDidReceiveInitialResponse //apple_ref/occ/clm/requestDidReceiveInitialResponse //apple_ref/occ/intfcm/requestDidReceiveInitialResponse //apple_ref/occ/intfm/requestDidReceiveInitialResponse //apple_ref/occ/func/requestDidReceiveInitialResponse //apple_ref/occ/ftmplt/requestDidReceiveInitialResponse //apple_ref/occ/defn/requestDidReceiveInitialResponse //apple_ref/occ/macro/requestDidReceiveInitialResponse" --><span class="function">requestDidReceiveInitialResponse</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --> <span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/request //apple_ref/occ/data/request" --><span class="var">request</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when an initial server response 
+is received for a Factual API call
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveData:;   name=FactualAPIDelegate::requestDidReceiveData: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestDidReceiveData:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestDidReceiveData:">requestDidReceiveData:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestDidReceiveData //apple_ref/occ/clm/requestDidReceiveData //apple_ref/occ/intfcm/requestDidReceiveData //apple_ref/occ/intfm/requestDidReceiveData //apple_ref/occ/func/requestDidReceiveData //apple_ref/occ/ftmplt/requestDidReceiveData //apple_ref/occ/defn/requestDidReceiveData //apple_ref/occ/macro/requestDidReceiveData" --><span class="function">requestDidReceiveData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --> <span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/request //apple_ref/occ/data/request" --><span class="var">request</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called every some data is received from 
+the server with respect to a Factual API call
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:failedWithError:;   name=FactualAPIDelegate::requestComplete:failedWithError: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:failedWithError:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestComplete:failedWithError:">requestComplete:failedWithError:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestComplete //apple_ref/occ/clm/requestComplete //apple_ref/occ/intfcm/requestComplete //apple_ref/occ/intfm/requestComplete //apple_ref/occ/func/requestComplete //apple_ref/occ/ftmplt/requestComplete //apple_ref/occ/defn/requestComplete //apple_ref/occ/macro/requestComplete" --><span class="function">requestComplete</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --> <span class="type">*</span>)<span class="param">request</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/failedWithError //apple_ref/occ/clm/failedWithError //apple_ref/occ/intfcm/failedWithError //apple_ref/occ/intfm/failedWithError //apple_ref/occ/func/failedWithError //apple_ref/occ/ftmplt/failedWithError //apple_ref/occ/defn/failedWithError //apple_ref/occ/macro/failedWithError" --><span class="function">failedWithError</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSError //apple_ref/occ/tdef/NSError //apple_ref/occ/tag/NSError //apple_ref/occ/econst/NSError //apple_ref/occ/struct/NSError //apple_ref/occ/clconst/NSError //apple_ref/occ/intf/NSError" --><span class="type">NSError</span><!-- /a --> <span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/error //apple_ref/occ/data/error" --><span class="var">error</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+<dt><code>error</code></dt><dd><p>The NSError description of the error</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when a API request fails due to either
+local network issues or server related issues. A description of the error
+is returned in the NSError object. No more callbacks will be initiated for 
+the Request object in question
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:;   name=FactualAPIDelegate::requestComplete: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestComplete:">requestComplete:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestComplete //apple_ref/occ/clm/requestComplete //apple_ref/occ/intfcm/requestComplete //apple_ref/occ/intfm/requestComplete //apple_ref/occ/func/requestComplete //apple_ref/occ/ftmplt/requestComplete //apple_ref/occ/defn/requestComplete //apple_ref/occ/macro/requestComplete" --><span class="function">requestComplete</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/request //apple_ref/occ/data/request" --><span class="var">request</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when a request with no return 
+value successfully completes on the server. (flagBadRow).
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedUpdateResult:;   name=FactualAPIDelegate::requestComplete:receivedUpdateResult: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedUpdateResult:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestComplete:receivedUpdateResult:">requestComplete:receivedUpdateResult:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestComplete //apple_ref/occ/clm/requestComplete //apple_ref/occ/intfcm/requestComplete //apple_ref/occ/intfm/requestComplete //apple_ref/occ/func/requestComplete //apple_ref/occ/ftmplt/requestComplete //apple_ref/occ/defn/requestComplete //apple_ref/occ/macro/requestComplete" --><span class="function">requestComplete</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <span class="param">request</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/receivedUpdateResult //apple_ref/occ/clm/receivedUpdateResult //apple_ref/occ/intfcm/receivedUpdateResult //apple_ref/occ/intfm/receivedUpdateResult //apple_ref/occ/func/receivedUpdateResult //apple_ref/occ/ftmplt/receivedUpdateResult //apple_ref/occ/defn/receivedUpdateResult //apple_ref/occ/macro/receivedUpdateResult" --><span class="function">receivedUpdateResult</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualUpdateResult //apple_ref/occ/tdef/FactualUpdateResult //apple_ref/occ/tag/FactualUpdateResult //apple_ref/occ/econst/FactualUpdateResult //apple_ref/occ/struct/FactualUpdateResult //apple_ref/occ/clconst/FactualUpdateResult //apple_ref/occ/intf/FactualUpdateResult" --><span class="type">FactualUpdateResult</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/updateResult //apple_ref/occ/data/updateResult" --><span class="var">updateResult</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+<dt><code>updateResult</code></dt><dd><p>The FactualUpdateResult result object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when a submitDataRequest request 
+successfully completes on the server. The results of the request are passed 
+to the caller in the FactualUpdateResult object. Please see related 
+FactualUpdateResult docs for more details.
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedQueryResult:;   name=FactualAPIDelegate::requestComplete:receivedQueryResult: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedQueryResult:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestComplete:receivedQueryResult:">requestComplete:receivedQueryResult:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestComplete //apple_ref/occ/clm/requestComplete //apple_ref/occ/intfcm/requestComplete //apple_ref/occ/intfm/requestComplete //apple_ref/occ/func/requestComplete //apple_ref/occ/ftmplt/requestComplete //apple_ref/occ/defn/requestComplete //apple_ref/occ/macro/requestComplete" --><span class="function">requestComplete</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <span class="param">request</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/receivedQueryResult //apple_ref/occ/clm/receivedQueryResult //apple_ref/occ/intfcm/receivedQueryResult //apple_ref/occ/intfm/receivedQueryResult //apple_ref/occ/func/receivedQueryResult //apple_ref/occ/ftmplt/receivedQueryResult //apple_ref/occ/defn/receivedQueryResult //apple_ref/occ/macro/receivedQueryResult" --><span class="function">receivedQueryResult</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualQueryResult //apple_ref/occ/tdef/FactualQueryResult //apple_ref/occ/tag/FactualQueryResult //apple_ref/occ/econst/FactualQueryResult //apple_ref/occ/struct/FactualQueryResult //apple_ref/occ/clconst/FactualQueryResult //apple_ref/occ/intf/FactualQueryResult" --><span class="type">FactualQueryResult</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/queryResult //apple_ref/occ/data/queryResult" --><span class="var">queryResult</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+<dt><code>queryResult</code></dt><dd><p>The FactualQueryResult result object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when a queryTable request successfully 
+completes on the server. The results of the request are passed to the caller
+in the FactualQueryResult object. Please see related FactualQueryResult 
+docs for more details.
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=intfm;  uid=//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedSchemaResult:;   name=FactualAPIDelegate::requestComplete:receivedSchemaResult: -->
+<a name="//apple_ref/occ/intfm/FactualAPIDelegate/requestComplete:receivedSchemaResult:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="requestComplete:receivedSchemaResult:">requestComplete:receivedSchemaResult:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/econst/void //apple_ref/occ/struct/void //apple_ref/occ/clconst/void //apple_ref/occ/intf/void" --><span class="type">void</span><!-- /a -->)<!-- a logicalPath="//apple_ref/occ/instm/requestComplete //apple_ref/occ/clm/requestComplete //apple_ref/occ/intfcm/requestComplete //apple_ref/occ/intfm/requestComplete //apple_ref/occ/func/requestComplete //apple_ref/occ/ftmplt/requestComplete //apple_ref/occ/defn/requestComplete //apple_ref/occ/macro/requestComplete" --><span class="function">requestComplete</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <span class="param">request</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/receivedSchemaResult //apple_ref/occ/clm/receivedSchemaResult //apple_ref/occ/intfcm/receivedSchemaResult //apple_ref/occ/intfm/receivedSchemaResult //apple_ref/occ/func/receivedSchemaResult //apple_ref/occ/ftmplt/receivedSchemaResult //apple_ref/occ/defn/receivedSchemaResult //apple_ref/occ/macro/receivedSchemaResult" --><span class="function">receivedSchemaResult</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualSchemaResult //apple_ref/occ/tdef/FactualSchemaResult //apple_ref/occ/tag/FactualSchemaResult //apple_ref/occ/econst/FactualSchemaResult //apple_ref/occ/struct/FactualSchemaResult //apple_ref/occ/clconst/FactualSchemaResult //apple_ref/occ/intf/FactualSchemaResult" --><span class="type">FactualSchemaResult</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/schemaResult //apple_ref/occ/data/schemaResult" --><span class="var">schemaResult</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>request</code></dt><dd><p>The request context object</dd>
+<dt><code>schemaResult</code></dt><dd><p>The FactualSchemaResult result object</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>This method gets called when a getTableSchema request successfully 
+completes on the server. The results of the request are passed to the caller
+in the FactualSchemaResult object. Please see related FactualSchemaResult 
+docs for more details.
+</p>
+<!-- end discussion -->
+<p></p><p>Last Updated: Friday, January 28, 2011
+</p></body></html>

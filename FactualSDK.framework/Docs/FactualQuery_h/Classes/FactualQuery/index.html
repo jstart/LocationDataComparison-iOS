@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>FactualQuery</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/FactualQuery;  name=FactualQuery-->
+<a name="//apple_ref/occ/cl/FactualQuery"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="FactualQuery">FactualQuery</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Encapsulates all the parameters supported by the Factual Query API
+<!-- end abstract --></p>
+<p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/NSObject" -->NSObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">FactualQuery.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>To query a Factual table, you must first construct a Query object and specify 
+some basic row selection criteria. You can optionally construct an empty Query 
+object, which will return to you the first (limit) number of rows using a table's
+default sort order. There are some restrictions on what combinations of filters are 
+valid in certain circumstances. Read the property / method descriptions for more 
+details
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_props"></a>
+<h2>Properties</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/rowId" target="_top">rowId</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/offset" target="_top">offset</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/limit" target="_top">limit</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/primarySortCriteria" target="_top">primarySortCriteria</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/secondarySortCriteria" target="_top">secondarySortCriteria</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/rowFilters" target="_top">rowFilters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualQuery/fullTextTerms" target="_top">fullTextTerms</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/rowId;   name=FactualQuery::rowId -->
+<a name="//apple_ref/occ/instp/FactualQuery/rowId"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rowId">rowId</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">copy</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/rowId //apple_ref/occ/data/rowId" --><span class="var">rowId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>filter the results by a specific row id. Setting a rowId filter 
+invalidates all other filter criteria and returns either 0 or 1 records
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/offset;   name=FactualQuery::offset -->
+<a name="//apple_ref/occ/instp/FactualQuery/offset"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="offset">offset</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">assign</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSUInteger //apple_ref/occ/tdef/NSUInteger //apple_ref/occ/tag/NSUInteger //apple_ref/occ/econst/NSUInteger //apple_ref/occ/struct/NSUInteger //apple_ref/occ/clconst/NSUInteger //apple_ref/occ/intf/NSUInteger" --><span class="type">NSUInteger</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/econst/offset //apple_ref/occ/data/offset" --><span class="var">offset</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>used to specify the offset (number of records to skip) when
+paginating a large record set.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/limit;   name=FactualQuery::limit -->
+<a name="//apple_ref/occ/instp/FactualQuery/limit"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="limit">limit</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">assign</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSUInteger //apple_ref/occ/tdef/NSUInteger //apple_ref/occ/tag/NSUInteger //apple_ref/occ/econst/NSUInteger //apple_ref/occ/struct/NSUInteger //apple_ref/occ/clconst/NSUInteger //apple_ref/occ/intf/NSUInteger" --><span class="type">NSUInteger</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/econst/limit //apple_ref/occ/data/limit" --><span class="var">limit</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>used to limit the number of returned records in a single response.
+This system will return the lessor of either the limit value or the max limit 
+value associated with the user's API Key.
+paginating a large record set.
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/primarySortCriteria;   name=FactualQuery::primarySortCriteria -->
+<a name="//apple_ref/occ/instp/FactualQuery/primarySortCriteria"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="primarySortCriteria">primarySortCriteria</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">retain</span>) <!-- a logicalPath="//apple_ref/occ/cl/FactualSortCriteria //apple_ref/occ/tdef/FactualSortCriteria //apple_ref/occ/tag/FactualSortCriteria //apple_ref/occ/econst/FactualSortCriteria //apple_ref/occ/struct/FactualSortCriteria //apple_ref/occ/clconst/FactualSortCriteria //apple_ref/occ/intf/FactualSortCriteria" --><span class="type">FactualSortCriteria</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/primarySortCriteria //apple_ref/occ/data/primarySortCriteria" --><span class="var">primarySortCriteria</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>set the primary sort criteria for the query in context. This 
+parameter is ignored in the case of full-text (see below) or geo (see below 
+queries).
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/secondarySortCriteria;   name=FactualQuery::secondarySortCriteria -->
+<a name="//apple_ref/occ/instp/FactualQuery/secondarySortCriteria"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="secondarySortCriteria">secondarySortCriteria</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">retain</span>) <!-- a logicalPath="//apple_ref/occ/cl/FactualSortCriteria //apple_ref/occ/tdef/FactualSortCriteria //apple_ref/occ/tag/FactualSortCriteria //apple_ref/occ/econst/FactualSortCriteria //apple_ref/occ/struct/FactualSortCriteria //apple_ref/occ/clconst/FactualSortCriteria //apple_ref/occ/intf/FactualSortCriteria" --><span class="type">FactualSortCriteria</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/secondarySortCriteria //apple_ref/occ/data/secondarySortCriteria" --><span class="var">secondarySortCriteria</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>set the secondary sort criteria for the query in context. Same
+restrictions as the pimrary sort criteria
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/rowFilters;   name=FactualQuery::rowFilters -->
+<a name="//apple_ref/occ/instp/FactualQuery/rowFilters"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="rowFilters">rowFilters</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">readonly</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSMutableArray //apple_ref/occ/tdef/NSMutableArray //apple_ref/occ/tag/NSMutableArray //apple_ref/occ/econst/NSMutableArray //apple_ref/occ/struct/NSMutableArray //apple_ref/occ/clconst/NSMutableArray //apple_ref/occ/intf/NSMutableArray" --><span class="type">NSMutableArray</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/rowFilters //apple_ref/occ/data/rowFilters" --><span class="var">rowFilters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>row filter that are going to be applied to this query 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualQuery/fullTextTerms;   name=FactualQuery::fullTextTerms -->
+<a name="//apple_ref/occ/instp/FactualQuery/fullTextTerms"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fullTextTerms">fullTextTerms</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property(
+    <span class="param">nonatomic</span>,
+    <span class="param">readonly</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSMutableArray //apple_ref/occ/tdef/NSMutableArray //apple_ref/occ/tag/NSMutableArray //apple_ref/occ/econst/NSMutableArray //apple_ref/occ/struct/NSMutableArray //apple_ref/occ/clconst/NSMutableArray //apple_ref/occ/intf/NSMutableArray" --><span class="type">NSMutableArray</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/fullTextTerms //apple_ref/occ/data/fullTextTerms" --><span class="var">fullTextTerms</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>text query terms used to perform a full-text query 
+<!-- end discussion -->
+<p></p><p>Last Updated: Friday, January 28, 2011
+</p></body></html>

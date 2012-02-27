@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>FactualAPI</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/FactualAPI;  name=FactualAPI-->
+<a name="//apple_ref/occ/cl/FactualAPI"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="FactualAPI">FactualAPI</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Top level object than provides an entry point into the Factual API.
+<!-- end abstract --></p>
+<p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/NSObject" -->NSObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">FactulAPI.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>You need to specify the Factual API during initialization. 
+The init call is non-blocking and does not perform any network IO. This class
+performs all network IO in an asynchronous manner and all API requests 
+take a FactualAPIDelegate reference and return a FactulAPIRequest
+object. You can hold on to (retain) the Request object for future request
+identification purposes. All results (success and failuers) come through the
+delegate methods, each of which tag the corresponding Request context object
+as their first parameter. You can also use the Request object to safely 
+cancel outstanding API requests. Once a request has failed or completed and 
+has notified of this state transition, you can release your reference to the 
+Request object and it will automatically be garbage collected (autorelease). 
+</p>
+<p>Each Request type in the Factual API has a corresponding return (Response) 
+type. All information related to the query and resulting data is self 
+contained in the response object and can be freely discarded or retained at 
+the user's discretion. 
+</p>
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/FactualAPI/initWithAPIKey:" target="_top">-initWithAPIKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/FactualAPI/submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:" target="_top">-submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/FactualAPI/queryTable:optionalQueryParams:withDelegate:" target="_top">-queryTable:optionalQueryParams:withDelegate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/FactualAPI/getTableSchema:withDelegate:" target="_top">-getTableSchema:withDelegate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instm/FactualAPI/flagBadRow:rowId:optionalSource:optionalComment:withDelegate:" target="_top">-flagBadRow:rowId:optionalSource:optionalComment:withDelegate:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/FactualAPI/initWithAPIKey:;   name=FactualAPI::initWithAPIKey: -->
+<a name="//apple_ref/occ/instm/FactualAPI/initWithAPIKey:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="initWithAPIKey:">initWithAPIKey:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/instm/initWithAPIKey //apple_ref/occ/clm/initWithAPIKey //apple_ref/occ/intfcm/initWithAPIKey //apple_ref/occ/intfm/initWithAPIKey //apple_ref/occ/func/initWithAPIKey //apple_ref/occ/ftmplt/initWithAPIKey //apple_ref/occ/defn/initWithAPIKey //apple_ref/occ/macro/initWithAPIKey" --><span class="function">initWithAPIKey</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/apiKey //apple_ref/occ/data/apiKey" --><span class="var">apiKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Used to initialize the API. Pass in the API Key
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/FactualAPI/submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:;   name=FactualAPI::submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken: -->
+<a name="//apple_ref/occ/instm/FactualAPI/submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:">submitRowData:facts:withDelegate:optionalRowId:optionalSource:optionalComment:optionalUserToken:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/submitRowData //apple_ref/occ/clm/submitRowData //apple_ref/occ/intfcm/submitRowData //apple_ref/occ/intfm/submitRowData //apple_ref/occ/func/submitRowData //apple_ref/occ/ftmplt/submitRowData //apple_ref/occ/defn/submitRowData //apple_ref/occ/macro/submitRowData" --><span class="function">submitRowData</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">tableId</span> <!-- a logicalPath="//apple_ref/occ/instm/facts //apple_ref/occ/clm/facts //apple_ref/occ/intfcm/facts //apple_ref/occ/intfm/facts //apple_ref/occ/func/facts //apple_ref/occ/ftmplt/facts //apple_ref/occ/defn/facts //apple_ref/occ/macro/facts" --><span class="function">facts</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSDictionary //apple_ref/occ/tdef/NSDictionary //apple_ref/occ/tag/NSDictionary //apple_ref/occ/econst/NSDictionary //apple_ref/occ/struct/NSDictionary //apple_ref/occ/clconst/NSDictionary //apple_ref/occ/intf/NSDictionary" --><span class="type">NSDictionary</span><!-- /a --><span class="type">*</span>) <span class="param">facts</span> <!-- a logicalPath="//apple_ref/occ/instm/withDelegate //apple_ref/occ/clm/withDelegate //apple_ref/occ/intfcm/withDelegate //apple_ref/occ/intfm/withDelegate //apple_ref/occ/func/withDelegate //apple_ref/occ/ftmplt/withDelegate //apple_ref/occ/defn/withDelegate //apple_ref/occ/macro/withDelegate" --><span class="function">withDelegate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">FactualAPIDelegate</span>&gt;) <span class="param">delegate</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalRowId //apple_ref/occ/clm/optionalRowId //apple_ref/occ/intfcm/optionalRowId //apple_ref/occ/intfm/optionalRowId //apple_ref/occ/func/optionalRowId //apple_ref/occ/ftmplt/optionalRowId //apple_ref/occ/defn/optionalRowId //apple_ref/occ/macro/optionalRowId" --><span class="function">optionalRowId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">rowId</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalSource //apple_ref/occ/clm/optionalSource //apple_ref/occ/intfcm/optionalSource //apple_ref/occ/intfm/optionalSource //apple_ref/occ/func/optionalSource //apple_ref/occ/ftmplt/optionalSource //apple_ref/occ/defn/optionalSource //apple_ref/occ/macro/optionalSource" --><span class="function">optionalSource</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">source</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalComment //apple_ref/occ/clm/optionalComment //apple_ref/occ/intfcm/optionalComment //apple_ref/occ/intfm/optionalComment //apple_ref/occ/func/optionalComment //apple_ref/occ/ftmplt/optionalComment //apple_ref/occ/defn/optionalComment //apple_ref/occ/macro/optionalComment" --><span class="function">optionalComment</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">comment</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalUserToken //apple_ref/occ/clm/optionalUserToken //apple_ref/occ/intfcm/optionalUserToken //apple_ref/occ/intfm/optionalUserToken //apple_ref/occ/func/optionalUserToken //apple_ref/occ/ftmplt/optionalUserToken //apple_ref/occ/defn/optionalUserToken //apple_ref/occ/macro/optionalUserToken" --><span class="function">optionalUserToken</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/tokenId //apple_ref/occ/data/tokenId" --><span class="var">tokenId</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>tableId</code></dt><dd><p>This is the Factual Table Id for which you are submitting 
+new or existing data. Mandatory Field.</dd>
+<dt><code>facts</code></dt><dd><p>This contains a dictionary of key/value pairs representing 
+the fields that you are inserting / updating. Supported data types are:
+NSString,NSNumber,NSNull and in some cases NSArray. Mandatory Field.</dd>
+<dt><code>delegate</code></dt><dd><p>This is a reference to the delegate on which callbacks
+will be invoked. A reference to delegate is (retained) and will not be 
+(released) until either the user explicitly cancels the request or either
+requestComplete:failedWithError: OR 
+receivedSchemaResult:receivedUpdateResult: is called on the delegate.</dd>
+<dt><code>rowId</code></dt><dd><p>(optional) This is an optional field that can be used to specify
+the existing rowID that the new edits to a recird apply to.</dd>
+<dt><code>source</code></dt><dd><p>(optional) Use this optional field to specify attribution 
+(such as a url) for the data you are submitting to Factual</dd>
+<dt><code>comment</code></dt><dd><p>(optional) Use this optional field to attach a comment to the
+data you will be submitting to Fatual</dd>
+<dt><code>tokenId</code></dt><dd><p>(optional)  Use this optional field to specify an app specific
+end user token to associate with the data you are submitting to Factual. 
+(see the Factual API documentation for more details)</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value -->the FactualAPIRequest object associated with this API request. 
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>The primary way you update a Factual table. Factual is a
+consensus value based system, so updates or inserts have very loose
+requirements. You can submit a change in value for a particular field and 
+row, or you can update or suggest an insert of a whole row. All updates 
+are processed by the system and MAY produce a new record in some cases and
+not others. If updating an existing row, when possible, specify the row 
+id for the row that is being operated on. If successful, this API will 
+asynchronously notify you of the result of operation via calling the
+requestComplete:receivedUpdateResult: method on the delegate. See the 
+documentation for the FactualUpdateResult class for more details. 
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/FactualAPI/queryTable:optionalQueryParams:withDelegate:;   name=FactualAPI::queryTable:optionalQueryParams:withDelegate: -->
+<a name="//apple_ref/occ/instm/FactualAPI/queryTable:optionalQueryParams:withDelegate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="queryTable:optionalQueryParams:withDelegate:">queryTable:optionalQueryParams:withDelegate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/queryTable //apple_ref/occ/clm/queryTable //apple_ref/occ/intfcm/queryTable //apple_ref/occ/intfm/queryTable //apple_ref/occ/func/queryTable //apple_ref/occ/ftmplt/queryTable //apple_ref/occ/defn/queryTable //apple_ref/occ/macro/queryTable" --><span class="function">queryTable</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">tableId</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalQueryParams //apple_ref/occ/clm/optionalQueryParams //apple_ref/occ/intfcm/optionalQueryParams //apple_ref/occ/intfm/optionalQueryParams //apple_ref/occ/func/optionalQueryParams //apple_ref/occ/ftmplt/optionalQueryParams //apple_ref/occ/defn/optionalQueryParams //apple_ref/occ/macro/optionalQueryParams" --><span class="function">optionalQueryParams</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualQuery //apple_ref/occ/tdef/FactualQuery //apple_ref/occ/tag/FactualQuery //apple_ref/occ/econst/FactualQuery //apple_ref/occ/struct/FactualQuery //apple_ref/occ/clconst/FactualQuery //apple_ref/occ/intf/FactualQuery" --><span class="type">FactualQuery</span><!-- /a --><span class="type">*</span>) <span class="param">queryParams</span> <!-- a logicalPath="//apple_ref/occ/instm/withDelegate //apple_ref/occ/clm/withDelegate //apple_ref/occ/intfcm/withDelegate //apple_ref/occ/intfm/withDelegate //apple_ref/occ/func/withDelegate //apple_ref/occ/ftmplt/withDelegate //apple_ref/occ/defn/withDelegate //apple_ref/occ/macro/withDelegate" --><span class="function">withDelegate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">FactualAPIDelegate</span>&gt;) <!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/delegate" --><span class="var">delegate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>tableId</code></dt><dd><p>The name of the Factual table to query.</dd>
+<dt><code>queryParams</code></dt><dd><p>(optional) And optional FactualQuery object to use to restrict
+the server query and the returned recordset.</dd>
+<dt><code>delegate</code></dt><dd><p>(optional) This is a reference to the delegate on which callbacks
+will be invoked. A reference to delegate is (retained) and will not be 
+(released) until either the user explicitly cancels the request or either
+requestComplete:failedWithError: OR 
+receivedSchemaResult:receivedQueryResult: is called on the delegate.</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value -->the FactualAPIRequest object associated with this API request.
+
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Use this method to query a Factual table. You must specify 
+the Factual table id. You can specify additional query parameters via the
+FactualQuery object, such as predicates (via FactualFilter), sort orders  
+and row offsets and record limits. Upon successful execution you will recieve
+query results asynchronously via a call the 
+requestComplete:receivedQueryResult: method on the delegate. Failures will 
+result in a call to the requestComplete:failedWithError: method on the 
+delegate. Please read the docs on FactualQueryResult for details about the
+data returned as a result of Query.
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/FactualAPI/getTableSchema:withDelegate:;   name=FactualAPI::getTableSchema:withDelegate: -->
+<a name="//apple_ref/occ/instm/FactualAPI/getTableSchema:withDelegate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="getTableSchema:withDelegate:">getTableSchema:withDelegate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/getTableSchema //apple_ref/occ/clm/getTableSchema //apple_ref/occ/intfcm/getTableSchema //apple_ref/occ/intfm/getTableSchema //apple_ref/occ/func/getTableSchema //apple_ref/occ/ftmplt/getTableSchema //apple_ref/occ/defn/getTableSchema //apple_ref/occ/macro/getTableSchema" --><span class="function">getTableSchema</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">tableId</span> <!-- a logicalPath="//apple_ref/occ/instm/withDelegate //apple_ref/occ/clm/withDelegate //apple_ref/occ/intfcm/withDelegate //apple_ref/occ/intfm/withDelegate //apple_ref/occ/func/withDelegate //apple_ref/occ/ftmplt/withDelegate //apple_ref/occ/defn/withDelegate //apple_ref/occ/macro/withDelegate" --><span class="function">withDelegate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">FactualAPIDelegate</span>&gt;) <!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/delegate" --><span class="var">delegate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>tableId</code></dt><dd><p>The name of the Factual table to retreive schema info for.</dd>
+<dt><code>delegate</code></dt><dd><p>This is a reference to the delegate on which callbacks
+will be invoked. A reference to delegate is (retained) and will not be 
+(released) until either the user explicitly cancels the request or either
+requestComplete:failedWithError: OR receivedSchemaResult:schemaResult: is
+called on the delegate.</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value -->the FactualAPIRequest object associated with this API request.
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Use this method to retrieve schema information about a Factual
+table. Schema information table level metadata as well as field level 
+details such as column names, data types, and for enumerated values, a 
+valid list of enumerations. Schema information is returned a call to the 
+requestComplete:receivedSchemaResult: method on the passed in delegate. 
+Please refer to the docs on FactualSchemaResult for more details about
+the information returned via a Table Schema query.
+</p>
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instm;  uid=//apple_ref/occ/instm/FactualAPI/flagBadRow:rowId:optionalSource:optionalComment:withDelegate:;   name=FactualAPI::flagBadRow:rowId:optionalSource:optionalComment:withDelegate: -->
+<a name="//apple_ref/occ/instm/FactualAPI/flagBadRow:rowId:optionalSource:optionalComment:withDelegate:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="flagBadRow:rowId:optionalSource:optionalComment:withDelegate:">flagBadRow:rowId:optionalSource:optionalComment:withDelegate:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>- (<!-- a logicalPath="//apple_ref/occ/cl/FactualAPIRequest //apple_ref/occ/tdef/FactualAPIRequest //apple_ref/occ/tag/FactualAPIRequest //apple_ref/occ/econst/FactualAPIRequest //apple_ref/occ/struct/FactualAPIRequest //apple_ref/occ/clconst/FactualAPIRequest //apple_ref/occ/intf/FactualAPIRequest" --><span class="type">FactualAPIRequest</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/flagBadRow //apple_ref/occ/clm/flagBadRow //apple_ref/occ/intfcm/flagBadRow //apple_ref/occ/intfm/flagBadRow //apple_ref/occ/func/flagBadRow //apple_ref/occ/ftmplt/flagBadRow //apple_ref/occ/defn/flagBadRow //apple_ref/occ/macro/flagBadRow" --><span class="function">flagBadRow</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">tableId</span> <!-- a logicalPath="//apple_ref/occ/instm/rowId //apple_ref/occ/clm/rowId //apple_ref/occ/intfcm/rowId //apple_ref/occ/intfm/rowId //apple_ref/occ/func/rowId //apple_ref/occ/ftmplt/rowId //apple_ref/occ/defn/rowId //apple_ref/occ/macro/rowId" --><span class="function">rowId</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">rowId</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalSource //apple_ref/occ/clm/optionalSource //apple_ref/occ/intfcm/optionalSource //apple_ref/occ/intfm/optionalSource //apple_ref/occ/func/optionalSource //apple_ref/occ/ftmplt/optionalSource //apple_ref/occ/defn/optionalSource //apple_ref/occ/macro/optionalSource" --><span class="function">optionalSource</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">source</span> <!-- a logicalPath="//apple_ref/occ/instm/optionalComment //apple_ref/occ/clm/optionalComment //apple_ref/occ/intfcm/optionalComment //apple_ref/occ/intfm/optionalComment //apple_ref/occ/func/optionalComment //apple_ref/occ/ftmplt/optionalComment //apple_ref/occ/defn/optionalComment //apple_ref/occ/macro/optionalComment" --><span class="function">optionalComment</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">comment</span> <!-- a logicalPath="//apple_ref/occ/instm/withDelegate //apple_ref/occ/clm/withDelegate //apple_ref/occ/intfcm/withDelegate //apple_ref/occ/intfm/withDelegate //apple_ref/occ/func/withDelegate //apple_ref/occ/ftmplt/withDelegate //apple_ref/occ/defn/withDelegate //apple_ref/occ/macro/withDelegate" --><span class="function">withDelegate</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->&lt;<span class="param">FactualAPIDelegate</span>&gt;) <!-- a logicalPath="//apple_ref/occ/econst/delegate //apple_ref/occ/data/delegate" --><span class="var">delegate</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class='param_indent'>
+<dl>
+<dt><code>tableId</code></dt><dd><p>The name of the Factual table in which the problem row is 
+located</dd>
+<dt><code>rowId</code></dt><dd><p>The id of the bad Row in the Factual Table</dd>
+<dt><code>source</code></dt><dd><p>(optional) Use this optional field to specify attribution 
+(such as a url) for the data you are submitting to Factual</dd>
+<dt><code>comment</code></dt><dd><p>(optional) Use this optional field to attach a reason why you
+have flagged this row as bad</dd>
+<dt><code>delegate</code></dt><dd><p>This is a reference to the delegate on which callbacks
+will be invoked. A reference to delegate is (retained) and will not be 
+(released) until either the user explicitly cancels the request or either
+requestComplete:failedWithError: OR requestComplete: is
+called on the delegate.</dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5><p><!-- begin return value -->the FactualAPIRequest object associated with this API request.
+
+<!-- end return value --></p><h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Use this method to mark a existing row as having bad or invalid 
+data
+</p>
+<!-- end discussion -->
+<p></p><a name="HeaderDoc_props"></a>
+<h2>Properties</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualAPI/apiKey" target="_top">apiKey</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/instp/FactualAPI/apiVersion" target="_top">apiVersion</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualAPI/apiKey;   name=FactualAPI::apiKey -->
+<a name="//apple_ref/occ/instp/FactualAPI/apiKey"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="apiKey">apiKey</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">readonly</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span> <!-- a logicalPath="//apple_ref/occ/econst/apiKey //apple_ref/occ/data/apiKey" --><span class="var">apiKey</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the read-only api-key used to authenticate a connection 
+to Factual 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=instp;  uid=//apple_ref/occ/instp/FactualAPI/apiVersion;   name=FactualAPI::apiVersion -->
+<a name="//apple_ref/occ/instp/FactualAPI/apiVersion"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="apiVersion">apiVersion</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>@property (
+    <span class="param">nonatomic</span>,
+    <span class="param">readonly</span>) <!-- a logicalPath="//apple_ref/occ/cl/NSInteger //apple_ref/occ/tdef/NSInteger //apple_ref/occ/tag/NSInteger //apple_ref/occ/econst/NSInteger //apple_ref/occ/struct/NSInteger //apple_ref/occ/clconst/NSInteger //apple_ref/occ/intf/NSInteger" --><span class="type">NSInteger</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/econst/apiVersion //apple_ref/occ/data/apiVersion" --><span class="var">apiVersion</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>Returns the version number of the Factual API for 
+debugging purposes. 
+<!-- end discussion -->
+<p></p><p>Last Updated: Friday, January 28, 2011
+</p></body></html>

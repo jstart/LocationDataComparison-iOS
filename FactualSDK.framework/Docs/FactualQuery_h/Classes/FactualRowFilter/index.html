@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><head>
+    <title>FactualRowFilter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ascii" />
+ <meta name="generator" content="HeaderDoc" />
+<meta name="xcode-display" content="render" />
+<style><!--
+#tocMenu {
+		display: block;
+		position:fixed;
+		top:0px;
+		left:0px;
+		width:210px;
+		height:100%;
+		background:transparent;
+}
+#bodyText {
+		margin-left: 210px;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+function hidetoc() {
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var toc = document.getElementById('tocMenu');
+		var body = document.getElementById('bodyText');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+--></script>
+<style type="text/css"><!--.keyword {background:#ffffff; color:#761550;}.template {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.function {background:#ffffff; color:#000000;}.string {background: #ffffff; color:#891315;}.preprocessor {background:#ffffff; color:#236e25}.comment {background:#ffffff; color:#236e25}.char {background: #ffffff; color:#0000ff;}.var {background:#ffffff; color:#000000;}.type {background:#ffffff; color:#761550;}.param {background:#ffffff; color:#000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; }.param_indent { margin-left: 40px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.hd_tocAccess { font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }--></style></head><body bgcolor="#ffffff" onload="hidetoc();">
+</div>
+<!-- headerDoc=cl; uid=//apple_ref/occ/cl/FactualRowFilter;  name=FactualRowFilter-->
+<a name="//apple_ref/occ/cl/FactualRowFilter"></a><div id='tocMenu'>
+<iframe id='toc_content' name='toc_content' SRC='toc.html' width='210' height='100%' align='left' frameborder='0'>This document set is best viewed in a browser that supports iFrames.</iframe>
+</div>
+<div id='bodyText'>
+<a name="top"></a>
+<hr><table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h1><a name="FactualRowFilter">FactualRowFilter</a></h1>
+</td></tr></table><hr><p><!-- begin abstract --><p>Represents single or groups of  filter predicates. 
+<!-- end abstract --></p>
+<p><b>Superclass:</b> <!-- a logicalPath="//apple_ref/occ/cl/NSObject" -->NSObject<!-- /a --><br>
+<b>Declared In:</b> <a href="../../index.html" target="_top">FactualQuery.h</a><br>
+</p><div class='declaration_indent'>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>You can associate an arbitrary number for row filters to Factual Query. Row filters 
+can either be a simple field name predicate value triple, or an AND or OR 
+predicate than contains one or more row filters. All top level row filters 
+are ANDed together during query execution time (including the full text and 
+geo filters - see Query). 
+</p>
+<p>A simple filter can be constructed as follows: 
+FactualRowFilter* simpleFilter = [FactualRowFilter fieldName:@"name" 
+equalTo:@"John Bolton"];
+An AND might be constructed as follows: 
+FactualRowFilter* andFilter = [FactualRowFilter andFilter: 
+[FactualRowFilter fieldName:@"name" equalTo:@"John Bolton"],
+[FactualRowFilter orFilter:
+[FactualRowFilter fieldName:@"profession" equalTo:@"Singer"],
+[FactualRowFilter fieldName:@"profession" equalTo:@"SongWriter"]]];
+</p>
+<p>which basically bolis down to: 
+name="JohnBolton" AND (profession="Singer" OR profession="SongWriter")
+</p>
+<!-- end discussion -->
+<p></p><hr><br><a name="HeaderDoc_methods"></a>
+<h2>Methods</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:equalTo:" target="_top">+fieldName:equalTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:notEqualTo:" target="_top">+fieldName:notEqualTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThan:" target="_top">+fieldName:greaterThan:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThan:" target="_top">+fieldName:lessThan:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThanOrEqualTo:" target="_top">+fieldName:greaterThanOrEqualTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThanOrEqualTo:" target="_top">+fieldName:lessThanOrEqualTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:In:" target="_top">+fieldName:In:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:InArray:" target="_top">+fieldName:InArray:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/fieldName:beginsWith:" target="_top">+fieldName:beginsWith:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/orFilter:" target="_top">+orFilter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/orFilterWithArray:" target="_top">+orFilterWithArray:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/andFilter:" target="_top">+andFilter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/occ/clm/FactualRowFilter/andFilterWithArray:" target="_top">+andFilterWithArray:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:equalTo:;   name=FactualRowFilter::fieldName:equalTo: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:equalTo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:equalTo:">fieldName:equalTo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> <!-- a logicalPath="//apple_ref/occ/instm/equalTo //apple_ref/occ/clm/equalTo //apple_ref/occ/intfcm/equalTo //apple_ref/occ/intfm/equalTo //apple_ref/occ/func/equalTo //apple_ref/occ/ftmplt/equalTo //apple_ref/occ/defn/equalTo //apple_ref/occ/macro/equalTo" --><span class="function">equalTo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an equalTo filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:notEqualTo:;   name=FactualRowFilter::fieldName:notEqualTo: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:notEqualTo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:notEqualTo:">fieldName:notEqualTo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/notEqualTo //apple_ref/occ/clm/notEqualTo //apple_ref/occ/intfcm/notEqualTo //apple_ref/occ/intfm/notEqualTo //apple_ref/occ/func/notEqualTo //apple_ref/occ/ftmplt/notEqualTo //apple_ref/occ/defn/notEqualTo //apple_ref/occ/macro/notEqualTo" --><span class="function">notEqualTo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a notEqualTo filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThan:;   name=FactualRowFilter::fieldName:greaterThan: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThan:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:greaterThan:">fieldName:greaterThan:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/greaterThan //apple_ref/occ/clm/greaterThan //apple_ref/occ/intfcm/greaterThan //apple_ref/occ/intfm/greaterThan //apple_ref/occ/func/greaterThan //apple_ref/occ/ftmplt/greaterThan //apple_ref/occ/defn/greaterThan //apple_ref/occ/macro/greaterThan" --><span class="function">greaterThan</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a greater than filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThan:;   name=FactualRowFilter::fieldName:lessThan: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThan:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:lessThan:">fieldName:lessThan:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/lessThan //apple_ref/occ/clm/lessThan //apple_ref/occ/intfcm/lessThan //apple_ref/occ/intfm/lessThan //apple_ref/occ/func/lessThan //apple_ref/occ/ftmplt/lessThan //apple_ref/occ/defn/lessThan //apple_ref/occ/macro/lessThan" --><span class="function">lessThan</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a less than filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThanOrEqualTo:;   name=FactualRowFilter::fieldName:greaterThanOrEqualTo: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:greaterThanOrEqualTo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:greaterThanOrEqualTo:">fieldName:greaterThanOrEqualTo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/greaterThanOrEqualTo //apple_ref/occ/clm/greaterThanOrEqualTo //apple_ref/occ/intfcm/greaterThanOrEqualTo //apple_ref/occ/intfm/greaterThanOrEqualTo //apple_ref/occ/func/greaterThanOrEqualTo //apple_ref/occ/ftmplt/greaterThanOrEqualTo //apple_ref/occ/defn/greaterThanOrEqualTo //apple_ref/occ/macro/greaterThanOrEqualTo" --><span class="function">greaterThanOrEqualTo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a greater than or equal to filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThanOrEqualTo:;   name=FactualRowFilter::fieldName:lessThanOrEqualTo: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:lessThanOrEqualTo:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:lessThanOrEqualTo:">fieldName:lessThanOrEqualTo:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/lessThanOrEqualTo //apple_ref/occ/clm/lessThanOrEqualTo //apple_ref/occ/intfcm/lessThanOrEqualTo //apple_ref/occ/intfm/lessThanOrEqualTo //apple_ref/occ/func/lessThanOrEqualTo //apple_ref/occ/ftmplt/lessThanOrEqualTo //apple_ref/occ/defn/lessThanOrEqualTo //apple_ref/occ/macro/lessThanOrEqualTo" --><span class="function">lessThanOrEqualTo</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a less than or equal to filter
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:In:;   name=FactualRowFilter::fieldName:In: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:In:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:In:">fieldName:In:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> <!-- a logicalPath="//apple_ref/occ/instm/In //apple_ref/occ/clm/In //apple_ref/occ/intfcm/In //apple_ref/occ/intfm/In //apple_ref/occ/func/In //apple_ref/occ/ftmplt/In //apple_ref/occ/defn/In //apple_ref/occ/macro/In" --><span class="function">In</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/id //apple_ref/occ/tdef/id //apple_ref/occ/tag/id //apple_ref/occ/econst/id //apple_ref/occ/struct/id //apple_ref/occ/clconst/id //apple_ref/occ/intf/id" --><span class="type">id</span><!-- /a -->) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->,... <!-- a logicalPath="//apple_ref/occ/econst/NS_REQUIRES_NIL_TERMINATION //apple_ref/occ/data/NS_REQUIRES_NIL_TERMINATION" --><span class="var">NS_REQUIRES_NIL_TERMINATION</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an OR filter using the IN predicate
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:InArray:;   name=FactualRowFilter::fieldName:InArray: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:InArray:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:InArray:">fieldName:InArray:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> <!-- a logicalPath="//apple_ref/occ/instm/InArray //apple_ref/occ/clm/InArray //apple_ref/occ/intfcm/InArray //apple_ref/occ/intfm/InArray //apple_ref/occ/func/InArray //apple_ref/occ/ftmplt/InArray //apple_ref/occ/defn/InArray //apple_ref/occ/macro/InArray" --><span class="function">InArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/econst/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/clconst/NSArray //apple_ref/occ/intf/NSArray" --><span class="type">NSArray</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/values //apple_ref/occ/data/values" --><span class="var">values</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an OR filter using the IN predicate with an array of values 
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/fieldName:beginsWith:;   name=FactualRowFilter::fieldName:beginsWith: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/fieldName:beginsWith:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="fieldName:beginsWith:">fieldName:beginsWith:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/fieldName //apple_ref/occ/clm/fieldName //apple_ref/occ/intfcm/fieldName //apple_ref/occ/intfm/fieldName //apple_ref/occ/func/fieldName //apple_ref/occ/ftmplt/fieldName //apple_ref/occ/defn/fieldName //apple_ref/occ/macro/fieldName" --><span class="function">fieldName</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <span class="param">fieldName</span> 
+        <!-- a logicalPath="//apple_ref/occ/instm/beginsWith //apple_ref/occ/clm/beginsWith //apple_ref/occ/intfcm/beginsWith //apple_ref/occ/intfm/beginsWith //apple_ref/occ/func/beginsWith //apple_ref/occ/ftmplt/beginsWith //apple_ref/occ/defn/beginsWith //apple_ref/occ/macro/beginsWith" --><span class="function">beginsWith</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSString //apple_ref/occ/tdef/NSString //apple_ref/occ/tag/NSString //apple_ref/occ/econst/NSString //apple_ref/occ/struct/NSString //apple_ref/occ/clconst/NSString //apple_ref/occ/intf/NSString" --><span class="type">NSString</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/econst/value //apple_ref/occ/data/value" --><span class="var">value</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct a prefix match text filter (on a particular field)
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/orFilter:;   name=FactualRowFilter::orFilter: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/orFilter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="orFilter:">orFilter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/orFilter //apple_ref/occ/clm/orFilter //apple_ref/occ/intfcm/orFilter //apple_ref/occ/intfm/orFilter //apple_ref/occ/func/orFilter //apple_ref/occ/ftmplt/orFilter //apple_ref/occ/defn/orFilter //apple_ref/occ/macro/orFilter" --><span class="function">orFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/rowFilter //apple_ref/occ/data/rowFilter" --><span class="var">rowFilter</span><!-- /a -->,... <!-- a logicalPath="//apple_ref/occ/econst/NS_REQUIRES_NIL_TERMINATION //apple_ref/occ/data/NS_REQUIRES_NIL_TERMINATION" --><span class="var">NS_REQUIRES_NIL_TERMINATION</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an OR filter consisting of one or more nested filters
+followed by a nil
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/orFilterWithArray:;   name=FactualRowFilter::orFilterWithArray: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/orFilterWithArray:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="orFilterWithArray:">orFilterWithArray:</a></h3>
+</td></tr></table><hr><p></p><dl><dt><i>Throws:</i></dt>
+<dd><ul>
+<li> NSException if NSArray value is nil or not of type FactualRowFilter</li>
+</ul></dd>
+</dl><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/orFilterWithArray //apple_ref/occ/clm/orFilterWithArray //apple_ref/occ/intfcm/orFilterWithArray //apple_ref/occ/intfm/orFilterWithArray //apple_ref/occ/func/orFilterWithArray //apple_ref/occ/ftmplt/orFilterWithArray //apple_ref/occ/defn/orFilterWithArray //apple_ref/occ/macro/orFilterWithArray" --><span class="function">orFilterWithArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/econst/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/clconst/NSArray //apple_ref/occ/intf/NSArray" --><span class="type">NSArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/rowFilters //apple_ref/occ/data/rowFilters" --><span class="var">rowFilters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an OR filter consisting of an array of nested filters 
+followed by a nil
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/andFilter:;   name=FactualRowFilter::andFilter: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/andFilter:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="andFilter:">andFilter:</a></h3>
+</td></tr></table><hr><p></p><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/andFilter //apple_ref/occ/clm/andFilter //apple_ref/occ/intfcm/andFilter //apple_ref/occ/intfm/andFilter //apple_ref/occ/func/andFilter //apple_ref/occ/ftmplt/andFilter //apple_ref/occ/defn/andFilter //apple_ref/occ/macro/andFilter" --><span class="function">andFilter</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/rowFilter //apple_ref/occ/data/rowFilter" --><span class="var">rowFilter</span><!-- /a -->,... <!-- a logicalPath="//apple_ref/occ/econst/NS_REQUIRES_NIL_TERMINATION //apple_ref/occ/data/NS_REQUIRES_NIL_TERMINATION" --><span class="var">NS_REQUIRES_NIL_TERMINATION</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an AND filter consisting of one or more nested filters
+followed by a nil
+<!-- end discussion -->
+<p></p><hr><!-- headerDoc=clm;  uid=//apple_ref/occ/clm/FactualRowFilter/andFilterWithArray:;   name=FactualRowFilter::andFilterWithArray: -->
+<a name="//apple_ref/occ/clm/FactualRowFilter/andFilterWithArray:"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h3><a name="andFilterWithArray:">andFilterWithArray:</a></h3>
+</td></tr></table><hr><p></p><dl><dt><i>Throws:</i></dt>
+<dd><ul>
+<li> NSException if NSArray value is nil or not of type FactualRowFilter</li>
+</ul></dd>
+</dl><div class='declaration_indent'>
+<pre>+(<!-- a logicalPath="//apple_ref/occ/cl/FactualRowFilter //apple_ref/occ/tdef/FactualRowFilter //apple_ref/occ/tag/FactualRowFilter //apple_ref/occ/econst/FactualRowFilter //apple_ref/occ/struct/FactualRowFilter //apple_ref/occ/clconst/FactualRowFilter //apple_ref/occ/intf/FactualRowFilter" --><span class="type">FactualRowFilter</span><!-- /a --><span class="type">*</span>) <!-- a logicalPath="//apple_ref/occ/instm/andFilterWithArray //apple_ref/occ/clm/andFilterWithArray //apple_ref/occ/intfcm/andFilterWithArray //apple_ref/occ/intfm/andFilterWithArray //apple_ref/occ/func/andFilterWithArray //apple_ref/occ/ftmplt/andFilterWithArray //apple_ref/occ/defn/andFilterWithArray //apple_ref/occ/macro/andFilterWithArray" --><span class="function">andFilterWithArray</span><!-- /a -->:(<!-- a logicalPath="//apple_ref/occ/cl/NSArray //apple_ref/occ/tdef/NSArray //apple_ref/occ/tag/NSArray //apple_ref/occ/econst/NSArray //apple_ref/occ/struct/NSArray //apple_ref/occ/clconst/NSArray //apple_ref/occ/intf/NSArray" --><span class="type">NSArray</span><!-- /a --><span class="type">*</span>)<!-- a logicalPath="//apple_ref/occ/econst/rowFilters //apple_ref/occ/data/rowFilters" --><span class="var">rowFilters</span><!-- /a -->; </pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font>
+</h5><!-- begin discussion --><p>construct an AND filter consisting of an array of nested filters 
+followed by a nil
+<!-- end discussion -->
+<p></p><p>Last Updated: Friday, January 28, 2011
+</p></body></html>
