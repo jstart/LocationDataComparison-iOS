@@ -34,11 +34,15 @@
   self.queue = [[NSOperationQueue alloc] init];
   self.places = [[NSMutableArray alloc] init];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFoursquarePlaces) name:@"FoursquareAuthSuccess" object:nil];
+  
   UIBarButtonItem * cityGridButton = [[UIBarButtonItem alloc] initWithTitle:@"CityGrid" style:UIBarButtonItemStyleDone target:self action:@selector(loadCityGridPlaces)];
   UIBarButtonItem * foursquareButton = [[UIBarButtonItem alloc] initWithTitle:@"Foursquare" style:UIBarButtonItemStyleDone target:self action:@selector(loadFoursquarePlaces)];
   UIBarButtonItem * factualButton = [[UIBarButtonItem alloc] initWithTitle:@"Factual" style:UIBarButtonItemStyleDone target:self action:@selector(loadFactualPlaces)];
+  UIBarButtonItem * facebookButton = [[UIBarButtonItem alloc] initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(loadFacebookPlaces)];
+  [facebookButton setWidth:60.0f];
+  
 
-  [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, nil]];
+  [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, facebookButton, nil] animated:YES];
 }
 
 - (void)viewDidUnload
@@ -84,6 +88,11 @@
   } else {
     return YES;
   }
+}
+
+- (void) loadFacebookPlaces {
+  [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFacebook];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
 }
 
 - (void) loadCityGridPlaces {

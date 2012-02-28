@@ -9,20 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CityGrid/CityGrid.h>
 #import <FactualSDK/FactualAPI.h>
+#import "Facebook.h"
 #import "SynthesizeSingleton.h"
 #import "CTLocationConstants.h"
 #import "CTLocationDataManagerDelegate.h"
 #import "BZFoursquare.h"
 
-@interface CTLocationDataManager : NSObject <BZFoursquareRequestDelegate, FactualAPIDelegate>
+@interface CTLocationDataManager : NSObject <BZFoursquareRequestDelegate, FactualAPIDelegate, FBSessionDelegate,FBRequestDelegate>
 
 @property (nonatomic, strong) BZFoursquare * foursquare;
 @property (nonatomic, strong) FactualAPI * factual;
+@property (nonatomic, strong) Facebook * facebook;
 @property (readwrite) CTLocationDataType currentType;
 @property (nonatomic, strong) id<CTLocationDataManagerDelegate> delegate;
 
 +(CTLocationDataManager *)sharedCTLocationDataManager;
--(BOOL)setupWithDataSource:(CTLocationDataType)dataSourceType;
+-(void)setupWithDataSource:(CTLocationDataType)dataSourceType;
 -(void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius;
 
 @end

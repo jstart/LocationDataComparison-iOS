@@ -7,6 +7,8 @@
 //
 
 #import "CTAppDelegate.h"
+#import "FacebookSupport.h"
+#import "CTLocationDataManager.h"
 
 @implementation CTAppDelegate
 
@@ -29,7 +31,8 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
   NSLog(@"%@, %@, %@", url, sourceApplication, annotation);
-  return [_foursquare handleOpenURL:url];
+//  return [_foursquare handleOpenURL:url];
+  return [[[CTLocationDataManager sharedCTLocationDataManager] facebook] handleOpenURL:url];
 }
 
 - (void)foursquareDidAuthorize:(BZFoursquare *)foursquare{
@@ -40,6 +43,11 @@
 
 - (void)foursquareDidNotAuthorize:(BZFoursquare *)foursquare error:(NSDictionary *)errorInfo{
   
+}
+
+// Pre 4.2 support
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+  return [[[CTLocationDataManager sharedCTLocationDataManager] facebook] handleOpenURL:url];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

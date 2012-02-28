@@ -11,22 +11,35 @@
 
 @implementation CTLocationDataManager
 
-@synthesize foursquare = _foursquare, factual = _factual, currentType = _currentType, delegate = _delegate;
+@synthesize foursquare = _foursquare, factual = _factual, facebook = _facebook, currentType = _currentType, delegate = _delegate;
 SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
-- (BOOL)setupWithDataSource:(CTLocationDataType)dataSourceType {
+- (void)setupWithDataSource:(CTLocationDataType)dataSourceType {
   self.currentType = dataSourceType;
   switch (dataSourceType) {
+      
+  case CTLocationDataTypeFacebook:
+  {
+    if (!self.facebook)
+      self.facebook = [[Facebook alloc] initWithAppId:FACEBOOK_APP_ID andDelegate:self];
+    if (![self.facebook isSessionValid]) {
+      [self.facebook authorize:[NSArray arrayWithObjects:@"user_about_me", @"user_checkins", @"friends_checkins", @"user_events", @"friends_events", @"user_hometown", @"friends_hometown", @"user_location", @"user_location", @"friends_location", @"", nil]];
+    }
+  }
   case CTLocationDataTypeFoursquare:
   {
-    _foursquare = [[BZFoursquare alloc] initWithClientID:FOURSQUARE_CLIENT_ID callbackURL:FOURSQUARE_AUTHORIZATION_CALLBACK_URL];
-    _foursquare.version = FOURSQUARE_VERIFICATION_DATE;
-    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    if (!self.foursquare) {
+      _foursquare = [[BZFoursquare alloc] initWithClientID:FOURSQUARE_CLIENT_ID callbackURL:FOURSQUARE_AUTHORIZATION_CALLBACK_URL];
+      _foursquare.version = FOURSQUARE_VERIFICATION_DATE;
+      _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+    }
   }
   break;
   case CTLocationDataTypeFactual:
   {
-    _factual = [[FactualAPI alloc] initWithAPIKey:FACTUAL_SERVER_KEY];
+    if (!self.factual) {
+      _factual = [[FactualAPI alloc] initWithAPIKey:FACTUAL_SERVER_KEY];
+    }
   }
   break;
   case CTLocationDataTypeCityGrid:
@@ -45,10 +58,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
 - (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius {
   switch (self.currentType) {
+  case CTLocationDataTypeFacebook:
+  {
+    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", @"1000", @"distance", nil];
+    FBRequest * request = [self.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
+  }
+  break;
   case CTLocationDataTypeFoursquare:
   {
-    NSString * radiusString = [NSString stringWithFormat:@"%f", radius];
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", radius, @"radius", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", radius, @"distance", nil];
     BZFoursquareRequest * request = [self.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [request start];
   }
@@ -94,6 +112,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 }
 
+#pragma mark
+#pragma Facebook
+- (void)request:(FBRequest *)request didLoad:(id)result{
+  NSLog(@"FB %@", result);
+  NSDictionary* tmpPlaces = [result objectForKey:@"data"];
+  //NSLog (@"%@", self.places);
+  NSMutableArray * array = [NSMutableArray arrayWithCapacity:tmpPlaces.count];
+  for (NSDictionary * venue in tmpPlaces) {
+    NSDictionary * locationDict = [venue objectForKey:@"location"];
+    
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"latitude"] floatValue], [[locationDict objectForKey:@"longitude"] floatValue])];
+    
+    [array addObject:result];
+  }
+  [self.delegate didReceiveResults:array];
+}
+
+- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response{
+  NSLog(@"%@", response);
+}
 #pragma mark
 #pragma Foursquare
 - (void)requestDidStartLoading:(BZFoursquareRequest *)request {

@@ -12,6 +12,10 @@
 #pragma mark
 #pragma API_KEYS
 
+#pragma FACEBOOK
+#define FACEBOOK_APP_ID @"237704586324353"
+#define FACEBOOK_APP_SECRET @"7d73f6ebb28309b52de44f2dee2004d5"
+
 #pragma CITY_GRID
 #define CITY_GRID_PUBLISHER @"test"
 #define CITY_GRID_PLACEMENT @"ios-example"
