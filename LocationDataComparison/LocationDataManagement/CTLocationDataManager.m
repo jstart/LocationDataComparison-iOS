@@ -17,7 +17,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 - (void)setupWithDataSource:(CTLocationDataType)dataSourceType {
   self.currentType = dataSourceType;
   switch (dataSourceType) {
-      
+
   case CTLocationDataTypeFacebook:
   {
     if (!self.facebook)
@@ -56,7 +56,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   break;
   case CTLocationDataTypeYahoo:
   {
-
   }
   break;
   default:
@@ -114,57 +113,58 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 
   break;
-  
+
   case CTLocationDataTypeGoogle:
-    {
-      [self.googlePlacesConnection getGoogleObjects:coordinate andTypes:kBank];
-    }
+  {
+    [self.googlePlacesConnection getGoogleObjects:coordinate andTypes:kBank];
+  }
   break;
   case CTLocationDataTypeYahoo:
   {
     CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:@"coffee" NumberOfResults:20 Radius:20.0f Coordinate:coordinate];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^( NSURLResponse *res, NSData *data, NSError *err) {
-      NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-      NSDictionary * dict = [string objectFromJSONString];
-      NSLog(@"JSON Dictionary %@", dict);
-      NSArray * resultsArray = [[dict objectForKey:@"ResultSet"] objectForKey:@"Result"];
-      NSMutableArray * array = [NSMutableArray arrayWithCapacity:resultsArray.count];
-      for (NSDictionary * venue in resultsArray) {
-        
-        CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake([[venue objectForKey:@"Latitude"]  floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
-        
-        [array addObject:result];
-      }
-      [self.delegate didReceiveResults:array];
-    }];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *res, NSData *data, NSError *err) {
+       NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+       NSDictionary * dict = [string objectFromJSONString];
+       NSLog (@"JSON Dictionary %@", dict);
+       NSArray * resultsArray = [[dict objectForKey:@"ResultSet"] objectForKey:@"Result"];
+       NSMutableArray * array = [NSMutableArray arrayWithCapacity:resultsArray.count];
+       for (NSDictionary * venue in resultsArray) {
+
+         CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[venue objectForKey:@"Latitude"] floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
+
+         [array addObject:result];
+       }
+       [self.delegate didReceiveResults:array];
+     }];
   }
   break;
   default:
-    NSLog(@"Unsupported dataSourceType.");
+    NSLog (@"Unsupported dataSourceType.");
     break;
   }
 }
 
 #pragma mark
 #pragma Facebook
-- (void)request:(FBRequest *)request didLoad:(id)result{
+- (void)request:(FBRequest *)request didLoad:(id)result {
   NSLog(@"FB %@", result);
   NSDictionary* tmpPlaces = [result objectForKey:@"data"];
   //NSLog (@"%@", self.places);
   NSMutableArray * array = [NSMutableArray arrayWithCapacity:tmpPlaces.count];
   for (NSDictionary * venue in tmpPlaces) {
     NSDictionary * locationDict = [venue objectForKey:@"location"];
-    
+
     CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"latitude"] floatValue], [[locationDict objectForKey:@"longitude"] floatValue])];
-    
+
     [array addObject:result];
   }
   [self.delegate didReceiveResults:array];
 }
 
-- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response{
+- (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
   NSLog(@"%@", response);
 }
+
 #pragma mark
 #pragma Foursquare
 - (void)requestDidStartLoading:(BZFoursquareRequest *)request {
@@ -215,7 +215,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
 #pragma mark
 #pragma Google
-- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFinishLoadingWithGooglePlacesObjects:(NSMutableArray *)objects{
+- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFinishLoadingWithGooglePlacesObjects:(NSMutableArray *)objects {
   NSMutableArray * array = [NSMutableArray arrayWithCapacity:objects.count];
   for (GooglePlacesObject * venue in objects) {
     CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:venue.name Coordinate:venue.coordinate];
@@ -223,13 +223,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
   [self.delegate didReceiveResults:array];
 }
-- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFailWithError:(NSError *)error{
+
+- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFailWithError:(NSError *)error {
   NSLog(@"%@", error);
 }
 
 #pragma mark
 #pragma NSURLConnection
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-  
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 }
+
 @end
