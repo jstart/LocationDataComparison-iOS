@@ -38,11 +38,12 @@
   UIBarButtonItem * cityGridButton = [[UIBarButtonItem alloc] initWithTitle:@"CityGrid" style:UIBarButtonItemStyleDone target:self action:@selector(loadCityGridPlaces)];
   UIBarButtonItem * foursquareButton = [[UIBarButtonItem alloc] initWithTitle:@"Foursquare" style:UIBarButtonItemStyleDone target:self action:@selector(loadFoursquarePlaces)];
   UIBarButtonItem * factualButton = [[UIBarButtonItem alloc] initWithTitle:@"Factual" style:UIBarButtonItemStyleDone target:self action:@selector(loadFactualPlaces)];
-  UIBarButtonItem * facebookButton = [[UIBarButtonItem alloc] initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(loadFacebookPlaces)];
-  [facebookButton setWidth:60.0f];
-  
+//  UIBarButtonItem * facebookButton = [[UIBarButtonItem alloc] initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(loadFacebookPlaces)];
+//  [facebookButton setWidth:60.0f];
+    UIBarButtonItem * googleButton = [[UIBarButtonItem alloc] initWithTitle:@"Google" style:UIBarButtonItemStyleDone target:self action:@selector(loadGooglePlaces)];
+    [googleButton setWidth:60.0f];
 
-  [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, facebookButton, nil] animated:YES];
+  [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, googleButton, nil] animated:YES];
 }
 
 - (void)viewDidUnload
@@ -107,6 +108,11 @@
 
 - (void) loadFactualPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFactual];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
+}
+
+- (void) loadGooglePlaces {
+  [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeGoogle];
   [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
 }
 

@@ -11,7 +11,7 @@
 
 @implementation CTLocationDataManager
 
-@synthesize foursquare = _foursquare, factual = _factual, facebook = _facebook, currentType = _currentType, delegate = _delegate;
+@synthesize foursquare = _foursquare, factual = _factual, facebook = _facebook, googlePlacesConnection = _googlePlacesConnection, currentType = _currentType, delegate = _delegate;
 SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
 - (void)setupWithDataSource:(CTLocationDataType)dataSourceType {
@@ -49,7 +49,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
     [CityGrid setDebug:CITY_GRID_DEBUG];
   }
   break;
-
+  case CTLocationDataTypeGoogle:
+  {
+    self.googlePlacesConnection = [[GooglePlacesConnection alloc] initWithDelegate:self];
+  }
+  break;
   default:
     NSLog(@"Unsupported dataSourceType.");
     break;
@@ -105,7 +109,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 
   break;
-
+  
+  case CTLocationDataTypeGoogle:
+    {
+      [self.googlePlacesConnection getGoogleObjects:coordinate andTypes:kBank];
+    }
+  break;
   default:
     NSLog(@"Unsupported dataSourceType.");
     break;
@@ -180,4 +189,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   [self.delegate didReceiveResults:array];
 }
 
+#pragma mark
+#pragma Google
+- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFinishLoadingWithGooglePlacesObjects:(NSMutableArray *)objects{
+  NSMutableArray * array = [NSMutableArray arrayWithCapacity:objects.count];
+  for (GooglePlacesObject * venue in objects) {
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:venue.name Coordinate:venue.coordinate];
+    [array addObject:result];
+  }
+  [self.delegate didReceiveResults:array];
+}
+- (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFailWithError:(NSError *)error{
+  NSLog(@"%@", error);
+}
 @end

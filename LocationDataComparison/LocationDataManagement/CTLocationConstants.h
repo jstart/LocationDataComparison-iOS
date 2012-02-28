@@ -30,13 +30,16 @@
 #pragma FACTUAL
 #define FACTUAL_SERVER_KEY @"S0mvKJsSItrI76wNrFsa2Y9tfHEFENJ6fd5XFvdG9qFo1THE5Fh0FpUeHBUBybBD"
 
+#pragma Google
+#define GOOGLE_API_KEY @"AIzaSyBBbh0gHw2r6AjxRpr3em8HKUg-c7GBQuc"
 
 #pragma DATA_SOURCE_TYPE
 typedef enum{
   CTLocationDataTypeFacebook = 0,
   CTLocationDataTypeFoursquare,
   CTLocationDataTypeCityGrid,
-  CTLocationDataTypeFactual
+  CTLocationDataTypeFactual,
+  CTLocationDataTypeGoogle
 }CTLocationDataType;
 
 #endif

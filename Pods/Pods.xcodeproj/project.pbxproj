@@ -10,84 +10,46 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>005A6F9A26F3482CBC54D5D6</key>
+		<key>05A9ED9E05484080A96D377F</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Pods-prefix.pch</string>
+			<string>SBJsonWriter.h</string>
 			<key>path</key>
-			<string>Pods-prefix.pch</string>
+			<string>SBJson/Source/SBJsonWriter.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>0086C40C4E8C427B9508348D</key>
+		<key>0A34801B5D56408E85F32A5B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJsonBase.m</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJsonBase.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0E2989E67B4241D588B6DE87</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSString+SBJSON.m</string>
+			<key>path</key>
+			<string>SBJson/Source/NSString+SBJSON.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>10EB5F664D47498B8DA83B04</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>1417F9ABA88A46A6AECB6169</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>040DC0AE647C40C59BEA8C1C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBDialog.h</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBDialog.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>0D4CF79B766C4DB287A5D3F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSObject+SBJSON.h</string>
-			<key>path</key>
-			<string>SBJson/Source/NSObject+SBJSON.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>1417F9ABA88A46A6AECB6169</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>1FBD9569F7DA43D8A4FE226B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BDD3BDA9D27A4D6D9562F40E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>21426A648FE44F65A5BF939A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>B60BE2366DD3473D843A9BEC</string>
-				<string>005A6F9A26F3482CBC54D5D6</string>
-				<string>B281DA20185646E78C6857F6</string>
+				<string>2F32C01EDABE401394C65654</string>
+				<string>860FD397C7E643E0911C4269</string>
+				<string>E4D4307C70F04ABFA0E272FD</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -96,18 +58,119 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>22F9ACA64C2648BBB772A6DB</key>
+		<key>13F3B717106842E0A3275A18</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>575771E15EAE4729A9DE9C10</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>154D34E588654AA3AFC02DD0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5E8BA06FB0D4491FB1052786</string>
+				<string>B9DBCB886C0043958A77B527</string>
+				<string>575771E15EAE4729A9DE9C10</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15AEEE7007164BCFAC6D9152</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>FBLoginDialog.m</string>
+			<string>Facebook.h</string>
 			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBLoginDialog.m</string>
+			<string>Facebook-iOS-SDK/src/Facebook.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>231EC2753E2E4E8AAA6FFD5C</key>
+		<key>1E1F3FADDE8A48C4AE0262D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0A34801B5D56408E85F32A5B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>264E43D5B76547458F1BA714</key>
+		<dict>
+			<key>fileRef</key>
+			<string>33DD7536B87F4EA18DCDC278</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>27374203B2F549149FC0146A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSString+SBJSON.h</string>
+			<key>path</key>
+			<string>SBJson/Source/NSString+SBJSON.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>27D2701C5EF54F2795927002</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4885C71ADEDB438DA489C633</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>2B1C3BF2F6D5465F8CAB6FC2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSONKit.m</string>
+			<key>path</key>
+			<string>JSONKit/JSONKit.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2E76B0F7CFBD4139AD5F8BF4</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -118,54 +181,130 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2353853915094A858F92E113</key>
+		<key>2F32C01EDABE401394C65654</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>15AEEE7007164BCFAC6D9152</string>
+				<string>605E44BEAD334325A8E8A4E4</string>
+				<string>CC1355B8C12E487DA7CBD3EF</string>
+				<string>D78D5AC55ACA493DB497A150</string>
+				<string>800766B69D1646FE9FE51CB4</string>
+				<string>2E76B0F7CFBD4139AD5F8BF4</string>
+				<string>5DD74295FA7143E3AED269A6</string>
+				<string>E0FA238CED9142F29A228E7E</string>
+				<string>33406BDAC0064D6DBCD10F8F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Facebook-iOS-SDK</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>33406BDAC0064D6DBCD10F8F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FBRequest.m</string>
+			<key>path</key>
+			<string>Facebook-iOS-SDK/src/FBRequest.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>33DD7536B87F4EA18DCDC278</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJsonWriter.m</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJsonWriter.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3911CCC0111F447193158827</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5DD74295FA7143E3AED269A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>3E3063B959924E899694294A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0E2989E67B4241D588B6DE87</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>3FDECB7C07BF41BE93B46994</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJsonParser.h</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJsonParser.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4042C85E00FA43E1A98AA8E4</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>2EE673AA0BC549CB80CAC894</string>
+				<string>C57AE77BE37249379E28AB3A</string>
+				<string>3911CCC0111F447193158827</string>
+				<string>E30FFB7C45BC4CA998871AB9</string>
+				<string>5E08E5B20AE94B5C9E7112CE</string>
+				<string>ACDD8BF3C9B94BFCAA294489</string>
+				<string>27D2701C5EF54F2795927002</string>
+				<string>3E3063B959924E899694294A</string>
+				<string>C73C3A33D0E04718A5CCDAFB</string>
+				<string>1E1F3FADDE8A48C4AE0262D9</string>
+				<string>5870EBD6824B431CB8637275</string>
+				<string>264E43D5B76547458F1BA714</string>
 			</array>
 			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
+			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>27FE3579FECA48D7BF023AAF</key>
+		<key>4885C71ADEDB438DA489C633</key>
 		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0420</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>6D0C457928794B0C97539220</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
 			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>41A91DF571E14ECA849006E8</string>
-			<key>productRefGroup</key>
-			<string>69DFC1FA1ACF42259E4C4750</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>30A6922980164088BE6F4737</string>
-			</array>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NSObject+SBJSON.m</string>
+			<key>path</key>
+			<string>SBJson/Source/NSObject+SBJSON.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>2EBBA371298840279A1F20B1</key>
+		<key>4D16D08CA872406D9F58DF1E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSONKit.h</string>
+			<key>path</key>
+			<string>JSONKit/JSONKit.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4EA70330623843F09438AF0A</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -220,66 +359,118 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>2EE673AA0BC549CB80CAC894</key>
+		<key>51763388E09E405CA9855E70</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>575771E15EAE4729A9DE9C10</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5870EBD6824B431CB8637275</key>
 		<dict>
 			<key>fileRef</key>
-			<string>1417F9ABA88A46A6AECB6169</string>
+			<string>6DC52ECF1A7941AB8F19A28A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
 		</dict>
-		<key>30A6922980164088BE6F4737</key>
+		<key>5A25996E35744D6E895E4142</key>
 		<dict>
-			<key>buildConfigurationList</key>
-			<string>DA54E4AC92964FE6A235D446</string>
-			<key>buildPhases</key>
+			<key>buildConfigurations</key>
 			<array>
-				<string>84BE3BB1EA314D3D84D93AB5</string>
-				<string>2353853915094A858F92E113</string>
-				<string>84C5D5DE405F4B1A9FCCDB1B</string>
+				<string>4EA70330623843F09438AF0A</string>
+				<string>DB91D050E9B84B23AAC5E9AB</string>
 			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>productName</key>
-			<string>Pods</string>
-			<key>productReference</key>
-			<string>D145881944A348B08634CA52</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>3111160DFFD144A4810FFC10</key>
+		<key>5DD74295FA7143E3AED269A6</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>SBJsonParser.h</string>
+			<string>FBDialog.m</string>
 			<key>path</key>
-			<string>SBJson/Source/SBJsonParser.h</string>
+			<string>Facebook-iOS-SDK/src/FBDialog.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>3904A2DCDD1C4E6BBDA96C6E</key>
+		<key>5E08E5B20AE94B5C9E7112CE</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>21426A648FE44F65A5BF939A</string>
-			</array>
+			<key>fileRef</key>
+			<string>33406BDAC0064D6DBCD10F8F</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
 		</dict>
-		<key>394180F4D5AD4544AE175046</key>
+		<key>5E216B891F3141ABBBDBF8BA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJSON.h</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJSON.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5E8BA06FB0D4491FB1052786</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-resources.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>605E44BEAD334325A8E8A4E4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FBConnect.h</string>
+			<key>path</key>
+			<string>Facebook-iOS-SDK/src/FBConnect.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>67712DDBEA25465FA982FE1D</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>B281DA20185646E78C6857F6</string>
+			<string>575771E15EAE4729A9DE9C10</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>DSTROOT</key>
@@ -304,35 +495,265 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>3E129BCC4CE14F2994800002</key>
+		<key>69F334A0B7244F4FA18450F8</key>
 		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B281DA20185646E78C6857F6</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>DSTROOT</key>
-				<string>/tmp/xcodeproj.dst</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Pods-prefix.pch</string>
-				<key>GCC_VERSION</key>
-				<string>com.apple.compilers.llvm.clang.1_0</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>67712DDBEA25465FA982FE1D</string>
+				<string>13F3B717106842E0A3275A18</string>
+			</array>
 			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
+			<string>XCConfigurationList</string>
 		</dict>
-		<key>40B65C89E71E49D395EE85C2</key>
+		<key>6DC52ECF1A7941AB8F19A28A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJsonParser.m</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJsonParser.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>708175B9307D4D73953025A5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>10EB5F664D47498B8DA83B04</string>
+				<string>8CEF498FD03F4F3E883D155E</string>
+				<string>796381857428444B862CAE08</string>
+				<string>FFB41589D33B4FCE9A18DDE6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>73BFDCA9BEA34E1CAF3AEE9F</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>69F334A0B7244F4FA18450F8</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4042C85E00FA43E1A98AA8E4</string>
+				<string>FF82DC6723AD4895B10E1DE4</string>
+				<string>8769295753F743A6971B4BF1</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>ECF607949C8E43BFBDE1622E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>7669D29F56D349EDBBDB762F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>SBJSON.m</string>
+			<key>path</key>
+			<string>SBJson/Source/SBJSON.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>796381857428444B862CAE08</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>ECF607949C8E43BFBDE1622E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>800766B69D1646FE9FE51CB4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FBRequest.h</string>
+			<key>path</key>
+			<string>Facebook-iOS-SDK/src/FBRequest.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>860FD397C7E643E0911C4269</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4D16D08CA872406D9F58DF1E</string>
+				<string>2B1C3BF2F6D5465F8CAB6FC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JSONKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8769295753F743A6971B4BF1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string>$(PRODUCT_NAME)</string>
+			<key>dstSubfolderSpec</key>
+			<string>16</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8A692FF79F8942E09EF0CED9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>51763388E09E405CA9855E70</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8CEF498FD03F4F3E883D155E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>51763388E09E405CA9855E70</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E90B9DF8F1445058E5740C0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JSON.h</string>
+			<key>path</key>
+			<string>SBJson/Source/JSON.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9E0C46476173442198B7964F</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0420</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>5A25996E35744D6E895E4142</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>708175B9307D4D73953025A5</string>
+			<key>productRefGroup</key>
+			<string>796381857428444B862CAE08</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>73BFDCA9BEA34E1CAF3AEE9F</string>
+			</array>
+		</dict>
+		<key>ACDD8BF3C9B94BFCAA294489</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2B1C3BF2F6D5465F8CAB6FC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>B9DBCB886C0043958A77B527</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C57AE77BE37249379E28AB3A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2E76B0F7CFBD4139AD5F8BF4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>C73C3A33D0E04718A5CCDAFB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7669D29F56D349EDBBDB762F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<key>CC1355B8C12E487DA7CBD3EF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FBDialog.h</string>
+			<key>path</key>
+			<string>Facebook-iOS-SDK/src/FBDialog.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D78D5AC55ACA493DB497A150</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FBLoginDialog.h</string>
+			<key>path</key>
+			<string>Facebook-iOS-SDK/src/FBLoginDialog.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DB91D050E9B84B23AAC5E9AB</key>
 		<dict>
 			<key>buildSettings</key>
 			<dict>
@@ -378,35 +799,21 @@
 			<key>name</key>
 			<string>Release</string>
 		</dict>
-		<key>41A91DF571E14ECA849006E8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>7A4A3C6A224E4562AD7B347A</string>
-				<string>0086C40C4E8C427B9508348D</string>
-				<string>69DFC1FA1ACF42259E4C4750</string>
-				<string>3904A2DCDD1C4E6BBDA96C6E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>44136A88D8A14B469FAF89B3</key>
+		<key>E0FA238CED9142F29A228E7E</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>SBJSON.h</string>
+			<string>FBLoginDialog.m</string>
 			<key>path</key>
-			<string>SBJson/Source/SBJSON.h</string>
+			<string>Facebook-iOS-SDK/src/FBLoginDialog.m</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>448DCF9B86314E4792F1E88E</key>
+		<key>E30FFB7C45BC4CA998871AB9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FFB5000B960B462897A23C33</string>
+			<string>E0FA238CED9142F29A228E7E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -415,312 +822,32 @@
 				<string> </string>
 			</dict>
 		</dict>
-		<key>5A4BBCDD1CAA4836A285E857</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBRequest.h</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBRequest.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>5E0CC769D4014B7B8C46FCAD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1D426757B634288BF324B41</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>651B6F8C8FB24FAB9943CF05</key>
-		<dict>
-			<key>fileRef</key>
-			<string>844F0628BE7446C49287A746</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>69DFC1FA1ACF42259E4C4750</key>
+		<key>E4D4307C70F04ABFA0E272FD</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>D145881944A348B08634CA52</string>
+				<string>8E90B9DF8F1445058E5740C0</string>
+				<string>E63DAA263FFF4498AEC2EFB6</string>
+				<string>27374203B2F549149FC0146A</string>
+				<string>5E216B891F3141ABBBDBF8BA</string>
+				<string>E60A5E3CE48C4CE58C3CF77F</string>
+				<string>3FDECB7C07BF41BE93B46994</string>
+				<string>05A9ED9E05484080A96D377F</string>
+				<string>4885C71ADEDB438DA489C633</string>
+				<string>0E2989E67B4241D588B6DE87</string>
+				<string>7669D29F56D349EDBBDB762F</string>
+				<string>0A34801B5D56408E85F32A5B</string>
+				<string>6DC52ECF1A7941AB8F19A28A</string>
+				<string>33DD7536B87F4EA18DCDC278</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>Products</string>
+			<string>SBJson</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>6D0C457928794B0C97539220</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>2EBBA371298840279A1F20B1</string>
-				<string>40B65C89E71E49D395EE85C2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>74FD00D3B56D48ABA1015DE3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>22F9ACA64C2648BBB772A6DB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>7A4A3C6A224E4562AD7B347A</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF0F6247D1F44497B5BE9886</string>
-				<string>FB898DF4248D4E8A96871608</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7E0E58AA4F604D57BC43BE2A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>JSON.h</string>
-			<key>path</key>
-			<string>SBJson/Source/JSON.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>7F47E09F724F4280BCE9479D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>936C6565682A44E09A72F87A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>844F0628BE7446C49287A746</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJSON.m</string>
-			<key>path</key>
-			<string>SBJson/Source/SBJSON.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>84BE3BB1EA314D3D84D93AB5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D7964AAE5ECB490C896A81CA</string>
-				<string>DDDC576172A94521AD7D6CF5</string>
-				<string>74FD00D3B56D48ABA1015DE3</string>
-				<string>448DCF9B86314E4792F1E88E</string>
-				<string>5E0CC769D4014B7B8C46FCAD</string>
-				<string>B9ADD1F970D3487D9F17D350</string>
-				<string>651B6F8C8FB24FAB9943CF05</string>
-				<string>A56122FE55FA463586E33F79</string>
-				<string>7F47E09F724F4280BCE9479D</string>
-				<string>1FBD9569F7DA43D8A4FE226B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>84C5D5DE405F4B1A9FCCDB1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>$(PRODUCT_NAME)</string>
-			<key>dstSubfolderSpec</key>
-			<string>16</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>85453F569D2E4D47A87616B6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBLoginDialog.h</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBLoginDialog.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>865798DA0AA54FDCA1D88D11</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSString+SBJSON.m</string>
-			<key>path</key>
-			<string>SBJson/Source/NSString+SBJSON.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>868D1AB978C04907A5876E8F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBDialog.m</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBDialog.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>936C6565682A44E09A72F87A</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJsonParser.m</string>
-			<key>path</key>
-			<string>SBJson/Source/SBJsonParser.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A56122FE55FA463586E33F79</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FB590AA253524C09B7662D8B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>AF0F6247D1F44497B5BE9886</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C9DA70DB10314DB0BCE2D143</string>
-				<string>CDF88EA2408D47C28B244179</string>
-				<string>040DC0AE647C40C59BEA8C1C</string>
-				<string>85453F569D2E4D47A87616B6</string>
-				<string>5A4BBCDD1CAA4836A285E857</string>
-				<string>231EC2753E2E4E8AAA6FFD5C</string>
-				<string>868D1AB978C04907A5876E8F</string>
-				<string>22F9ACA64C2648BBB772A6DB</string>
-				<string>FFB5000B960B462897A23C33</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Facebook-iOS-SDK</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B167B7A3238D442D8FB7F404</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJsonWriter.h</string>
-			<key>path</key>
-			<string>SBJson/Source/SBJsonWriter.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B281DA20185646E78C6857F6</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B60BE2366DD3473D843A9BEC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>Pods-resources.sh</string>
-			<key>path</key>
-			<string>Pods-resources.sh</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>B9ADD1F970D3487D9F17D350</key>
-		<dict>
-			<key>fileRef</key>
-			<string>865798DA0AA54FDCA1D88D11</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>BDD3BDA9D27A4D6D9562F40E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJsonWriter.m</string>
-			<key>path</key>
-			<string>SBJson/Source/SBJsonWriter.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>C0E213E2718843AEB053C26B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSString+SBJSON.h</string>
-			<key>path</key>
-			<string>SBJson/Source/NSString+SBJSON.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>C46A430069BB4FA49631DB4F</key>
+		<key>E60A5E3CE48C4CE58C3CF77F</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
@@ -731,29 +858,18 @@
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>C9DA70DB10314DB0BCE2D143</key>
+		<key>E63DAA263FFF4498AEC2EFB6</key>
 		<dict>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>name</key>
-			<string>Facebook.h</string>
+			<string>NSObject+SBJSON.h</string>
 			<key>path</key>
-			<string>Facebook-iOS-SDK/src/Facebook.h</string>
+			<string>SBJson/Source/NSObject+SBJSON.h</string>
 			<key>sourceTree</key>
 			<string>SOURCE_ROOT</string>
 		</dict>
-		<key>CDF88EA2408D47C28B244179</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBConnect.h</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBConnect.h</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>D145881944A348B08634CA52</key>
+		<key>ECF607949C8E43BFBDE1622E</key>
 		<dict>
 			<key>explicitFileType</key>
 			<string>archive.ar</string>
@@ -768,100 +884,34 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>D7964AAE5ECB490C896A81CA</key>
+		<key>FF82DC6723AD4895B10E1DE4</key>
 		<dict>
-			<key>fileRef</key>
-			<string>231EC2753E2E4E8AAA6FFD5C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>DA54E4AC92964FE6A235D446</key>
-		<dict>
-			<key>buildConfigurations</key>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
 			<array>
-				<string>394180F4D5AD4544AE175046</string>
-				<string>3E129BCC4CE14F2994800002</string>
+				<string>8A692FF79F8942E09EF0CED9</string>
 			</array>
 			<key>isa</key>
-			<string>XCConfigurationList</string>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
 		</dict>
-		<key>DDDC576172A94521AD7D6CF5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>868D1AB978C04907A5876E8F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string> </string>
-			</dict>
-		</dict>
-		<key>E1D426757B634288BF324B41</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>NSObject+SBJSON.m</string>
-			<key>path</key>
-			<string>SBJson/Source/NSObject+SBJSON.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>FB590AA253524C09B7662D8B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>SBJsonBase.m</string>
-			<key>path</key>
-			<string>SBJson/Source/SBJsonBase.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>FB898DF4248D4E8A96871608</key>
+		<key>FFB41589D33B4FCE9A18DDE6</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>7E0E58AA4F604D57BC43BE2A</string>
-				<string>0D4CF79B766C4DB287A5D3F2</string>
-				<string>C0E213E2718843AEB053C26B</string>
-				<string>44136A88D8A14B469FAF89B3</string>
-				<string>C46A430069BB4FA49631DB4F</string>
-				<string>3111160DFFD144A4810FFC10</string>
-				<string>B167B7A3238D442D8FB7F404</string>
-				<string>E1D426757B634288BF324B41</string>
-				<string>865798DA0AA54FDCA1D88D11</string>
-				<string>844F0628BE7446C49287A746</string>
-				<string>FB590AA253524C09B7662D8B</string>
-				<string>936C6565682A44E09A72F87A</string>
-				<string>BDD3BDA9D27A4D6D9562F40E</string>
+				<string>154D34E588654AA3AFC02DD0</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>SBJson</string>
+			<string>Targets Support Files</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>FFB5000B960B462897A23C33</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>FBRequest.m</string>
-			<key>path</key>
-			<string>Facebook-iOS-SDK/src/FBRequest.m</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
 	</dict>
 	<key>rootObject</key>
-	<string>27FE3579FECA48D7BF023AAF</string>
+	<string>9E0C46476173442198B7964F</string>
 </dict>
 </plist>

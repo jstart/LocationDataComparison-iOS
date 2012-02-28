@@ -27,5 +27,7 @@
 
 - (void) loadCityGridPlaces;
 - (void) loadFoursquarePlaces;
+- (void) loadFacebookPlaces;
 - (void) loadFactualPlaces;
+- (void) loadGooglePlaces;
 @end

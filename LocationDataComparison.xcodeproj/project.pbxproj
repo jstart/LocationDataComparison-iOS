@@ -17,6 +17,9 @@
 		FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26345E14FC2B5700142047 /* CTLocationDataManager.m */; };
 		FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */; };
 		FD26347D14FCC7BD00142047 /* FacebookSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26347C14FCC7BD00142047 /* FacebookSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD2634AD14FD3B3200142047 /* GooglePlacesConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634A514FD3B3200142047 /* GooglePlacesConnection.m */; };
+		FD2634AE14FD3B3200142047 /* GooglePlacesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634A714FD3B3200142047 /* GooglePlacesObject.m */; };
+		FD2634AF14FD3B3200142047 /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634AC14FD3B3200142047 /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
 		FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
 		FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70883014F84DC50029C7AC /* CoreGraphics.framework */; };
@@ -66,6 +69,14 @@
 		FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManagerResult.m; path = LocationDataManagement/CTLocationDataManagerResult.m; sourceTree = "<group>"; };
 		FD26347B14FCC7BD00142047 /* FacebookSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSupport.h; sourceTree = "<group>"; };
 		FD26347C14FCC7BD00142047 /* FacebookSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSupport.m; sourceTree = "<group>"; };
+		FD2634A414FD3B3200142047 /* GooglePlacesConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesConnection.h; sourceTree = "<group>"; };
+		FD2634A514FD3B3200142047 /* GooglePlacesConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlacesConnection.m; sourceTree = "<group>"; };
+		FD2634A614FD3B3200142047 /* GooglePlacesObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooglePlacesObject.h; sourceTree = "<group>"; };
+		FD2634A714FD3B3200142047 /* GooglePlacesObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooglePlacesObject.m; sourceTree = "<group>"; };
+		FD2634A914FD3B3200142047 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		FD2634AA14FD3B3200142047 /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
+		FD2634AB14FD3B3200142047 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
+		FD2634AC14FD3B3200142047 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
 		FD70882814F84DC50029C7AC /* LocationDataComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationDataComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD70882C14F84DC50029C7AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD70882E14F84DC50029C7AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +159,28 @@
 			name = "Location Data Management";
 			sourceTree = "<group>";
 		};
+		FD2634A314FD3B3200142047 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				FD2634A414FD3B3200142047 /* GooglePlacesConnection.h */,
+				FD2634A514FD3B3200142047 /* GooglePlacesConnection.m */,
+				FD2634A614FD3B3200142047 /* GooglePlacesObject.h */,
+				FD2634A714FD3B3200142047 /* GooglePlacesObject.m */,
+			);
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		FD2634A814FD3B3200142047 /* GTM */ = {
+			isa = PBXGroup;
+			children = (
+				FD2634A914FD3B3200142047 /* GTMDefines.h */,
+				FD2634AA14FD3B3200142047 /* GTMGarbageCollection.h */,
+				FD2634AB14FD3B3200142047 /* GTMNSString+URLArguments.h */,
+				FD2634AC14FD3B3200142047 /* GTMNSString+URLArguments.m */,
+			);
+			path = GTM;
+			sourceTree = "<group>";
+		};
 		FD70881D14F84DC10029C7AC = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +221,8 @@
 		FD70883214F84DC50029C7AC /* LocationDataComparison */ = {
 			isa = PBXGroup;
 			children = (
+				FD2634A314FD3B3200142047 /* GooglePlaces */,
+				FD2634A814FD3B3200142047 /* GTM */,
 				FD26347B14FCC7BD00142047 /* FacebookSupport.h */,
 				FD26347C14FCC7BD00142047 /* FacebookSupport.m */,
 				FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */,
@@ -378,6 +413,9 @@
 				FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */,
 				FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */,
 				FD26347D14FCC7BD00142047 /* FacebookSupport.m in Sources */,
+				FD2634AD14FD3B3200142047 /* GooglePlacesConnection.m in Sources */,
+				FD2634AE14FD3B3200142047 /* GooglePlacesObject.m in Sources */,
+				FD2634AF14FD3B3200142047 /* GTMNSString+URLArguments.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

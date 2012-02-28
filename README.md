@@ -10,11 +10,10 @@ List of location based API sources to compare:
 * Factual
 * Foursquare Venue Database
 * Facebook Graph API
+* Google Places API
 
 ### Not Yet Started
 
-* Google Places API
-* InfoChimps
 * Microsoft Bing Maps Location API
 * Yahoo Local API
 * Yelp API

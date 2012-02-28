@@ -10,5 +10,7 @@
 	<string></string>
 	<key>Facebook</key>
 	<string></string>
+	<key>Google</key>
+	<string></string>
 </dict>
 </plist>
