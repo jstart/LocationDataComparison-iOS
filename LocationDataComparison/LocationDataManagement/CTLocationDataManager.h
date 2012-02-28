@@ -15,8 +15,9 @@
 #import "CTLocationConstants.h"
 #import "CTLocationDataManagerDelegate.h"
 #import "BZFoursquare.h"
+#import "CTYahooLocalSearchRequest.h"
 
-@interface CTLocationDataManager : NSObject <BZFoursquareRequestDelegate, FactualAPIDelegate, FBSessionDelegate,FBRequestDelegate, GooglePlacesConnectionDelegate>
+@interface CTLocationDataManager : NSObject <BZFoursquareRequestDelegate, FactualAPIDelegate, FBSessionDelegate,FBRequestDelegate, GooglePlacesConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (nonatomic, strong) BZFoursquare * foursquare;
 @property (nonatomic, strong) FactualAPI * factual;

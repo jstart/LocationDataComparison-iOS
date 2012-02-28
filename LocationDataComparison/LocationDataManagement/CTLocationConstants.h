@@ -33,13 +33,17 @@
 #pragma Google
 #define GOOGLE_API_KEY @"AIzaSyBBbh0gHw2r6AjxRpr3em8HKUg-c7GBQuc"
 
+#pragma Yahoo
+#define YAHOO_APP_ID @"1syHD5fV34HfPfBrdvn2gPXmP3JcBxDw.Tzssu8BXBk6kCwn.o1logyoRevd51BjOtDohiouIZyhTnvP5eq05kY8"
+
 #pragma DATA_SOURCE_TYPE
 typedef enum{
   CTLocationDataTypeFacebook = 0,
   CTLocationDataTypeFoursquare,
   CTLocationDataTypeCityGrid,
   CTLocationDataTypeFactual,
-  CTLocationDataTypeGoogle
+  CTLocationDataTypeGoogle,
+  CTLocationDataTypeYahoo
 }CTLocationDataType;
 
 #endif

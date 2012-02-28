@@ -9,6 +9,7 @@
 #import "CTViewController.h"
 #import "BZFoursquare.h"
 #import "CTAppDelegate.h"
+#import "CTYahooLocalSearchRequest.h"
 
 @implementation CTViewController
 @synthesize mapView;
@@ -40,7 +41,7 @@
   UIBarButtonItem * factualButton = [[UIBarButtonItem alloc] initWithTitle:@"Factual" style:UIBarButtonItemStyleDone target:self action:@selector(loadFactualPlaces)];
 //  UIBarButtonItem * facebookButton = [[UIBarButtonItem alloc] initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(loadFacebookPlaces)];
 //  [facebookButton setWidth:60.0f];
-    UIBarButtonItem * googleButton = [[UIBarButtonItem alloc] initWithTitle:@"Google" style:UIBarButtonItemStyleDone target:self action:@selector(loadGooglePlaces)];
+    UIBarButtonItem * googleButton = [[UIBarButtonItem alloc] initWithTitle:@"Google" style:UIBarButtonItemStyleDone target:self action:@selector(loadYahooPlaces)];
     [googleButton setWidth:60.0f];
 
   [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, googleButton, nil] animated:YES];
@@ -113,6 +114,11 @@
 
 - (void) loadGooglePlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeGoogle];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
+}
+
+- (void) loadYahooPlaces {
+  [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeYahoo];
   [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
 }
 

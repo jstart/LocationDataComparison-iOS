@@ -20,6 +20,9 @@
 		FD2634AD14FD3B3200142047 /* GooglePlacesConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634A514FD3B3200142047 /* GooglePlacesConnection.m */; };
 		FD2634AE14FD3B3200142047 /* GooglePlacesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634A714FD3B3200142047 /* GooglePlacesObject.m */; };
 		FD2634AF14FD3B3200142047 /* GTMNSString+URLArguments.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634AC14FD3B3200142047 /* GTMNSString+URLArguments.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD2634BC14FD479400142047 /* CTYahooLocalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634BB14FD479400142047 /* CTYahooLocalObject.m */; };
+		FD2634BF14FD492D00142047 /* CTYahooLocalSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634BE14FD492D00142047 /* CTYahooLocalSearchRequest.m */; };
+		FD2634C314FD500300142047 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2634C214FD500300142047 /* XMLReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882C14F84DC50029C7AC /* UIKit.framework */; };
 		FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70882E14F84DC50029C7AC /* Foundation.framework */; };
 		FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70883014F84DC50029C7AC /* CoreGraphics.framework */; };
@@ -77,6 +80,12 @@
 		FD2634AA14FD3B3200142047 /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
 		FD2634AB14FD3B3200142047 /* GTMNSString+URLArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+URLArguments.h"; sourceTree = "<group>"; };
 		FD2634AC14FD3B3200142047 /* GTMNSString+URLArguments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+URLArguments.m"; sourceTree = "<group>"; };
+		FD2634BA14FD479400142047 /* CTYahooLocalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTYahooLocalObject.h; path = YahooLocal/CTYahooLocalObject.h; sourceTree = "<group>"; };
+		FD2634BB14FD479400142047 /* CTYahooLocalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTYahooLocalObject.m; path = YahooLocal/CTYahooLocalObject.m; sourceTree = "<group>"; };
+		FD2634BD14FD492D00142047 /* CTYahooLocalSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTYahooLocalSearchRequest.h; path = YahooLocal/CTYahooLocalSearchRequest.h; sourceTree = "<group>"; };
+		FD2634BE14FD492D00142047 /* CTYahooLocalSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTYahooLocalSearchRequest.m; path = YahooLocal/CTYahooLocalSearchRequest.m; sourceTree = "<group>"; };
+		FD2634C114FD500300142047 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		FD2634C214FD500300142047 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		FD70882814F84DC50029C7AC /* LocationDataComparison.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationDataComparison.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD70882C14F84DC50029C7AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD70882E14F84DC50029C7AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +190,26 @@
 			path = GTM;
 			sourceTree = "<group>";
 		};
+		FD2634B914FD477100142047 /* YahooLocal */ = {
+			isa = PBXGroup;
+			children = (
+				FD2634BA14FD479400142047 /* CTYahooLocalObject.h */,
+				FD2634BB14FD479400142047 /* CTYahooLocalObject.m */,
+				FD2634BD14FD492D00142047 /* CTYahooLocalSearchRequest.h */,
+				FD2634BE14FD492D00142047 /* CTYahooLocalSearchRequest.m */,
+			);
+			name = YahooLocal;
+			sourceTree = "<group>";
+		};
+		FD2634C014FD500300142047 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				FD2634C114FD500300142047 /* XMLReader.h */,
+				FD2634C214FD500300142047 /* XMLReader.m */,
+			);
+			path = XMLReader;
+			sourceTree = "<group>";
+		};
 		FD70881D14F84DC10029C7AC = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +250,8 @@
 		FD70883214F84DC50029C7AC /* LocationDataComparison */ = {
 			isa = PBXGroup;
 			children = (
+				FD2634C014FD500300142047 /* XMLReader */,
+				FD2634B914FD477100142047 /* YahooLocal */,
 				FD2634A314FD3B3200142047 /* GooglePlaces */,
 				FD2634A814FD3B3200142047 /* GTM */,
 				FD26347B14FCC7BD00142047 /* FacebookSupport.h */,
@@ -416,6 +447,9 @@
 				FD2634AD14FD3B3200142047 /* GooglePlacesConnection.m in Sources */,
 				FD2634AE14FD3B3200142047 /* GooglePlacesObject.m in Sources */,
 				FD2634AF14FD3B3200142047 /* GTMNSString+URLArguments.m in Sources */,
+				FD2634BC14FD479400142047 /* CTYahooLocalObject.m in Sources */,
+				FD2634BF14FD492D00142047 /* CTYahooLocalSearchRequest.m in Sources */,
+				FD2634C314FD500300142047 /* XMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

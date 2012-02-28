@@ -8,6 +8,7 @@
 
 #import "CTLocationDataManager.h"
 #import "CTLocationDataManagerResult.h"
+#import "XMLReader.h"
 
 @implementation CTLocationDataManager
 
@@ -52,6 +53,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   case CTLocationDataTypeGoogle:
   {
     self.googlePlacesConnection = [[GooglePlacesConnection alloc] initWithDelegate:self];
+  }
+  break;
+  case CTLocationDataTypeYahoo:
+  {
+
   }
   break;
   default:
@@ -114,6 +120,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
     {
       [self.googlePlacesConnection getGoogleObjects:coordinate andTypes:kBank];
     }
+  break;
+  case CTLocationDataTypeYahoo:
+  {
+    CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:@"coffee" NumberOfResults:20 Radius:20.0f Coordinate:coordinate];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^( NSURLResponse *res, NSData *data, NSError *err) {
+      NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+      NSDictionary * dict = [XMLReader dictionaryForXMLString:string error:&err];
+      NSLog(@"XML Dictionary %@", dict);
+      NSArray * resultsArray = [[dict objectForKey:@"ResultSet"] objectForKey:@"Result"];
+      NSMutableArray * array = [NSMutableArray arrayWithCapacity:resultsArray.count];
+      for (NSDictionary * venue in resultsArray) {
+        
+        CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[[venue objectForKey:@"Title"] objectForKey:@"text"] Coordinate:CLLocationCoordinate2DMake([[[venue objectForKey:@"Latitude"] objectForKey:@"text"] floatValue], [[[venue objectForKey:@"Longitude"]objectForKey:@"text"] floatValue])];
+        
+        [array addObject:result];
+      }
+      [self.delegate didReceiveResults:array];
+    }];
+  }
   break;
   default:
     NSLog(@"Unsupported dataSourceType.");
@@ -201,5 +226,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 }
 - (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFailWithError:(NSError *)error{
   NSLog(@"%@", error);
+}
+
+#pragma mark
+#pragma NSURLConnection
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+  
 }
 @end

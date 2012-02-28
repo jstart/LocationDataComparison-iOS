@@ -30,4 +30,6 @@
 - (void) loadFacebookPlaces;
 - (void) loadFactualPlaces;
 - (void) loadGooglePlaces;
+- (void) loadYahooPlaces;
+
 @end
