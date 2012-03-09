@@ -16,9 +16,11 @@
 @synthesize settingsButton;
 @synthesize toolbar;
 @synthesize queue;
+@synthesize pickerView;
 @synthesize places;
 @synthesize fsqPlaces;
 @synthesize factualPlaces;
+@synthesize dataSources;
 
 - (void)didReceiveMemoryWarning
 {
@@ -35,16 +37,9 @@
   self.queue = [[NSOperationQueue alloc] init];
   self.places = [[NSMutableArray alloc] init];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFoursquarePlaces) name:@"FoursquareAuthSuccess" object:nil];
-  
-  UIBarButtonItem * cityGridButton = [[UIBarButtonItem alloc] initWithTitle:@"CityGrid" style:UIBarButtonItemStyleDone target:self action:@selector(loadCityGridPlaces)];
-  UIBarButtonItem * foursquareButton = [[UIBarButtonItem alloc] initWithTitle:@"Foursquare" style:UIBarButtonItemStyleDone target:self action:@selector(loadFoursquarePlaces)];
-  UIBarButtonItem * factualButton = [[UIBarButtonItem alloc] initWithTitle:@"Factual" style:UIBarButtonItemStyleDone target:self action:@selector(loadFactualPlaces)];
-//  UIBarButtonItem * facebookButton = [[UIBarButtonItem alloc] initWithTitle:@"Facebook" style:UIBarButtonItemStyleDone target:self action:@selector(loadFacebookPlaces)];
-//  [facebookButton setWidth:60.0f];
-    UIBarButtonItem * googleButton = [[UIBarButtonItem alloc] initWithTitle:@"Google" style:UIBarButtonItemStyleDone target:self action:@selector(loadYahooPlaces)];
-    [googleButton setWidth:60.0f];
-
-  [self.toolbar setItems:[NSArray arrayWithObjects:cityGridButton, foursquareButton, factualButton, googleButton, nil] animated:YES];
+  UIBarButtonItem * sourcesButton = [[UIBarButtonItem alloc] initWithTitle:@"Sources" style:UIBarButtonItemStyleDone target:self action:@selector(showSources:)];
+  [self.toolbar setItems:[NSArray arrayWithObjects:sourcesButton, nil] animated:YES];
+  self.dataSources = [[NSMutableArray alloc] initWithObjects:@"Facebook",@"Foursquare", @"CityGrid", @"Factual", @"Google", @"Yahoo", nil];
 }
 
 - (void)viewDidUnload
@@ -52,6 +47,7 @@
   [self setMapView:nil];
   [self setSettingsButton:nil];
   [self setToolbar:nil];
+  [self setPickerView:nil];
   [super viewDidUnload];
   // Release any retained subviews of the main view.
   // e.g. self.myOutlet = nil;
@@ -120,6 +116,67 @@
 - (void) loadYahooPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeYahoo];
   [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
+}
+
+-(void)showSources:(id)sender{
+  if (self.pickerView.hidden) {
+    [UIView animateWithDuration:0.2 animations:^{
+      self.pickerView.hidden = NO;
+      CGRect frame = self.pickerView.frame;
+      frame.origin.y = 156;
+      self.pickerView.frame = frame;
+    }];
+  }
+  else{
+    [UIView animateWithDuration:0.2 animations:^{
+      CGRect frame = self.pickerView.frame;
+      frame.origin.y = 480;
+      self.pickerView.frame = frame;
+    } completion:^(BOOL finished){
+      self.pickerView.hidden = YES;
+    }];
+  }
+}
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+  return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+  return [self.dataSources count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+  return [self.dataSources objectAtIndex:row];
+}
+
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+//  
+//}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+  switch ((CTLocationDataType) row) {
+    case CTLocationDataTypeCityGrid:
+      [self loadCityGridPlaces];
+      break;
+    case CTLocationDataTypeFactual:
+      [self loadFactualPlaces];
+      break;
+    case CTLocationDataTypeFacebook:
+      [self loadFacebookPlaces];
+      break;
+    case CTLocationDataTypeFoursquare:
+      [self loadFoursquarePlaces];
+      break;
+    case CTLocationDataTypeYahoo:
+      [self loadYahooPlaces];
+      break;
+    case CTLocationDataTypeGoogle:
+      [self loadGooglePlaces];
+      break;
+    default:
+      @throw @"ERROR, Unsupported data type";
+      break;
+  }
 }
 
 #pragma mark

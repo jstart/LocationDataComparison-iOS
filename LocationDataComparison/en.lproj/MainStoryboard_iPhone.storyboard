@@ -20,6 +20,14 @@
                                     <outlet property="delegate" destination="dDa-JH-WWi" id="vTE-lt-oNr"/>
                                 </connections>
                             </mapView>
+                            <pickerView hidden="YES" contentMode="scaleToFill" id="h0S-pX-x4c">
+                                <rect key="frame" x="0.0" y="372" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dDa-JH-WWi" id="ziL-2P-tb3"/>
+                                    <outlet property="delegate" destination="dDa-JH-WWi" id="csO-s5-Lzz"/>
+                                </connections>
+                            </pickerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TyA-1s-e8A">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -37,6 +45,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="srj-eL-OpB" id="35A-Qu-6Ua"/>
+                        <outlet property="pickerView" destination="h0S-pX-x4c" id="y5e-QB-wob"/>
                         <outlet property="settingsButton" destination="KyS-aD-L5I" id="veK-eJ-MRj"/>
                         <outlet property="toolbar" destination="TyA-1s-e8A" id="uac-Ua-DaM"/>
                     </connections>
@@ -96,6 +105,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>

@@ -13,7 +13,6 @@
 		FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345514FBF31F00142047 /* MobileCoreServices.framework */; };
 		FD26345814FC06EA00142047 /* SupportedLocationAPIs.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */; };
-		FD26345A14FC0BF700142047 /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD26345914FC0BF700142047 /* FactualSDK.framework */; };
 		FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26345E14FC2B5700142047 /* CTLocationDataManager.m */; };
 		FD26346514FC36F800142047 /* CTLocationDataManagerResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26346414FC36F800142047 /* CTLocationDataManagerResult.m */; };
 		FD26347D14FCC7BD00142047 /* FacebookSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26347C14FCC7BD00142047 /* FacebookSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -39,6 +38,7 @@
 		FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886414F84F090029C7AC /* MapKit.framework */; };
 		FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886614F84F140029C7AC /* CityGrid.framework */; };
 		FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */; };
+		FDA3AF6E150A916F008BB1CC /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */; };
 		FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFA675A14F854D7001D8938 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,6 @@
 		FD26344D14FBEFFF00142047 /* BZFoursquareRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquareRequest.m; sourceTree = "<group>"; };
 		FD26345514FBF31F00142047 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FD26345714FC06EA00142047 /* SupportedLocationAPIs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SupportedLocationAPIs.plist; sourceTree = "<group>"; };
-		FD26345914FC0BF700142047 /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FactualSDK.framework; path = ../../../../../Downloads/FactualSDK.framework; sourceTree = "<group>"; };
 		FD26345C14FC2B3400142047 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		FD26345D14FC2B5700142047 /* CTLocationDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationDataManager.h; path = LocationDataManagement/CTLocationDataManager.h; sourceTree = "<group>"; };
 		FD26345E14FC2B5700142047 /* CTLocationDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationDataManager.m; path = LocationDataManagement/CTLocationDataManager.m; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		FD70886614F84F140029C7AC /* CityGrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CityGrid.framework; path = "../CityGridiOS SDK/CityGrid.framework"; sourceTree = "<group>"; };
 		FD70886814F851060029C7AC /* CTDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTDataSourceTableViewController.h; path = Views/CTDataSourceTableViewController.h; sourceTree = "<group>"; };
 		FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTDataSourceTableViewController.m; path = Views/CTDataSourceTableViewController.m; sourceTree = "<group>"; };
+		FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
 		FDFA675A14F854D7001D8938 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -115,7 +115,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD26345A14FC0BF700142047 /* FactualSDK.framework in Frameworks */,
 				FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */,
 				FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */,
 				FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */,
@@ -124,6 +123,7 @@
 				FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */,
 				FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */,
 				1102BB22AE454899BCBEB79E /* libPods.a in Frameworks */,
+				FDA3AF6E150A916F008BB1CC /* FactualSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +201,7 @@
 		FD70881D14F84DC10029C7AC = {
 			isa = PBXGroup;
 			children = (
-				FD26345914FC0BF700142047 /* FactualSDK.framework */,
+				FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */,
 				FD26345514FBF31F00142047 /* MobileCoreServices.framework */,
 				FDFA675A14F854D7001D8938 /* CoreLocation.framework */,
 				FD70886614F84F140029C7AC /* CityGrid.framework */,
@@ -551,6 +551,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../CityGridiOS SDK\"",
 					"\"$(SRCROOT)/../../../../../Downloads\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";
@@ -573,6 +574,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../CityGridiOS SDK\"",
 					"\"$(SRCROOT)/../../../../../Downloads\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LocationDataComparison/LocationDataComparison-Prefix.pch";

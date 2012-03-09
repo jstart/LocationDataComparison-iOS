@@ -15,8 +15,10 @@
 #import "CTLocationDataManagerResult.h"
 #import "CTLocationDataManager.h"
 
-@interface CTViewController : UIViewController <MKMapViewDelegate, CTLocationDataManagerDelegate>
+@interface CTViewController : UIViewController <MKMapViewDelegate, CTLocationDataManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (strong, nonatomic) NSArray * dataSources;
 @property (strong, nonatomic) NSMutableArray * places;
 @property (strong, nonatomic) NSMutableDictionary * fsqPlaces;
 @property (strong, nonatomic) NSMutableDictionary * factualPlaces;
