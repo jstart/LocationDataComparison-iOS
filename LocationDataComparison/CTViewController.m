@@ -135,14 +135,14 @@
     [UIView animateWithDuration:0.2 animations:^{
       self.pickerView.hidden = NO;
       CGRect frame = self.pickerView.frame;
-      frame.origin.y = 156;
+      frame.origin.y = self.view.bounds.size.height - (self.pickerView.frame.size.height + self.toolbar.frame.size.height);
       self.pickerView.frame = frame;
     }];
   }
   else{
     [UIView animateWithDuration:0.2 animations:^{
       CGRect frame = self.pickerView.frame;
-      frame.origin.y = 480;
+      frame.origin.y = [UIScreen mainScreen].bounds.size.height;
       self.pickerView.frame = frame;
     } completion:^(BOOL finished){
       self.pickerView.hidden = YES;

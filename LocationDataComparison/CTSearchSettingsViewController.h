@@ -11,7 +11,7 @@
 #define kCTRadiusSetting @"RadiusSettingStoreKey"
 #define kCTKeywordSetting @"KeywordSettingStoreKey"
 
-@interface CTSearchSettingsViewController : UIViewController
+@interface CTSearchSettingsViewController : UIViewController<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *keywordTextField;
 @property (strong, nonatomic) IBOutlet UILabel *currentSearchRadius;
 @property (strong, nonatomic) IBOutlet UISlider *radiusSlider;

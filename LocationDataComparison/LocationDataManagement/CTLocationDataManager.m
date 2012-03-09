@@ -68,13 +68,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   switch (self.currentType) {
   case CTLocationDataTypeFacebook:
   {
-    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", nil];
+    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:queryString, @"q",@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", nil];
     FBRequest * request = [self.facebook.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
   }
   break;
   case CTLocationDataTypeFoursquare:
   {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", [NSNumber numberWithInt:radius], @"distance", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", [NSNumber numberWithInt:radius], @"distance", queryString, @"query", nil];
     BZFoursquareRequest * request = [self.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [request start];
   }
@@ -83,6 +83,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   {
     // alloc query object
     FactualQuery* queryObject = [FactualQuery query];
+    [queryObject addFullTextQueryTerm:queryString];
     // set geo filter
     [queryObject setGeoFilter:coordinate radiusInMeters:radius];
     // run query against the US-POI table
