@@ -6,13 +6,14 @@
 
 @implementation FacebookSupport
 
+@synthesize facebook;
 SYNTHESIZE_SINGLETON_FOR_CLASS(FacebookSupport);
 
 - (id)init {
     self = [super init];
     
     //  initiate Facebook instance
-    facebook = [[Facebook alloc] initWithAppId:FACEBOOK_APP_ID];
+    facebook = [[Facebook alloc] initWithAppId:FACEBOOK_APP_ID andDelegate:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"FBAccessTokenKey"] 
         && [defaults objectForKey:@"FBExpirationDateKey"]) {
@@ -45,8 +46,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(FacebookSupport);
 }
 
 - (void)connect {
-    NSArray *permissions = [NSArray arrayWithObjects:@"offline_access", @"publish_stream", nil];
-    [facebook authorize:permissions delegate:self];
+    NSArray *permissions = [NSArray arrayWithObjects:@"user_about_me", @"user_checkins", @"friends_checkins", @"user_events", @"friends_events", @"user_hometown", @"friends_hometown", @"user_location", @"user_location", @"friends_location", @"", nil];
+    [facebook authorize:permissions];
 }
 
 - (void)getFriendsList {

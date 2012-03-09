@@ -43,7 +43,7 @@
 // useful functions
 -(id)initWithDelegate:(id)del;
 
--(void)getGoogleObjectsWithQuery:(NSString *)query 
+-(void)getGoogleObjectsWithQuery:(NSString *)query andRadius:(CLLocationDistance)radius
                   andCoordinates:(CLLocationCoordinate2D)coords 
                         andTypes:(NSString *)types;
 

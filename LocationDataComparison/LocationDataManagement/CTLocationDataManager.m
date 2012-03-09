@@ -21,9 +21,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   case CTLocationDataTypeFacebook:
   {
     if (!self.facebook)
-      self.facebook = [[Facebook alloc] initWithAppId:FACEBOOK_APP_ID andDelegate:self];
-    if (![self.facebook isSessionValid]) {
-      [self.facebook authorize:[NSArray arrayWithObjects:@"user_about_me", @"user_checkins", @"friends_checkins", @"user_events", @"friends_events", @"user_hometown", @"friends_hometown", @"user_location", @"user_location", @"friends_location", @"", nil]];
+      self.facebook = [FacebookSupport sharedFacebookSupport];
+    if (![self.facebook connected]) {
+      [self.facebook connect];
     }
   }
   case CTLocationDataTypeFoursquare:
@@ -64,17 +64,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 }
 
-- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius {
+- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString {
   switch (self.currentType) {
   case CTLocationDataTypeFacebook:
   {
-    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", @"1000", @"distance", nil];
-    FBRequest * request = [self.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
+    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", nil];
+    FBRequest * request = [self.facebook.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
   }
   break;
   case CTLocationDataTypeFoursquare:
   {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", radius, @"distance", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", [NSNumber numberWithInt:radius], @"distance", nil];
     BZFoursquareRequest * request = [self.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [request start];
   }
@@ -93,8 +93,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   case CTLocationDataTypeCityGrid: {
     CGPlacesSearch* search = [CityGrid placesSearch];
     search.type = CGPlacesSearchTypeRestaurant;
+    search.what = queryString;
     CLLocation * location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
     search.latlon = location;
+    if (radius > 50.0f) {
+      NSLog(@"City Grid maxes out search at 50m, defaulting to 50m. See here: http://docs.citygridmedia.com/display/citygridv2/Places+API#PlacesAPI-SearchUsingLatitudeandLongitude");
+      radius = ((CLLocationDistance)50.0f);
+    }
     search.radius = radius;
     search.resultsPerPage = 20;
 
@@ -116,12 +121,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
   case CTLocationDataTypeGoogle:
   {
-    [self.googlePlacesConnection getGoogleObjects:coordinate andTypes:kBank];
+    [self.googlePlacesConnection getGoogleObjectsWithQuery:queryString andRadius:radius andCoordinates:coordinate andTypes:kAllTypes];
   }
   break;
   case CTLocationDataTypeYahoo:
   {
-    CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:@"coffee" NumberOfResults:20 Radius:20.0f Coordinate:coordinate];
+    CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:20 Radius:radius Coordinate:coordinate];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *res, NSData *data, NSError *err) {
        NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
        NSDictionary * dict = [string objectFromJSONString];

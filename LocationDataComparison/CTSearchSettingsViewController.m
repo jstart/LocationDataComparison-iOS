@@ -71,6 +71,8 @@
 
 - (IBAction)searchClicked:(id)sender {
   //save settings
+  [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:self.radiusSlider.value] forKey:kCTRadiusSetting];
+  [[NSUserDefaults standardUserDefaults] setObject:self.keywordTextField.text ? self.keywordTextField.text : @"coffee" forKey:kCTKeywordSetting];
   [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -78,7 +78,7 @@
     
 }
 //Method is called during UISearchBar search
--(void)getGoogleObjectsWithQuery:(NSString *)query 
+-(void)getGoogleObjectsWithQuery:(NSString *)query andRadius:(CLLocationDistance)radius
                   andCoordinates:(CLLocationCoordinate2D)coords 
                         andTypes:(NSString *)types
 {
@@ -92,8 +92,8 @@
     query = [query gtm_stringByEscapingForURLArgument];
     types = [types gtm_stringByEscapingForURLArgument];
     
-    NSString* gurl               = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=1000&types=%@&name=%@&sensor=true&key=%@",
-                                    centerLat, centerLng, types, query, kGOOGLE_API_KEY];
+    NSString* gurl               = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%d&types=%@&name=%@&sensor=true&key=%@",
+                                    centerLat, centerLng, ((int)radius), types, query, kGOOGLE_API_KEY];
     
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:gurl] 
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy 

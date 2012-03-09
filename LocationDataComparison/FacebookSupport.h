@@ -15,6 +15,8 @@
     Facebook *facebook;
 }
 
+@property (nonatomic, retain) Facebook * facebook;
+
 + (FacebookSupport*)sharedFacebookSupport;
 - (BOOL)handleOpenURL:(NSURL *)url; //  whether or not url can be handled by Facebook instance
 - (BOOL)connected; //   check whether or not Facebook instance ready to work

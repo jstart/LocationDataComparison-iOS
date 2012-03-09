@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define kCTRadiusSetting @"RadiusSettingStoreKey"
+#define kCTKeywordSetting @"KeywordSettingStoreKey"
+
 @interface CTSearchSettingsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *keywordTextField;
 @property (strong, nonatomic) IBOutlet UILabel *currentSearchRadius;

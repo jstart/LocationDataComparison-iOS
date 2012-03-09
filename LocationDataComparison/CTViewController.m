@@ -7,9 +7,9 @@
 //
 
 #import "CTViewController.h"
-#import "BZFoursquare.h"
+#import "FacebookSupport.h"
 #import "CTAppDelegate.h"
-#import "CTYahooLocalSearchRequest.h"
+#import "CTSearchSettingsViewController.h"
 
 @implementation CTViewController
 @synthesize mapView;
@@ -37,6 +37,7 @@
   self.queue = [[NSOperationQueue alloc] init];
   self.places = [[NSMutableArray alloc] init];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFoursquarePlaces) name:@"FoursquareAuthSuccess" object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFacebookPlaces) name:kFacebookConnectedNotificationKey object:nil];
   UIBarButtonItem * sourcesButton = [[UIBarButtonItem alloc] initWithTitle:@"Sources" style:UIBarButtonItemStyleDone target:self action:@selector(showSources:)];
   [self.toolbar setItems:[NSArray arrayWithObjects:sourcesButton, nil] animated:YES];
   self.dataSources = [[NSMutableArray alloc] initWithObjects:@"Facebook",@"Foursquare", @"CityGrid", @"Factual", @"Google", @"Yahoo", nil];
@@ -60,7 +61,6 @@
   [mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeCityGrid];
   [[CTLocationDataManager sharedCTLocationDataManager] setDelegate:self];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,32 +90,44 @@
 
 - (void) loadFacebookPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFacebook];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 - (void) loadCityGridPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeCityGrid];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:20.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 - (void) loadFoursquarePlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFoursquare];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 - (void) loadFactualPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFactual];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 - (void) loadGooglePlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeGoogle];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 - (void) loadYahooPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeYahoo];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:200.0f];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
 }
 
 -(void)showSources:(id)sender{

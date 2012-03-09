@@ -10,7 +10,7 @@
 #import <CityGrid/CityGrid.h>
 #import <FactualSDK/FactualAPI.h>
 #import "GooglePlacesConnection.h"
-#import "Facebook.h"
+#import "FacebookSupport.h"
 #import "SynthesizeSingleton.h"
 #import "CTLocationConstants.h"
 #import "CTLocationDataManagerDelegate.h"
@@ -21,13 +21,13 @@
 
 @property (nonatomic, strong) BZFoursquare * foursquare;
 @property (nonatomic, strong) FactualAPI * factual;
-@property (nonatomic, strong) Facebook * facebook;
+@property (nonatomic, strong) FacebookSupport * facebook;
 @property (nonatomic, strong) GooglePlacesConnection * googlePlacesConnection;
 @property (readwrite) CTLocationDataType currentType;
 @property (nonatomic, strong) id<CTLocationDataManagerDelegate> delegate;
 
 +(CTLocationDataManager *)sharedCTLocationDataManager;
 -(void)setupWithDataSource:(CTLocationDataType)dataSourceType;
--(void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius;
+- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString;
 
 @end
