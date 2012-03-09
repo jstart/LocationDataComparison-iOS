@@ -37,8 +37,8 @@
 		FD70885B14F84DCA0029C7AC /* LocationDataComparisonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */; };
 		FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886414F84F090029C7AC /* MapKit.framework */; };
 		FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886614F84F140029C7AC /* CityGrid.framework */; };
-		FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */; };
 		FDA3AF6E150A916F008BB1CC /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */; };
+		FDA3AF72150AA0F1008BB1CC /* CTSearchSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA3AF71150AA0F1008BB1CC /* CTSearchSettingsViewController.m */; };
 		FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFA675A14F854D7001D8938 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,9 +104,9 @@
 		FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationDataComparisonTests.m; sourceTree = "<group>"; };
 		FD70886414F84F090029C7AC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FD70886614F84F140029C7AC /* CityGrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CityGrid.framework; path = "../CityGridiOS SDK/CityGrid.framework"; sourceTree = "<group>"; };
-		FD70886814F851060029C7AC /* CTDataSourceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTDataSourceTableViewController.h; path = Views/CTDataSourceTableViewController.h; sourceTree = "<group>"; };
-		FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTDataSourceTableViewController.m; path = Views/CTDataSourceTableViewController.m; sourceTree = "<group>"; };
 		FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
+		FDA3AF70150AA0F0008BB1CC /* CTSearchSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CTSearchSettingsViewController.h; sourceTree = "<group>"; };
+		FDA3AF71150AA0F1008BB1CC /* CTSearchSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSearchSettingsViewController.m; sourceTree = "<group>"; };
 		FDFA675A14F854D7001D8938 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -290,10 +290,10 @@
 		FD70886B14F852190029C7AC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD70886814F851060029C7AC /* CTDataSourceTableViewController.h */,
-				FD70886914F851060029C7AC /* CTDataSourceTableViewController.m */,
 				FD70884414F84DC60029C7AC /* CTViewController.h */,
 				FD70884514F84DC60029C7AC /* CTViewController.m */,
+				FDA3AF70150AA0F0008BB1CC /* CTSearchSettingsViewController.h */,
+				FDA3AF71150AA0F1008BB1CC /* CTSearchSettingsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -425,7 +425,6 @@
 				FD70883914F84DC50029C7AC /* main.m in Sources */,
 				FD70883D14F84DC50029C7AC /* CTAppDelegate.m in Sources */,
 				FD70884614F84DC60029C7AC /* CTViewController.m in Sources */,
-				FD70886A14F851060029C7AC /* CTDataSourceTableViewController.m in Sources */,
 				FD26344E14FBEFFF00142047 /* BZFoursquare.m in Sources */,
 				FD26344F14FBEFFF00142047 /* BZFoursquareRequest.m in Sources */,
 				FD26345F14FC2B5700142047 /* CTLocationDataManager.m in Sources */,
@@ -436,6 +435,7 @@
 				FD2634AF14FD3B3200142047 /* GTMNSString+URLArguments.m in Sources */,
 				FD2634BC14FD479400142047 /* CTYahooLocalObject.m in Sources */,
 				FD2634BF14FD492D00142047 /* CTYahooLocalSearchRequest.m in Sources */,
+				FDA3AF72150AA0F1008BB1CC /* CTSearchSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,9 +37,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Location Data" id="Y1p-YY-91s">
-                        <barButtonItem key="rightBarButtonItem" title="Sources" id="KyS-aD-L5I">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="KyS-aD-L5I">
                             <connections>
-                                <segue destination="R3I-4A-WEF" kind="push" id="F3m-wq-OI6"/>
+                                <segue destination="6uR-ni-vWI" kind="push" id="nWg-de-f1f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,36 +51,78 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-76" y="144"/>
+            <point key="canvasLocation" x="-77" y="140"/>
         </scene>
-        <scene sceneID="ME9-Vq-oBs">
+        <scene sceneID="eo0-HA-jBA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ylu-3h-2Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="R3I-4A-WEF" customClass="CTDataSourceTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3kF-Ik-DGZ">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPe-s6-nDz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="6uR-ni-vWI" customClass="CTSearchSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MHb-mQ-ja7">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fm7-Aq-vWJ">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="R3I-4A-WEF" id="c04-lY-SBK"/>
-                            <outlet property="delegate" destination="R3I-4A-WEF" id="tyM-wW-dlr"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="k4a-Vh-eyM"/>
-                </tableViewController>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="nq6-sJ-P8I">
+                                <rect key="frame" x="20" y="49" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Search Keyword" lineBreakMode="tailTruncation" minimumFontSize="10" id="hf1-Ul-cM7">
+                                <rect key="frame" x="20" y="20" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" id="CIs-gH-Rlg">
+                                <rect key="frame" x="18" y="117" width="284" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="radiusChanged:" destination="6uR-ni-vWI" eventType="valueChanged" id="BOM-O6-q4f"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Radius" lineBreakMode="tailTruncation" minimumFontSize="10" id="EFH-Vi-CTO">
+                                <rect key="frame" x="20" y="88" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0m" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="17" id="702-hG-Qkr">
+                                <rect key="frame" x="196" y="88" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zc1-PB-qlg">
+                                <rect key="frame" x="123" y="147" width="75" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchClicked:" destination="6uR-ni-vWI" eventType="touchUpInside" id="Rno-Jg-2mC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YJs-SU-dxX"/>
+                    <connections>
+                        <outlet property="currentSearchRadius" destination="702-hG-Qkr" id="yyz-Oy-w36"/>
+                        <outlet property="keywordTextField" destination="nq6-sJ-P8I" id="NSj-lO-1IZ"/>
+                        <outlet property="radiusSlider" destination="CIs-gH-Rlg" id="iu8-98-abt"/>
+                        <outlet property="searchButton" destination="Zc1-PB-qlg" id="Bwa-00-zzs"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="332" y="144"/>
+            <point key="canvasLocation" x="355" y="140"/>
         </scene>
         <scene sceneID="Fjz-sa-8nf">
             <objects>
@@ -94,12 +136,20 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-610" y="144"/>
+            <point key="canvasLocation" x="-610" y="140"/>
         </scene>
     </scenes>
     <classes>
-        <class className="CTDataSourceTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTDataSourceTableViewController.h"/>
+        <class className="CTSearchSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSearchSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="radiusChanged:"/>
+                <relationship kind="action" name="searchClicked:"/>
+                <relationship kind="outlet" name="currentSearchRadius" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="radiusSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="CTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
