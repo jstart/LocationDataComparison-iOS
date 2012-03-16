@@ -56,7 +56,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="161" y="-174"/>
+            <point key="canvasLocation" x="57" y="-158"/>
         </scene>
         <!--Search Settings View Controller-->
         <scene sceneID="kaX-aF-sWg">
@@ -145,7 +145,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1003" y="-171"/>
+            <point key="canvasLocation" x="907" y="-158"/>
         </scene>
         <!--Cluster Table View View Controller-->
         <scene sceneID="c3m-Sp-W5X">
