@@ -99,42 +99,42 @@
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFacebook];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 - (void) loadCityGridPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeCityGrid];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 - (void) loadFoursquarePlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFoursquare];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 - (void) loadFactualPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeFactual];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 - (void) loadGooglePlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeGoogle];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 - (void) loadYahooPlaces {
   [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeYahoo];
   float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
   NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
-  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
 -(void)showSources:(id)sender{

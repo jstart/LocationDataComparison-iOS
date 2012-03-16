@@ -28,6 +28,6 @@
 
 +(CTLocationDataManager *)sharedCTLocationDataManager;
 -(void)setupWithDataSource:(CTLocationDataType)dataSourceType;
-- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString;
+- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults;
 
 @end

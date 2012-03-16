@@ -64,17 +64,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 }
 
-- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString {
+- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults{
   switch (self.currentType) {
   case CTLocationDataTypeFacebook:
   {
-    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:queryString, @"q",@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", nil];
+    NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:queryString, @"q",@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", [NSString stringWithFormat:@"%d",maxResults], @"limit", nil];
     FBRequest * request = [self.facebook.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
   }
   break;
   case CTLocationDataTypeFoursquare:
   {
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", [NSNumber numberWithInt:radius], @"distance", queryString, @"query", nil];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%f, %f",coordinate.latitude, coordinate.longitude], @"ll",  FOURSQUARE_CLIENT_SECRET, @"client_secret",FOURSQUARE_CLIENT_ID, @"client_id", [NSNumber numberWithInt:radius], @"distance", queryString, @"query", [NSNumber numberWithInt:maxResults], @"limit", nil];
     BZFoursquareRequest * request = [self.foursquare requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
     [request start];
   }
@@ -86,6 +86,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
     [queryObject addFullTextQueryTerm:queryString];
     // set geo filter
     [queryObject setGeoFilter:coordinate radiusInMeters:radius];
+    [queryObject setLimit:maxResults];
     // run query against the US-POI table
     FactualAPIRequest* activeRequest = [self.factual queryTable:@"bi0eJZ" optionalQueryParams:queryObject withDelegate:self];
   }
@@ -102,7 +103,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
       radius = ((CLLocationDistance)50.0f);
     }
     search.radius = radius;
-    search.resultsPerPage = 20;
+    search.resultsPerPage = maxResults;
 
     NSArray* errors = nil;
     NSArray* tmpPlaces = [search search:&errors].locations;
@@ -122,12 +123,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
   case CTLocationDataTypeGoogle:
   {
+    NSLog(@"Google does not support a results limit via the Places API as far as I can tell. https://groups.google.com/forum/?fromgroups#!topic/google-places-api/EtFGzRN6aUs");
     [self.googlePlacesConnection getGoogleObjectsWithQuery:queryString andRadius:radius andCoordinates:coordinate andTypes:kAllTypes];
   }
   break;
   case CTLocationDataTypeYahoo:
   {
-    CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:20 Radius:radius Coordinate:coordinate];
+    CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:maxResults Radius:radius Coordinate:coordinate];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *res, NSData *data, NSError *err) {
        NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
        NSDictionary * dict = [string objectFromJSONString];

@@ -61,7 +61,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(FacebookSupport);
 }
 
 - (void)postText:(NSString*)textFormat {
-    [self postText:textFormat onFriendWall:@"me"];
+
 }
 
 #pragma mark -

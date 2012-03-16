@@ -161,7 +161,7 @@
 	NSString *responseString    = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];	
 	NSError *jsonError          = nil;
 	
-	NSDictionary *parsedJSON    = [responseString objectFromJSONStringWithParseOptions:nil error:&jsonError];
+	NSDictionary *parsedJSON    = [responseString objectFromJSONStringWithParseOptions:JKParseOptionNone error:&jsonError];
     
 	if ([jsonError code]==0) 
     {

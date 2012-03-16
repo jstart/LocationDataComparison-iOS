@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Location Data" id="eNX-wX-rnA">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="bze-yX-clc">
                             <connections>
-                                <segue destination="RQj-0U-3Kh" kind="push" id="VCD-xE-mCG"/>
+                                <segue destination="RQj-0U-3Kh" kind="push" identifier="settings" id="VCD-xE-mCG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -52,7 +52,7 @@
                         <outlet property="pickerView" destination="xbW-V0-rvB" id="xeF-zY-bwm"/>
                         <outlet property="settingsButton" destination="bze-yX-clc" id="HBs-Pm-ZMT"/>
                         <outlet property="toolbar" destination="OJz-kr-l3S" id="nto-pg-5ZJ"/>
-                        <segue destination="YBW-Kr-6SK" kind="push" id="25S-WO-v7O"/>
+                        <segue destination="YBW-Kr-6SK" kind="push" identifier="cluster" id="25S-WO-v7O"/>
                     </connections>
                 </viewController>
             </objects>
@@ -82,7 +82,7 @@
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="1000" id="Vcg-O4-zrT">
                                 <rect key="frame" x="18" y="117" width="732" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <connections>
                                     <action selector="radiusChanged:" destination="RQj-0U-3Kh" eventType="valueChanged" id="nWL-Z2-Cdc"/>
                                 </connections>
@@ -102,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zgk-ZZ-MaO">
-                                <rect key="frame" x="287" y="147" width="195" height="75"/>
+                                <rect key="frame" x="287" y="405" width="195" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <state key="normal" title="Search">
@@ -116,6 +116,19 @@
                                     <action selector="searchClicked:" destination="RQj-0U-3Kh" eventType="touchUpInside" id="alB-F8-WAk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max # of Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8rq-WL-CpM">
+                                <rect key="frame" x="20" y="147" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="8O6-0a-WRQ">
+                                <rect key="frame" x="20" y="176" width="734" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -123,6 +136,7 @@
                     <connections>
                         <outlet property="currentSearchRadius" destination="lue-0u-S2m" id="S99-4d-5dR"/>
                         <outlet property="keywordTextField" destination="TES-WT-Shm" id="cej-ch-LxQ"/>
+                        <outlet property="maxResultsField" destination="8O6-0a-WRQ" id="AHz-v7-VzV"/>
                         <outlet property="radiusSlider" destination="Vcg-O4-zrT" id="v0V-I3-h8c"/>
                         <outlet property="searchButton" destination="Zgk-ZZ-MaO" id="zo3-HC-ZGM"/>
                     </connections>
@@ -140,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Jv1-y4-mIM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="Jv1-y4-mIM">
                                 <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -176,34 +190,6 @@
             <point key="canvasLocation" x="-823" y="-174"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CTClusterTableViewViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTClusterTableViewViewController.h"/>
-        </class>
-        <class className="CTSearchSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSearchSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="radiusChanged:"/>
-                <relationship kind="action" name="searchClicked:"/>
-                <relationship kind="outlet" name="currentSearchRadius" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="radiusSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="OCMapView"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="OCMapView" superclassName="MKMapView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCMapView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

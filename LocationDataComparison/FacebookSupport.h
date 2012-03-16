@@ -24,7 +24,5 @@
 - (void)getFriendsList; //  get friends list
 - (void)getFriendPhoto:(NSString*)identifier;
 - (void)postText:(NSString*)textFormat;
-- (void)postText:(NSString*)textFormat onFriendWall:(NSString*)userID;
-- (void)postImage:(UIImage*)newImage withText:(NSString*)textFormat;
 
 @end

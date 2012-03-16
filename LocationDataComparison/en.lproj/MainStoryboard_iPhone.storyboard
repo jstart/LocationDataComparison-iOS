@@ -41,7 +41,7 @@
                     <navigationItem key="navigationItem" title="Location Data" id="Y1p-YY-91s">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="KyS-aD-L5I">
                             <connections>
-                                <segue destination="6uR-ni-vWI" kind="push" id="nWg-de-f1f"/>
+                                <segue destination="6uR-ni-vWI" kind="push" identifier="settings" id="nWg-de-f1f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -50,7 +50,7 @@
                         <outlet property="pickerView" destination="h0S-pX-x4c" id="y5e-QB-wob"/>
                         <outlet property="settingsButton" destination="KyS-aD-L5I" id="veK-eJ-MRj"/>
                         <outlet property="toolbar" destination="TyA-1s-e8A" id="uac-Ua-DaM"/>
-                        <segue destination="o5D-lh-l4n" kind="push" identifier="" id="5lJ-xg-G9C"/>
+                        <segue destination="o5D-lh-l4n" kind="push" identifier="cluster" id="5lJ-xg-G9C"/>
                     </connections>
                 </viewController>
             </objects>
@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9DO-g4-FcM">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="9DO-g4-FcM">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -113,7 +113,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="1000" id="CIs-gH-Rlg">
                                 <rect key="frame" x="18" y="117" width="284" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                 <connections>
                                     <action selector="radiusChanged:" destination="6uR-ni-vWI" eventType="valueChanged" id="BOM-O6-q4f"/>
                                 </connections>
@@ -133,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zc1-PB-qlg">
-                                <rect key="frame" x="123" y="147" width="75" height="37"/>
+                                <rect key="frame" x="123" y="215" width="75" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Search">
@@ -147,6 +147,19 @@
                                     <action selector="searchClicked:" destination="6uR-ni-vWI" eventType="touchUpInside" id="Rno-Jg-2mC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max # of Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DRC-hN-r56">
+                                <rect key="frame" x="25" y="147" width="128" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="zvZ-A4-HOD">
+                                <rect key="frame" x="25" y="176" width="275" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -154,6 +167,7 @@
                     <connections>
                         <outlet property="currentSearchRadius" destination="702-hG-Qkr" id="yyz-Oy-w36"/>
                         <outlet property="keywordTextField" destination="nq6-sJ-P8I" id="NSj-lO-1IZ"/>
+                        <outlet property="maxResultsField" destination="zvZ-A4-HOD" id="TDu-9k-XoD"/>
                         <outlet property="radiusSlider" destination="CIs-gH-Rlg" id="iu8-98-abt"/>
                         <outlet property="searchButton" destination="Zc1-PB-qlg" id="Bwa-00-zzs"/>
                     </connections>
@@ -177,31 +191,6 @@
             <point key="canvasLocation" x="-610" y="140"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CTSearchSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSearchSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="radiusChanged:"/>
-                <relationship kind="action" name="searchClicked:"/>
-                <relationship kind="outlet" name="currentSearchRadius" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="radiusSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CTViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="OCMapView"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="OCMapView" superclassName="MKMapView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCMapView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

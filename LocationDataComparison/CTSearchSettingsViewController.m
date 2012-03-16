@@ -12,6 +12,7 @@
 @synthesize keywordTextField;
 @synthesize currentSearchRadius;
 @synthesize radiusSlider;
+@synthesize maxResultsField;
 @synthesize searchButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,6 +55,7 @@
   [self setCurrentSearchRadius:nil];
   [self setRadiusSlider:nil];
   [self setSearchButton:nil];
+  [self setMaxResultsField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -73,6 +75,7 @@
   //save settings
   [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:self.radiusSlider.value] forKey:kCTRadiusSetting];
   [[NSUserDefaults standardUserDefaults] setObject:self.keywordTextField.text ? self.keywordTextField.text : @"coffee" forKey:kCTKeywordSetting];
+  [[NSUserDefaults standardUserDefaults] setObject:self.maxResultsField.text forKey:kCTMaxResultsSetting];
   [self.navigationController popViewControllerAnimated:YES];
 }
 
