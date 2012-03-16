@@ -103,6 +103,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
       radius = ((CLLocationDistance)50.0f);
     }
     search.radius = radius;
+    if (maxResults > 50) {
+      NSLog(@"City Grid maxes out search at 50 results, defaulting to 50 results. See here: http://docs.citygridmedia.com/display/citygridv2/Places+API");
+      maxResults = 50;
+    }
     search.resultsPerPage = maxResults;
 
     NSArray* errors = nil;
