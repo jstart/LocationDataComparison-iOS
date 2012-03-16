@@ -9,6 +9,7 @@
 #import "CTAppDelegate.h"
 #import "FacebookSupport.h"
 #import "CTLocationDataManager.h"
+#import "CTLocationConstants.h"
 
 @implementation CTAppDelegate
 
@@ -17,8 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-  _foursquare = [[BZFoursquare alloc] initWithClientID:@"K4XTUDHZYEWKM3I0F543YWCCOILTEQXOXH3Z4UGMSJQOVM3B" callbackURL:@"fsqdemo://foursquare"];
-   _foursquare.version = @"20120227";
+  _foursquare = [[BZFoursquare alloc] initWithClientID:FOURSQUARE_CLIENT_ID callbackURL:FOURSQUARE_AUTHORIZATION_CALLBACK_URL];
+   _foursquare.version = FOURSQUARE_VERIFICATION_DATE;
    _foursquare.locale = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
   _foursquare.sessionDelegate = self;
   
