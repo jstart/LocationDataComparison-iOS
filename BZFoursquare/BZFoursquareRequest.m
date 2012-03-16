@@ -25,7 +25,6 @@
 
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "BZFoursquareRequest.h"
-#define DBZ_USE_JSONKIT 1
 #if defined(BZ_USE_JSONKIT)
 #import "JSONKit.h"
 #elif defined(BZ_USE_SBJSON)

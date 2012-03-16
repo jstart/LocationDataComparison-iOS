@@ -254,9 +254,9 @@
     clusterAnnotation.title = @"Cluster";
     NSString * subtitle = @"";
     for (OCAnnotation * annotation in clusterAnnotation.annotationsInCluster) {
-      subtitle = [subtitle stringByAppendingString:annotation.title];
+      subtitle = [subtitle stringByAppendingString:[NSString stringWithFormat:@" \"%@\" ", annotation.title]];
     }
-    clusterAnnotation.subtitle = [NSString stringWithFormat:@"Containing annotations: %d %@", [clusterAnnotation.annotationsInCluster count], subtitle];
+    clusterAnnotation.subtitle = [NSString stringWithFormat:@"Containing %d annotations: %@", [clusterAnnotation.annotationsInCluster count], subtitle];
     
     // set its image
     annotationView.image = [UIImage imageNamed:@"regular.png"];
@@ -316,7 +316,7 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
-  NSLog(@"%@, %@", view.annotation.title, view);
+  NSLog(@"%@", view.annotation.title);
   if ([view.annotation isKindOfClass:[OCAnnotation class]]) {
     CTClusterTableViewViewController * vc = [[CTClusterTableViewViewController alloc] initWithStyle:UITableViewStylePlain andAnnotations:((OCAnnotation*)view.annotation).annotationsInCluster];
     [self.navigationController pushViewController:vc animated:YES];
@@ -388,6 +388,7 @@
       [array addObject:annotation];
 	  }
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView removeOverlays:self.mapView.overlays];
     [mapView addAnnotations:array];
 	}];
 
