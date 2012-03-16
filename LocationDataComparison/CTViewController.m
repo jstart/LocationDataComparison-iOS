@@ -137,64 +137,63 @@
   [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
--(void)showSources:(id)sender{
+- (void)showSources:(id)sender {
   if (self.pickerView.hidden) {
     [UIView animateWithDuration:0.2 animations:^{
-      self.pickerView.hidden = NO;
-      CGRect frame = self.pickerView.frame;
-      frame.origin.y = self.view.bounds.size.height - (self.pickerView.frame.size.height + self.toolbar.frame.size.height);
-      self.pickerView.frame = frame;
-    }];
-  }
-  else{
+       self.pickerView.hidden = NO;
+       CGRect frame = self.pickerView.frame;
+       frame.origin.y = self.view.bounds.size.height - (self.pickerView.frame.size.height + self.toolbar.frame.size.height);
+       self.pickerView.frame = frame;
+     }];
+  } else{
     [UIView animateWithDuration:0.2 animations:^{
-      CGRect frame = self.pickerView.frame;
-      frame.origin.y = [UIScreen mainScreen].bounds.size.height;
-      self.pickerView.frame = frame;
-    } completion:^(BOOL finished){
-      self.pickerView.hidden = YES;
-    }];
+       CGRect frame = self.pickerView.frame;
+       frame.origin.y = [UIScreen mainScreen].bounds.size.height;
+       self.pickerView.frame = frame;
+     } completion:^(BOOL finished){
+       self.pickerView.hidden = YES;
+     }];
   }
 }
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
   return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
   return [self.dataSources count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
   return [self.dataSources objectAtIndex:row];
 }
 
 //- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-//  
+//
 //}
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
   switch ((CTLocationDataType) row) {
-    case CTLocationDataTypeCityGrid:
-      [self loadCityGridPlaces];
-      break;
-    case CTLocationDataTypeFactual:
-      [self loadFactualPlaces];
-      break;
-    case CTLocationDataTypeFacebook:
-      [self loadFacebookPlaces];
-      break;
-    case CTLocationDataTypeFoursquare:
-      [self loadFoursquarePlaces];
-      break;
-    case CTLocationDataTypeYahoo:
-      [self loadYahooPlaces];
-      break;
-    case CTLocationDataTypeGoogle:
-      [self loadGooglePlaces];
-      break;
-    default:
-      @throw @"ERROR, Unsupported data type";
-      break;
+  case CTLocationDataTypeCityGrid:
+    [self loadCityGridPlaces];
+    break;
+  case CTLocationDataTypeFactual:
+    [self loadFactualPlaces];
+    break;
+  case CTLocationDataTypeFacebook:
+    [self loadFacebookPlaces];
+    break;
+  case CTLocationDataTypeFoursquare:
+    [self loadFoursquarePlaces];
+    break;
+  case CTLocationDataTypeYahoo:
+    [self loadYahooPlaces];
+    break;
+  case CTLocationDataTypeGoogle:
+    [self loadGooglePlaces];
+    break;
+  default:
+    @throw @"ERROR, Unsupported data type";
+    break;
   }
   [self showSources:self.pickerView];
 }
@@ -226,12 +225,12 @@
 // For MapKit provided annotations (eg. MKUserLocation) return nil to use the MapKit provided annotation view.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
   MKAnnotationView *annotationView;
-  
+
   // if it's a cluster
   if ([annotation isKindOfClass:[OCAnnotation class]]) {
-    
+
     OCAnnotation *clusterAnnotation = (OCAnnotation *)annotation;
-    
+
     annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"ClusterView"];
     if (!annotationView) {
       annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ClusterView"];
@@ -241,15 +240,15 @@
     //calculate cluster region
     //CLLocationDistance clusterRadius = mapView.region.span.longitudeDelta * mapView.clusterSize * 111000; //static circle size of cluster
     CLLocationDistance clusterRadius = self.mapView.region.span.longitudeDelta/log(self.mapView.region.span.longitudeDelta*self.mapView.region.span.longitudeDelta) * log(pow([clusterAnnotation.annotationsInCluster count], 4)) * self.mapView.clusterSize * 50000; //circle size based on number of annotations in cluster
-    
+
     MKCircle *circle = [MKCircle circleWithCenterCoordinate:clusterAnnotation.coordinate radius:clusterRadius * cos([annotation coordinate].latitude * M_PI / 180.0)];
     [circle setTitle:@"background"];
     [self.mapView addOverlay:circle];
-    
+
     MKCircle *circleLine = [MKCircle circleWithCenterCoordinate:clusterAnnotation.coordinate radius:clusterRadius * cos([annotation coordinate].latitude * M_PI / 180.0)];
     [circleLine setTitle:@"line"];
     [self.mapView addOverlay:circleLine];
-    
+
     // set title
     clusterAnnotation.title = @"Cluster";
     NSString * subtitle = @"";
@@ -257,23 +256,22 @@
       subtitle = [subtitle stringByAppendingString:[NSString stringWithFormat:@" \"%@\" ", annotation.title]];
     }
     clusterAnnotation.subtitle = [NSString stringWithFormat:@"Containing %d annotations: %@", [clusterAnnotation.annotationsInCluster count], subtitle];
-    
+
     // set its image
     annotationView.image = [UIImage imageNamed:@"regular.png"];
-    
+
     // change pin image for group
     if (self.mapView.clusterByGroupTag) {
       if ([clusterAnnotation.groupTag isEqualToString:@"group"]) {
-        annotationView.image = [UIImage imageNamed:@"bananas.png"];
-      }
-      else if([clusterAnnotation.groupTag isEqualToString:@"group2"]){
-        annotationView.image = [UIImage imageNamed:@"oranges.png"];
+	annotationView.image = [UIImage imageNamed:@"bananas.png"];
+      } else if([clusterAnnotation.groupTag isEqualToString:@"group2"]) {
+	annotationView.image = [UIImage imageNamed:@"oranges.png"];
       }
       clusterAnnotation.title = clusterAnnotation.groupTag;
     }
   }
   // If it's a single annotation
-  else if([annotation isKindOfClass:[OCMapViewSampleHelpAnnotation class]]){
+  else if([annotation isKindOfClass:[OCMapViewSampleHelpAnnotation class]]) {
     OCMapViewSampleHelpAnnotation *singleAnnotation = (OCMapViewSampleHelpAnnotation *)annotation;
     annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"singleAnnotationView"];
     if (!annotationView) {
@@ -282,11 +280,10 @@
       annotationView.centerOffset = CGPointMake(0, -20);
     }
     singleAnnotation.title = singleAnnotation.groupTag;
-    
+
     if ([singleAnnotation.groupTag isEqualToString:@"group"]) {
       annotationView.image = [UIImage imageNamed:@"banana.png"];
-    }
-    else if([singleAnnotation.groupTag isEqualToString:@"group2"]){
+    } else if([singleAnnotation.groupTag isEqualToString:@"group2"]) {
       annotationView.image = [UIImage imageNamed:@"orange.png"];
     }
   }
@@ -299,9 +296,9 @@
       ((MKPinAnnotationView *)annotationView).pinColor = MKPinAnnotationColorRed;
     }
   }
-  
+
   [annotationView setCanShowCallout:YES];
-  
+
   return annotationView;
 }
 
@@ -347,23 +344,21 @@
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay NS_AVAILABLE(NA, 4_0){
   MKCircle *circle = overlay;
   MKCircleView *circleView = [[MKCircleView alloc] initWithCircle:overlay];
-  
+
   if ([circle.title isEqualToString:@"background"])
   {
     circleView.fillColor = [UIColor yellowColor];
     circleView.alpha = 0.25;
-  }
-  else if ([circle.title isEqualToString:@"helper"])
+  } else if ([circle.title isEqualToString:@"helper"])
   {
     circleView.fillColor = [UIColor redColor];
     circleView.alpha = 0.25;
-  }
-  else
+  } else
   {
     circleView.strokeColor = [UIColor blackColor];
     circleView.lineWidth = 0.5;
   }
-  
+
   return circleView;
 }
 
@@ -376,24 +371,24 @@
 
 #pragma mark
 #pragma CTLocationDataManagerDelegate methods
--(void)didReceiveResults:(NSArray*)results{
+- (void)didReceiveResults:(NSArray*)results {
   NSLog(@"Location Data Manager received %d results.", results.count);
   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-    NSMutableArray * array = [NSMutableArray arrayWithCapacity:results.count];
-    for (CTLocationDataManagerResult * location in results) {
-      CTLocationDataManagerResult * annotation = [[CTLocationDataManagerResult alloc] init];
-      [annotation setTitle:location.title];
-      [annotation setCoordinate:location.coordinate];
-      [annotation setGroupTag:@"group"];
-      [array addObject:annotation];
-	  }
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView removeOverlays:self.mapView.overlays];
-    [mapView addAnnotations:array];
-	}];
-
+     NSMutableArray * array = [NSMutableArray arrayWithCapacity:results.count];
+     for (CTLocationDataManagerResult * location in results) {
+       CTLocationDataManagerResult * annotation = [[CTLocationDataManagerResult alloc] init];
+       [annotation setTitle:location.title];
+       [annotation setCoordinate:location.coordinate];
+       [annotation setGroupTag:@"group"];
+       [array addObject:annotation];
+     }
+     [self.mapView removeAnnotations:self.mapView.annotations];
+     [self.mapView removeOverlays:self.mapView.overlays];
+     [mapView addAnnotations:array];
+   }];
 }
--(void)didFailWithError:(NSError*)error{
+
+- (void)didFailWithError:(NSError*)error {
   NSLog(@"%@", error);
 }
 

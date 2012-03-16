@@ -64,12 +64,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   }
 }
 
-- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults{
+- (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults {
   switch (self.currentType) {
   case CTLocationDataTypeFacebook:
   {
     NSMutableDictionary * graphDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:queryString, @"q",@"place",@"type", [NSString stringWithFormat:@"%.3f,%.3f", coordinate.latitude, coordinate.longitude], @"center", [NSString stringWithFormat:@"%.0f", radius], @"distance", [NSString stringWithFormat:@"%d",maxResults], @"limit", nil];
     FBRequest * request = [self.facebook.facebook requestWithGraphPath:@"search" andParams:graphDict andDelegate:self];
+    request = nil;
   }
   break;
   case CTLocationDataTypeFoursquare:
@@ -89,6 +90,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
     [queryObject setLimit:maxResults];
     // run query against the US-POI table
     FactualAPIRequest* activeRequest = [self.factual queryTable:@"bi0eJZ" optionalQueryParams:queryObject withDelegate:self];
+    activeRequest = nil;
   }
 
   break;
@@ -133,24 +135,38 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   break;
   case CTLocationDataTypeYahoo:
   {
+    if (maxResults > 20) {
+      NSLog(@"Yahoo Places maxes out search at 20 results, defaulting to 20 results.");
+      maxResults = 20;
+    }
     CTYahooLocalSearchRequest * request = [[CTYahooLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:maxResults Radius:radius Coordinate:coordinate];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *res, NSData *data, NSError *err) {
        NSString * string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
        NSDictionary * dict = [string objectFromJSONString];
        NSLog (@"JSON Dictionary %@", dict);
-       NSArray * resultsArray = [[dict objectForKey:@"ResultSet"] objectForKey:@"Result"];
+       NSArray * resultsArray = [[[dict objectForKey:@"ResultSet"] objectForKey:@"Result"] isKindOfClass:[NSArray class]] ?[[dict objectForKey:@"ResultSet"] objectForKey:@"Result"]:nil;
        NSMutableArray * array = [NSMutableArray arrayWithCapacity:resultsArray.count];
-       for (NSDictionary * venue in resultsArray) {
+       if (resultsArray) {
+         for (NSDictionary * venue in resultsArray) {
 
-         CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[venue objectForKey:@"Latitude"] floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
+           CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[venue objectForKey:@"Latitude"] floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
+
+           [array addObject:result];
+	 }
+         [self.delegate didReceiveResults:array];
+       } else{
+         NSDictionary * oneResult = [[dict objectForKey:@"ResultSet"] objectForKey:@"Result"];
+         NSLog (@"Yahoo's response structure changes when you request only 1 response.  Adapting for Yahoo.");
+         CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[oneResult objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[oneResult objectForKey:@"Latitude"] floatValue], [[oneResult objectForKey:@"Longitude"] floatValue])];
 
          [array addObject:result];
+
+         [self.delegate didReceiveResults:array];
        }
-       [self.delegate didReceiveResults:array];
      }];
   }
   break;
-  default:
+  default :
     NSLog (@"Unsupported dataSourceType.");
     break;
   }

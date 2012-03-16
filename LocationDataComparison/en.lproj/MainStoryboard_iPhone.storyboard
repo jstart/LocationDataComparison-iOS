@@ -159,6 +159,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6uR-ni-vWI" id="aQX-H5-Thw"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -191,6 +194,32 @@
             <point key="canvasLocation" x="-610" y="140"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CTSearchSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSearchSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="radiusChanged:"/>
+                <relationship kind="action" name="searchClicked:"/>
+                <relationship kind="outlet" name="currentSearchRadius" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="keywordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="maxResultsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="radiusSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="searchButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CTViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="OCMapView"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="OCMapView" superclassName="MKMapView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCMapView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

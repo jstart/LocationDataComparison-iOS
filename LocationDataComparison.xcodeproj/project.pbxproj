@@ -424,7 +424,7 @@
 		FD70881F14F84DC10029C7AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = FD70882214F84DC10029C7AC /* Build configuration list for PBXProject "LocationDataComparison" */;
 			compatibilityVersion = "Xcode 3.2";

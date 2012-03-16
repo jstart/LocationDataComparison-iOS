@@ -26,8 +26,8 @@
 @property (readwrite) CTLocationDataType currentType;
 @property (nonatomic, strong) id<CTLocationDataManagerDelegate> delegate;
 
-+(CTLocationDataManager *)sharedCTLocationDataManager;
--(void)setupWithDataSource:(CTLocationDataType)dataSourceType;
++ (CTLocationDataManager *)sharedCTLocationDataManager;
+- (void)setupWithDataSource:(CTLocationDataType)dataSourceType;
 - (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults;
 
 @end

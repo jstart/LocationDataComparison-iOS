@@ -11,7 +11,7 @@
 @protocol CTLocationDataManagerDelegate <NSObject>
 
 @optional
--(void)didReceiveResults:(NSArray*)results;
--(void)didFailWithError:(NSError*)error;
+- (void)didReceiveResults:(NSArray*)results;
+- (void)didFailWithError:(NSError*)error;
 
 @end

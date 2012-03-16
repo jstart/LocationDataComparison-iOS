@@ -25,7 +25,7 @@
 - (void)setSubtitle:(NSString *)text;
 - (NSString *)groupTag;
 - (void)setGroupTag:(NSString *)tag;
--(id) initWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
-+(CTLocationDataManagerResult*)resultWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
+- (id) initWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
++ (CTLocationDataManagerResult*)resultWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate NS_AVAILABLE(NA, 4_0);
 @end
