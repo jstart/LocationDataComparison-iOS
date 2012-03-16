@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Fd6-Q5-SnL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Fd6-Q5-SnL">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
+        <!--View Controller - Location Data-->
         <scene sceneID="it7-dm-H2X">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJQ-Ee-mAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -13,7 +15,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="L4z-j3-fBs">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="L4z-j3-fBs" customClass="OCMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -50,11 +52,13 @@
                         <outlet property="pickerView" destination="xbW-V0-rvB" id="xeF-zY-bwm"/>
                         <outlet property="settingsButton" destination="bze-yX-clc" id="HBs-Pm-ZMT"/>
                         <outlet property="toolbar" destination="OJz-kr-l3S" id="nto-pg-5ZJ"/>
+                        <segue destination="YBW-Kr-6SK" kind="push" id="25S-WO-v7O"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="161" y="-174"/>
         </scene>
+        <!--Search Settings View Controller-->
         <scene sceneID="kaX-aF-sWg">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPV-Qd-II1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,7 +94,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50.0m" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" minimumFontSize="17" id="lue-0u-S2m">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="50.0m" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="17" adjustsFontSizeToFit="NO" id="lue-0u-S2m">
                                 <rect key="frame" x="605" y="88" width="149" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,6 +130,37 @@
             </objects>
             <point key="canvasLocation" x="1003" y="-171"/>
         </scene>
+        <!--Cluster Table View View Controller-->
+        <scene sceneID="c3m-Sp-W5X">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieW-vb-ZT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="YBW-Kr-6SK" customClass="CTClusterTableViewViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="93k-md-5bH">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Jv1-y4-mIM">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YBW-Kr-6SK" id="vAe-h9-vgQ"/>
+                            <outlet property="delegate" destination="YBW-Kr-6SK" id="uB4-Lh-l88"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="i8p-qu-plz"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="677" y="1112"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="mmy-cd-Wam">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qx-6K-ipL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,6 +177,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="CTClusterTableViewViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTClusterTableViewViewController.h"/>
+        </class>
         <class className="CTSearchSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSearchSettingsViewController.h"/>
             <relationships>
@@ -156,11 +194,14 @@
         <class className="CTViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="OCMapView"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
                 <relationship kind="outlet" name="settingsButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
+        </class>
+        <class className="OCMapView" superclassName="MKMapView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OCMapView.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

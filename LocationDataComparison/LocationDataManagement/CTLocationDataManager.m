@@ -111,7 +111,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
     } else {
       NSMutableArray * array = [NSMutableArray arrayWithCapacity:tmpPlaces.count];
       for (CGPlacesSearchLocation * location in tmpPlaces) {
-	CTLocationDataManagerResult * result = [[CTLocationDataManagerResult alloc] initWithName:location.name Coordinate:location.latlon.coordinate];
+	CTLocationDataManagerResult * result = [[CTLocationDataManagerResult alloc] initWithTitle:location.name Coordinate:location.latlon.coordinate];
 	[array addObject:result];
       }
       [self.delegate didReceiveResults:array];
@@ -136,7 +136,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
        NSMutableArray * array = [NSMutableArray arrayWithCapacity:resultsArray.count];
        for (NSDictionary * venue in resultsArray) {
 
-         CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[venue objectForKey:@"Latitude"] floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
+         CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[venue objectForKey:@"Title"] Coordinate:CLLocationCoordinate2DMake ([[venue objectForKey:@"Latitude"] floatValue], [[venue objectForKey:@"Longitude"] floatValue])];
 
          [array addObject:result];
        }
@@ -160,7 +160,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   for (NSDictionary * venue in tmpPlaces) {
     NSDictionary * locationDict = [venue objectForKey:@"location"];
 
-    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"latitude"] floatValue], [[locationDict objectForKey:@"longitude"] floatValue])];
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"latitude"] floatValue], [[locationDict objectForKey:@"longitude"] floatValue])];
 
     [array addObject:result];
   }
@@ -185,7 +185,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   for (NSDictionary * venue in tmpPlaces) {
     NSDictionary * locationDict = [venue objectForKey:@"location"];
 
-    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"lat"] floatValue], [[locationDict objectForKey:@"lng"] floatValue])];
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[venue objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[locationDict objectForKey:@"lat"] floatValue], [[locationDict objectForKey:@"lng"] floatValue])];
 
     [array addObject:result];
   }
@@ -213,7 +213,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   NSMutableArray * array = [NSMutableArray arrayWithCapacity:queryResult.rows.count];
   for (FactualRow * venue in tmpPlaces) {
     NSDictionary * factualDictionary = [venue namesAndValues];
-    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:[factualDictionary objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[factualDictionary objectForKey:@"latitude"] floatValue], [[factualDictionary objectForKey:@"longitude"] floatValue])];
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:[factualDictionary objectForKey:@"name"] Coordinate:CLLocationCoordinate2DMake([[factualDictionary objectForKey:@"latitude"] floatValue], [[factualDictionary objectForKey:@"longitude"] floatValue])];
     [array addObject:result];
   }
   [self.delegate didReceiveResults:array];
@@ -224,7 +224,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 - (void) googlePlacesConnection:(GooglePlacesConnection *)conn didFinishLoadingWithGooglePlacesObjects:(NSMutableArray *)objects {
   NSMutableArray * array = [NSMutableArray arrayWithCapacity:objects.count];
   for (GooglePlacesObject * venue in objects) {
-    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithName:venue.name Coordinate:venue.coordinate];
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:venue.name Coordinate:venue.coordinate];
     [array addObject:result];
   }
   [self.delegate didReceiveResults:array];

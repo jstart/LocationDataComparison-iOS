@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import <CityGrid/CityGrid.h>
-#import <FactualSDK/FactualAPI.h>
-#import "BZFoursquareRequest.h"
+#import "OCMapView.h"
+#import "OCMapViewSampleHelpAnnotation.h"
 #import "CTLocationDataManagerDelegate.h"
 #import "CTLocationDataManagerResult.h"
 #import "CTLocationDataManager.h"
@@ -23,7 +22,7 @@
 @property (strong, nonatomic) NSMutableDictionary * fsqPlaces;
 @property (strong, nonatomic) NSMutableDictionary * factualPlaces;
 @property (strong, nonatomic) NSOperationQueue * queue;
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet OCMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 

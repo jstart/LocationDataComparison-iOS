@@ -8,10 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import "OCGrouping.h"
 
-@interface CTLocationDataManagerResult : NSObject
-@property (readwrite) CLLocationCoordinate2D coordinate;
-@property (nonatomic, strong) NSString * name;
--(id) initWithName:(NSString*)name Coordinate:(CLLocationCoordinate2D)coordinate;
-+(CTLocationDataManagerResult*)resultWithName:(NSString*)name Coordinate:(CLLocationCoordinate2D)coordinate;
+@interface CTLocationDataManagerResult : NSObject <MKAnnotation, OCGrouping>{
+  NSString *_groupTag;
+}
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+// Title and subtitle for use by selection UI.
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+- (NSString *)title;
+- (void)setTitle:(NSString *)text;
+
+- (NSString *)subtitle;
+- (void)setSubtitle:(NSString *)text;
+- (NSString *)groupTag;
+- (void)setGroupTag:(NSString *)tag;
+-(id) initWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
++(CTLocationDataManagerResult*)resultWithTitle:(NSString*)title Coordinate:(CLLocationCoordinate2D)coordinate;
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate NS_AVAILABLE(NA, 4_0);
 @end
