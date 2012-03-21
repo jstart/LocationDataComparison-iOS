@@ -11,7 +11,7 @@
 
 @implementation CTLocationDataManager
 
-@synthesize foursquare = _foursquare, factual = _factual, facebook = _facebook, googlePlacesConnection = _googlePlacesConnection, currentType = _currentType, delegate = _delegate;
+@synthesize foursquare = _foursquare, factual = _factual, facebook = _facebook, googlePlacesConnection = _googlePlacesConnection, currentType = _currentType, delegate = _delegate, yelpResponseData = _yelpResponseData;
 SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
 
 - (void)setupWithDataSource:(CTLocationDataType)dataSourceType {
@@ -56,6 +56,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   break;
   case CTLocationDataTypeYahoo:
   {
+  }
+  break;
+  case CTLocationDataTypeYelp:
+  {
+    self.yelpResponseData = [[NSMutableData alloc] init];
   }
   break;
   default:
@@ -166,6 +171,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
      }];
   }
   break;
+  case CTLocationDataTypeYelp:
+  {
+    CTYelpLocalSearchRequest * request = [[CTYelpLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:maxResults Radius:radius Coordinate:coordinate];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+  }
+  break;
   default :
     NSLog (@"Unsupported dataSourceType.");
     break;
@@ -256,9 +267,27 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   NSLog(@"%@", error);
 }
 
-#pragma mark
-#pragma NSURLConnection
+#pragma Yelp
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+  [self.yelpResponseData setLength:0];
+}
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+   [self.yelpResponseData appendData:data];
+}
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+  NSString * string = [[NSString alloc] initWithData:self.yelpResponseData encoding:NSUTF8StringEncoding];
+  NSDictionary * responseDict = [string objectFromJSONString];
+  NSLog(@"%@", responseDict);
+  NSMutableArray * array = [[NSMutableArray alloc] init];
+  for (NSDictionary * placeDict in [responseDict objectForKey:@"businesses"]) {
+    NSString * name = [placeDict objectForKey:@"name"];
+    float lat = [[[[placeDict objectForKey:@"location"] objectForKey:@"coordinate"] objectForKey:@"latitude"] floatValue];
+    float lon = [[[[placeDict objectForKey:@"location"] objectForKey:@"coordinate"] objectForKey:@"longitude"] floatValue];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(lat, lon);
+    CTLocationDataManagerResult * result = [CTLocationDataManagerResult resultWithTitle:name Coordinate:coordinate];
+    [array addObject:result];
+  }
+  [self.delegate didReceiveResults:array];
 }
 
 @end

@@ -36,6 +36,12 @@
 #pragma Yahoo
 #define YAHOO_APP_ID @"1syHD5fV34HfPfBrdvn2gPXmP3JcBxDw.Tzssu8BXBk6kCwn.o1logyoRevd51BjOtDohiouIZyhTnvP5eq05kY8"
 
+#pragma Yelp
+#define YELP_CONSUMER_KEY @"ggkFVz9AOTU70A2H4XsEQQ"
+#define YELP_CONSUMER_SECRET @"q2h5kFpfz13NqtLINe5nu-1-_sM"
+#define YELP_TOKEN @"6-kpb9dzttvdYfWYe9Emp2yd9B0zw8ea"
+#define YELP_TOKEN_SECRET @"qJhCsri-Gxz5QRfxwvYnEgkvMi0"
+
 #pragma DATA_SOURCE_TYPE
 typedef enum {
   CTLocationDataTypeFacebook = 0,
@@ -43,7 +49,8 @@ typedef enum {
   CTLocationDataTypeCityGrid,
   CTLocationDataTypeFactual,
   CTLocationDataTypeGoogle,
-  CTLocationDataTypeYahoo
+  CTLocationDataTypeYahoo,
+  CTLocationDataTypeYelp
 } CTLocationDataType;
 
 #endif

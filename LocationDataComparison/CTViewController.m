@@ -42,7 +42,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadFacebookPlaces) name:kFacebookConnectedNotificationKey object:nil];
   UIBarButtonItem * sourcesButton = [[UIBarButtonItem alloc] initWithTitle:@"Sources" style:UIBarButtonItemStyleDone target:self action:@selector(showSources:)];
   [self.toolbar setItems:[NSArray arrayWithObjects:sourcesButton, nil] animated:YES];
-  self.dataSources = [[NSMutableArray alloc] initWithObjects:@"Facebook",@"Foursquare", @"CityGrid", @"Factual", @"Google", @"Yahoo", nil];
+  self.dataSources = [[NSMutableArray alloc] initWithObjects:@"Facebook",@"Foursquare", @"CityGrid", @"Factual", @"Google", @"Yahoo", @"Yelp", nil];
   self.mapView.clusteringEnabled = YES;
   self.mapView.clusteringMethod = OCClusteringMethodBubble;
   self.mapView.clusterSize = 0.1;
@@ -137,6 +137,14 @@
   [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
 }
 
+- (void) loadYelpPlaces{
+  [[CTLocationDataManager sharedCTLocationDataManager] setupWithDataSource:CTLocationDataTypeYelp];
+  float radius = [[[NSUserDefaults standardUserDefaults] objectForKey:kCTRadiusSetting] floatValue];
+  NSString * query = [[NSUserDefaults standardUserDefaults] objectForKey:kCTKeywordSetting];
+  [[CTLocationDataManager sharedCTLocationDataManager] requestPlacesForCoordinate:mapView.userLocation.coordinate andRadius:radius andQuery:query andMaxResults:[[[NSUserDefaults standardUserDefaults] objectForKey:kCTMaxResultsSetting] intValue]];
+
+}
+
 - (void)showSources:(id)sender {
   if (self.pickerView.hidden) {
     [UIView animateWithDuration:0.2 animations:^{
@@ -190,6 +198,9 @@
     break;
   case CTLocationDataTypeGoogle:
     [self loadGooglePlaces];
+    break;
+  case CTLocationDataTypeYelp:
+    [self loadYelpPlaces];
     break;
   default:
     @throw @"ERROR, Unsupported data type";

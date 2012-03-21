@@ -16,6 +16,7 @@
 #import "CTLocationDataManagerDelegate.h"
 #import "BZFoursquare.h"
 #import "CTYahooLocalSearchRequest.h"
+#import "CTYelpLocalSearchRequest.h"
 
 @interface CTLocationDataManager : NSObject <BZFoursquareRequestDelegate, FactualAPIDelegate, FBSessionDelegate,FBRequestDelegate, GooglePlacesConnectionDelegate, NSURLConnectionDataDelegate>
 
@@ -25,7 +26,7 @@
 @property (nonatomic, strong) GooglePlacesConnection * googlePlacesConnection;
 @property (readwrite) CTLocationDataType currentType;
 @property (nonatomic, strong) id<CTLocationDataManagerDelegate> delegate;
-
+@property (nonatomic, strong) NSMutableData *yelpResponseData;
 + (CTLocationDataManager *)sharedCTLocationDataManager;
 - (void)setupWithDataSource:(CTLocationDataType)dataSourceType;
 - (void)requestPlacesForCoordinate:(CLLocationCoordinate2D)coordinate andRadius:(CLLocationDistance)radius andQuery:(NSString*)queryString andMaxResults:(int)maxResults;
