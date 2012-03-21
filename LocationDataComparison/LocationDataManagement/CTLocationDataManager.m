@@ -175,6 +175,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CTLocationDataManager)
   {
     CTYelpLocalSearchRequest * request = [[CTYelpLocalSearchRequest alloc] initWithQuery:queryString NumberOfResults:maxResults Radius:radius Coordinate:coordinate];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    connection = nil;
   }
   break;
   default :
