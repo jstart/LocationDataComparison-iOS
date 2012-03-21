@@ -17,17 +17,17 @@
   }
   NSString * urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=%@&limit=%d&radius_filter=%f&ll=%f,%f", queryString, numberOfResults, radius, coordinate.latitude, coordinate.longitude];
   NSURL *URL = [NSURL URLWithString:urlString];
-  OAConsumer *consumer = [[OAConsumer alloc] initWithKey:YELP_CONSUMER_KEY secret:YELP_CONSUMER_SECRET];
-  OAToken *token = [[OAToken alloc] initWithKey:YELP_TOKEN secret:YELP_TOKEN_SECRET];  
+  OAConsumer *aConsumer = [[OAConsumer alloc] initWithKey:YELP_CONSUMER_KEY secret:YELP_CONSUMER_SECRET];
+  OAToken *aToken = [[OAToken alloc] initWithKey:YELP_TOKEN secret:YELP_TOKEN_SECRET];  
   
-  id<OASignatureProviding, NSObject> provider = [[OAHMAC_SHA1SignatureProvider alloc] init];
-  NSString *realm = nil;  
+  id<OASignatureProviding, NSObject> aProvider = [[OAHMAC_SHA1SignatureProvider alloc] init];
+  NSString *aRealm = nil;  
     
   if (self = [super initWithURL:URL
-                       consumer:consumer
-                          token:token
-                          realm:realm
-              signatureProvider:provider]) {
+                       consumer:aConsumer
+                          token:aToken
+                          realm:aRealm
+              signatureProvider:aProvider]) {
     [self prepare];
     
   }
