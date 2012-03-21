@@ -37,7 +37,6 @@
 		FD70885814F84DCA0029C7AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD70885614F84DCA0029C7AC /* InfoPlist.strings */; };
 		FD70885B14F84DCA0029C7AC /* LocationDataComparisonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */; };
 		FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886414F84F090029C7AC /* MapKit.framework */; };
-		FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD70886614F84F140029C7AC /* CityGrid.framework */; };
 		FDA3AF6E150A916F008BB1CC /* FactualSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */; };
 		FDA3AF72150AA0F1008BB1CC /* CTSearchSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA3AF71150AA0F1008BB1CC /* CTSearchSettingsViewController.m */; };
 		FDA3AFDD150E9BC3008BB1CC /* OCAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA3AFD5150E9BBC008BB1CC /* OCAlgorithms.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,6 +55,7 @@
 		FDA3B000150EA257008BB1CC /* regular.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA3AFF6150EA257008BB1CC /* regular.png */; };
 		FDA3B001150EA257008BB1CC /* regular@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA3AFF7150EA257008BB1CC /* regular@2x.png */; };
 		FDB2E2B615139230001FD764 /* CTClusterTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2E2B515139230001FD764 /* CTClusterTableViewViewController.m */; };
+		FDE7CBB3151A48A800E0D392 /* CityGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE7CBB2151A48A800E0D392 /* CityGrid.framework */; };
 		FDF715B0151A25FD005149DE /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7158C151A25FD005149DE /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FDF715B1151A25FD005149DE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF7158E151A25FD005149DE /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FDF715B2151A25FD005149DE /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF71590151A25FD005149DE /* NSURL+Base.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -140,7 +140,6 @@
 		FD70885914F84DCA0029C7AC /* LocationDataComparisonTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationDataComparisonTests.h; sourceTree = "<group>"; };
 		FD70885A14F84DCA0029C7AC /* LocationDataComparisonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationDataComparisonTests.m; sourceTree = "<group>"; };
 		FD70886414F84F090029C7AC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FD70886614F84F140029C7AC /* CityGrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CityGrid.framework; path = "../CityGridiOS SDK/CityGrid.framework"; sourceTree = "<group>"; };
 		FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FactualSDK.framework; sourceTree = "<group>"; };
 		FDA3AF70150AA0F0008BB1CC /* CTSearchSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSearchSettingsViewController.h; sourceTree = "<group>"; };
 		FDA3AF71150AA0F1008BB1CC /* CTSearchSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSearchSettingsViewController.m; sourceTree = "<group>"; };
@@ -167,6 +166,7 @@
 		FDA3AFF7150EA257008BB1CC /* regular@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "regular@2x.png"; sourceTree = "<group>"; };
 		FDB2E2B415139230001FD764 /* CTClusterTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTClusterTableViewViewController.h; sourceTree = "<group>"; };
 		FDB2E2B515139230001FD764 /* CTClusterTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTClusterTableViewViewController.m; sourceTree = "<group>"; };
+		FDE7CBB2151A48A800E0D392 /* CityGrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CityGrid.framework; sourceTree = "<group>"; };
 		FDF7158B151A25FD005149DE /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		FDF7158C151A25FD005149DE /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		FDF7158D151A25FD005149DE /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -216,13 +216,13 @@
 				FD410DCF1519237300204A49 /* QuartzCore.framework in Frameworks */,
 				FD26345614FBF31F00142047 /* MobileCoreServices.framework in Frameworks */,
 				FDFA675B14F854D7001D8938 /* CoreLocation.framework in Frameworks */,
-				FD70886714F84F140029C7AC /* CityGrid.framework in Frameworks */,
 				FD70886514F84F090029C7AC /* MapKit.framework in Frameworks */,
 				FD70882D14F84DC50029C7AC /* UIKit.framework in Frameworks */,
 				FD70882F14F84DC50029C7AC /* Foundation.framework in Frameworks */,
 				FD70883114F84DC50029C7AC /* CoreGraphics.framework in Frameworks */,
 				1102BB22AE454899BCBEB79E /* libPods.a in Frameworks */,
 				FDA3AF6E150A916F008BB1CC /* FactualSDK.framework in Frameworks */,
+				FDE7CBB3151A48A800E0D392 /* CityGrid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +300,12 @@
 		FD70881D14F84DC10029C7AC = {
 			isa = PBXGroup;
 			children = (
+				FDE7CBB2151A48A800E0D392 /* CityGrid.framework */,
 				FD410DCE1519237300204A49 /* QuartzCore.framework */,
 				FD410DCC1519232A00204A49 /* CoreAudio.framework */,
 				FDA3AF6D150A916F008BB1CC /* FactualSDK.framework */,
 				FD26345514FBF31F00142047 /* MobileCoreServices.framework */,
 				FDFA675A14F854D7001D8938 /* CoreLocation.framework */,
-				FD70886614F84F140029C7AC /* CityGrid.framework */,
 				FD70886414F84F090029C7AC /* MapKit.framework */,
 				FD70883214F84DC50029C7AC /* LocationDataComparison */,
 				FD70885314F84DCA0029C7AC /* LocationDataComparisonTests */,
