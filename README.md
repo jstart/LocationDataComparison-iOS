@@ -17,3 +17,7 @@ List of location based API sources to compare:
 ### Not Yet Started
 
 * Microsoft Bing Maps Location API
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jstart/locationdatacomparison-ios/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
